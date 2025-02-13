@@ -85,6 +85,8 @@ namespace Assets.Scripts.BuildingScripts
 
                 buildingGenerator.AddTileToTileListData(tilePosition, tile[6], 0);
                 buildingGenerator.AddPlaceToOccupiedPlaces(new Vector2((int)room.entryPoint.x + i, (int)room.entryPoint.y - room.countOfWallsDown));
+
+                AddPositionsOfFloor(new Vector2((int)room.entryPoint.x + i, (int)room.entryPoint.y - room.countOfWallsDown));
             }
         }
 
@@ -107,7 +109,14 @@ namespace Assets.Scripts.BuildingScripts
 
                 buildingGenerator.AddTileToTileListData(tilePosition, tile[6], 0);
                 buildingGenerator.AddPlaceToOccupiedPlaces(new Vector2((int)room.entryPoint.x - i, (int)room.entryPoint.y - room.countOfWallsDown));
+
+                AddPositionsOfFloor(new Vector2((int)room.entryPoint.x - i, (int)room.entryPoint.y - room.countOfWallsDown));
             }
+        }
+
+        private void AddPositionsOfFloor(Vector2 position)
+        {
+            buildingGenerator.AddWallPositionToListOfWallsPositions(position);
         }
 
         private void SetTileOfRightRoomWall(Room room, Tile[] tile)

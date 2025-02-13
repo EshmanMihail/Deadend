@@ -47,6 +47,8 @@ public class BuildingGenerator : NetworkBehaviour
 
     private List<TileDataInfo> mapData = new List<TileDataInfo>();
     private List<Vector2> occupiedPlaces = new List<Vector2>();
+    private List<Vector2> walls = new List<Vector2>();
+    private List<Vector2> freePlacesToSpawn = new List<Vector2>();
 
     void Start()
     {
@@ -384,6 +386,11 @@ public class BuildingGenerator : NetworkBehaviour
     public void AddPlaceToOccupiedPlaces(Vector2 position)
     {
         occupiedPlaces.Add(position);
+    }
+
+    public void AddWallPositionToListOfWallsPositions(Vector2 position)
+    {
+        walls.Add(position);
     }
 
     public void AddTileToTileListData(Vector3Int position, Tile tile, int tileLayer)
