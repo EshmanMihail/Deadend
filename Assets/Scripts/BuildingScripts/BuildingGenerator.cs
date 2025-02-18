@@ -437,5 +437,13 @@ public class BuildingGenerator : NetworkBehaviour
             }
         }
     }
+
+    private void FillRoomByObjectsAndStructure()
+    {
+        for (int i = 0; i < roomList.Count; i++)
+        {
+            roomList[i].GenerateRoomStructure();
+        }
+    }
     #endregion
 }

@@ -17,6 +17,8 @@ namespace Assets.Scripts.BuildingScripts
         public RoomBiom roomBiom;
 
         protected TilesSetter tileSetter;
+
+
         protected Tile[] tiles;
         protected GameObject[] gameObjects;
 
@@ -34,6 +36,8 @@ namespace Assets.Scripts.BuildingScripts
         }
 
         public abstract void GenerateRoomStructure();
+
+        public abstract void SpawnRoomObjects();
 
         public void GetGameObjects(GameObject[] gameObjects)
         {

@@ -12,7 +12,12 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts
 
         public override void GenerateRoomStructure()
         {
-            throw new NotImplementedException();
+            
+        }
+
+        public override void SpawnRoomObjects()
+        {
+
         }
     }
 }
