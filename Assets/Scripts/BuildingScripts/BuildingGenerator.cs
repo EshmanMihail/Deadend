@@ -9,12 +9,14 @@ using UnityEngine.Rendering.Universal;
 using Assets.Scripts.BuildingScripts.BuildingTypes;
 using System.Linq;
 using Assets.Scripts.BuildingScripts.RoomScripts;
+using Assets.Scripts.BuildingScripts.RoomScripts.Room_s_factory;
 
 
 public class BuildingGenerator : NetworkBehaviour
 {
-    Building building;
-    TilesSetter tilesSetter;
+    private Building building;
+    private TilesSetter tilesSetter;
+    private RoomFactoryManager roomFactoryManager;
 
     private System.Random rand;
     private bool isGenerationEnd;
@@ -53,6 +55,7 @@ public class BuildingGenerator : NetworkBehaviour
     void Start()
     {
         tilesSetter = new TilesSetter(this, wallsTilemap, backgroundWalls, metalRoomTiles, lampTile);
+        InitializeRoomFactories();
 
         rand = new System.Random(Guid.NewGuid().GetHashCode());
         isGenerationEnd = false;
@@ -96,6 +99,18 @@ public class BuildingGenerator : NetworkBehaviour
         randomStructure = 0;
         if (randomStructure == 0) return new NormalBuilding();
         return new RandedBuilding();
+    }
+
+    private void InitializeRoomFactories()
+    {
+        var factories = new Dictionary<RoomBiom, IRoomFactory>
+        {
+            { RoomBiom.metal, new MetalRoomFactory(metalRoomTiles, metalRoomObjects, tilesSetter) },
+            { RoomBiom.grass, new GrassRoomFactory(grassRoomTiles, grassRoomObjects, tilesSetter) },
+            { RoomBiom.frozen, new FrozenRoomFactory(frozenRoomTiles, frozenRoomObjects, tilesSetter) }
+        };
+
+        roomFactoryManager = new RoomFactoryManager(factories);
     }
 
     private void GenerateBuilding(Vector2 startPosition, RoomType roomType)
@@ -309,27 +324,7 @@ public class BuildingGenerator : NetworkBehaviour
         int randomIndex = rand.Next(values.Length);
         RoomBiom randomBiom = (RoomBiom)values.GetValue(randomIndex);
 
-        Room room;
-        if (randomIndex == 0)
-        {
-            room = new MetalRoom(entryPoint, roomType, countOfWallsUp, countOfWallsDown, countOfWallsLeft, countOfWallsRight, randomBiom);
-            room.GetTilesAndTileSetter(metalRoomTiles, tilesSetter);
-            room.GetGameObjects(metalRoomObjects);
-        }
-        else if (randomIndex == 1)
-        {
-            room = new GrassRoom(entryPoint, roomType, countOfWallsUp, countOfWallsDown, countOfWallsLeft, countOfWallsRight, randomBiom);
-            room.GetTilesAndTileSetter(grassRoomTiles, tilesSetter);
-            room.GetGameObjects(grassRoomObjects);
-        }
-        else
-        {
-            room = new FrozenRoom(entryPoint, roomType, countOfWallsUp, countOfWallsDown, countOfWallsLeft, countOfWallsRight, randomBiom);
-            room.GetTilesAndTileSetter(frozenRoomTiles, tilesSetter);
-            room.GetGameObjects(frozenRoomObjects);
-        }
-
-        return room;
+        return roomFactoryManager.CreateRoom(entryPoint, roomType, countOfWallsUp, countOfWallsDown, countOfWallsLeft, countOfWallsRight, randomBiom);
     }
 
     private void DetermineNextRoomPaths(RoomType roomType, ref bool upperRoom, ref bool downRoom, ref bool rightRoom, ref bool leftRoom)
@@ -426,6 +421,19 @@ public class BuildingGenerator : NetworkBehaviour
             if (roomList[i].roomBiom != RoomBiom.metal)
             {
                 tilesSetter.MakeRoomHerBiom(roomList[i]);
+            }
+        }
+
+        MakeEntranceForMetalRooms();
+    }
+
+    private void MakeEntranceForMetalRooms()
+    {
+        for (int i = 0; i < roomList.Count; i++)
+        {
+            if (roomList[i].roomBiom == RoomBiom.metal)
+            {
+                tilesSetter.MakeEntrance(roomList[i]);
             }
         }
     }

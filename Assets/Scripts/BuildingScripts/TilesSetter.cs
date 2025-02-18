@@ -209,7 +209,7 @@ namespace Assets.Scripts.BuildingScripts
             }
         }
 
-        private void MakeEntrance(Room room)
+        public void MakeEntrance(Room room)
         {
             wallsTilemap.SetTile(new Vector3Int((int)room.entryPoint.x, (int)room.entryPoint.y, 10), null);
 
