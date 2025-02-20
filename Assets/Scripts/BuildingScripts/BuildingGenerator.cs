@@ -10,6 +10,7 @@ using Assets.Scripts.BuildingScripts.BuildingTypes;
 using System.Linq;
 using Assets.Scripts.BuildingScripts.RoomScripts;
 using Assets.Scripts.BuildingScripts.RoomScripts.Room_s_factory;
+using Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build;
 
 
 public class BuildingGenerator : NetworkBehaviour
@@ -105,9 +106,9 @@ public class BuildingGenerator : NetworkBehaviour
     {
         var factories = new Dictionary<RoomBiom, IRoomFactory>
         {
-            { RoomBiom.metal, new MetalRoomFactory(metalRoomTiles, metalRoomObjects, tilesSetter) },
-            { RoomBiom.grass, new GrassRoomFactory(grassRoomTiles, grassRoomObjects, tilesSetter) },
-            { RoomBiom.frozen, new FrozenRoomFactory(frozenRoomTiles, frozenRoomObjects, tilesSetter) }
+            { RoomBiom.metal, new MetalRoomFactory(new RoomStructureGenerator(rand), metalRoomTiles, metalRoomObjects, tilesSetter) },
+            { RoomBiom.grass, new GrassRoomFactory(new RoomStructureGenerator(rand), grassRoomTiles, grassRoomObjects, tilesSetter) },
+            { RoomBiom.frozen, new FrozenRoomFactory(new RoomStructureGenerator(rand), frozenRoomTiles, frozenRoomObjects, tilesSetter) }
         };
 
         roomFactoryManager = new RoomFactoryManager(factories);

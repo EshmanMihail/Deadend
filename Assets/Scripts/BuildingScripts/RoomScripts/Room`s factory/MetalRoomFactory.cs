@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build;
+using System;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -6,12 +7,14 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Room_s_factory
 {
     public class MetalRoomFactory : IRoomFactory
     {
+        private RoomStructureGenerator structureGenerator;
         private Tile[] tiles;
         private GameObject[] objects;
         private TilesSetter tilesSetter;
 
-        public MetalRoomFactory(Tile[] tiles, GameObject[] objects, TilesSetter tilesSetter)
+        public MetalRoomFactory(RoomStructureGenerator structureGenerator, Tile[] tiles, GameObject[] objects, TilesSetter tilesSetter)
         {
+            this.structureGenerator = structureGenerator;
             this.tiles = tiles;
             this.objects = objects;
             this.tilesSetter = tilesSetter;
@@ -24,6 +27,7 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Room_s_factory
 
         public void ConfigureRoom(Room room)
         {
+            room.SetStructureGenerator(structureGenerator);
             room.SetTilesAndTileSetter(tiles, tilesSetter);
             room.SetGameObjects(objects);
         }

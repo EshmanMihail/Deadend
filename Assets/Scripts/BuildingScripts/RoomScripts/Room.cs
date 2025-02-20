@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.BuildingScripts.RoomScripts;
+using Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,8 +16,9 @@ namespace Assets.Scripts.BuildingScripts
         public RoomType roomType;
         public RoomBiom roomBiom;
 
-        protected TilesSetter tileSetter;
+        protected RoomStructureGenerator structureGenerator;
 
+        protected TilesSetter tileSetter;
 
         protected Tile[] tiles;
         protected GameObject[] gameObjects;
@@ -46,6 +48,11 @@ namespace Assets.Scripts.BuildingScripts
         {
             this.tiles = tiles;
             this.tileSetter = tilesSetter;
+        }
+
+        public void SetStructureGenerator(RoomStructureGenerator structureGenerator)
+        {
+            this.structureGenerator = structureGenerator;
         }
 
         public Tile[] GetTiles() 
