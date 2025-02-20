@@ -27,7 +27,7 @@ public class BuildingGenerator : NetworkBehaviour
     [SerializeField] private Tile lampTile;
     [SerializeField] private Tile startTile;
 
-    [SerializeField] private Tile[] metalRoomTiles = new Tile[11];
+    [SerializeField] private Tile[] metalRoomTiles = new Tile[16];
     [SerializeField] private GameObject[] metalRoomObjects = new GameObject[1];
 
     [SerializeField] private Tile[] grassRoomTiles = new Tile[11];
@@ -168,7 +168,15 @@ public class BuildingGenerator : NetworkBehaviour
         Vector2 entryPointAfterCorrection = DetermineEntryPointForCorrection(roomType, entryPoint);
         CorrectionOfRoomSize(entryPointAfterCorrection, ref countOfWallsUp, ref countOfWallsDown, ref countOfWallsLeft, ref countOfWallsRight);
 
-        Room room = DetermineRoomBiom(entryPoint, roomType, countOfWallsUp, countOfWallsDown, countOfWallsLeft, countOfWallsRight);
+        RoomWallsInfo roomWalls = new RoomWallsInfo
+        {
+            countOfWallsUp = countOfWallsUp,
+            countOfWallsDown = countOfWallsDown,
+            countOfWallsLeft = countOfWallsLeft,
+            countOfWallsRight = countOfWallsRight
+        };
+
+        Room room = DetermineRoomBiom(entryPoint, roomType, roomWalls);
 
         return room;
     }
@@ -313,18 +321,18 @@ public class BuildingGenerator : NetworkBehaviour
 
     private bool IsRoomCanExsite(Room room)
     {
-        if ((room.countOfWallsRight + room.countOfWallsLeft) * (room.countOfWallsUp + room.countOfWallsDown) < 16) return false;
-        if (room.countOfWallsUp + room.countOfWallsDown == 1) return false;
+        if ((room.wallsInfo.countOfWallsRight + room.wallsInfo.countOfWallsLeft) * (room.wallsInfo.countOfWallsUp + room.wallsInfo.countOfWallsDown) < 16) return false;
+        if (room.wallsInfo.countOfWallsUp + room.wallsInfo.countOfWallsDown == 1) return false;
         return true;
     }
 
-    private Room DetermineRoomBiom(Vector2 entryPoint, RoomType roomType, int countOfWallsUp, int countOfWallsDown, int countOfWallsLeft, int countOfWallsRight)
+    private Room DetermineRoomBiom(Vector2 entryPoint, RoomType roomType, RoomWallsInfo wallsInfo)
     {
         Array values = Enum.GetValues(typeof(RoomBiom));
         int randomIndex = rand.Next(values.Length);
         RoomBiom randomBiom = (RoomBiom)values.GetValue(randomIndex);
 
-        return roomFactoryManager.CreateRoom(entryPoint, roomType, countOfWallsUp, countOfWallsDown, countOfWallsLeft, countOfWallsRight, randomBiom);
+        return roomFactoryManager.CreateRoom(entryPoint, roomType, wallsInfo, randomBiom);
     }
 
     private void DetermineNextRoomPaths(RoomType roomType, ref bool upperRoom, ref bool downRoom, ref bool rightRoom, ref bool leftRoom)
@@ -438,7 +446,7 @@ public class BuildingGenerator : NetworkBehaviour
         }
     }
 
-    private void FillRoomByObjectsAndStructure()
+    private void CreateRoomStructure()
     {
         for (int i = 0; i < roomList.Count; i++)
         {

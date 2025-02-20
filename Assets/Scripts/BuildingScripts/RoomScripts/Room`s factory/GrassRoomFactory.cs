@@ -17,15 +17,15 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Room_s_factory
             this.tilesSetter = tilesSetter;
         }
 
-        public Room CreateRoom(Vector2 entryPoint, RoomType roomType, int countOfWallsUp, int countOfWallsDown, int countOfWallsLeft, int countOfWallsRight)
+        public Room CreateRoom(Vector2 entryPoint, RoomType roomType, RoomWallsInfo wallsInfo)
         {
-            return new GrassRoom(entryPoint, roomType, countOfWallsUp, countOfWallsDown, countOfWallsLeft, countOfWallsRight, RoomBiom.grass);
+            return new GrassRoom(entryPoint, roomType, wallsInfo, RoomBiom.grass);
         }
 
         public void ConfigureRoom(Room room)
         {
-            room.GetTilesAndTileSetter(tiles, tilesSetter);
-            room.GetGameObjects(objects);
+            room.SetTilesAndTileSetter(tiles, tilesSetter);
+            room.SetGameObjects(objects);
         }
     }
 }

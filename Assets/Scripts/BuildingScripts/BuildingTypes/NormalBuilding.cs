@@ -34,23 +34,23 @@ namespace Assets.Scripts.BuildingScripts.BuildingTypes
             int pathPointX = 0, pathPointY = 0;
             if (NextRoomType == RoomType.Upper)
             {
-                pathPointX = rand.Next((int)entryPoint.x - room.countOfWallsLeft + 1, (int)entryPoint.x + room.countOfWallsRight - 1);
-                pathPointY = (int)entryPoint.y + room.countOfWallsUp;
+                pathPointX = rand.Next((int)entryPoint.x - room.wallsInfo.countOfWallsLeft + 1, (int)entryPoint.x + room.wallsInfo.countOfWallsRight - 1);
+                pathPointY = (int)entryPoint.y + room.wallsInfo.countOfWallsUp;
             }
             if (NextRoomType == RoomType.Bottom)
             {
-                pathPointX = rand.Next((int)entryPoint.x - room.countOfWallsLeft + 1, (int)entryPoint.x + room.countOfWallsRight - 1);
-                pathPointY = (int)entryPoint.y - room.countOfWallsDown;
+                pathPointX = rand.Next((int)entryPoint.x - room.wallsInfo.countOfWallsLeft + 1, (int)entryPoint.x + room.wallsInfo.countOfWallsRight - 1);
+                pathPointY = (int)entryPoint.y - room.wallsInfo.countOfWallsDown;
             }
             if (NextRoomType == RoomType.Right)
             {
-                pathPointX = (int)entryPoint.x + room.countOfWallsRight;
-                pathPointY = (int)entryPoint.y - room.countOfWallsDown + 1;
+                pathPointX = (int)entryPoint.x + room.wallsInfo.countOfWallsRight;
+                pathPointY = (int)entryPoint.y - room.wallsInfo.countOfWallsDown + 1;
             }
             if (NextRoomType == RoomType.Left)
             {
-                pathPointX = (int)entryPoint.x - room.countOfWallsLeft;
-                pathPointY = (int)entryPoint.y - room.countOfWallsDown + 1;
+                pathPointX = (int)entryPoint.x - room.wallsInfo.countOfWallsLeft;
+                pathPointY = (int)entryPoint.y - room.wallsInfo.countOfWallsDown + 1;
             }
 
             return new Vector2 (pathPointX, pathPointY);

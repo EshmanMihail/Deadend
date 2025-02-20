@@ -829,7 +829,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9a4e64e3222c7a447b696490ea2dd681, type: 2}
   - {fileID: 11400000, guid: 4c1700aacba79e04596d351a072a160d, type: 2}
   - {fileID: 11400000, guid: 4c1700aacba79e04596d351a072a160d, type: 2}
-  - {fileID: 11400000, guid: fae03de1dc53c9545af7a1383ed943fa, type: 2}
+  - {fileID: 11400000, guid: 9aeb0593940bc114ebeb7e81337b3295, type: 2}
+  - {fileID: 11400000, guid: c73809c3a7e27b149813eef5467aaa7d, type: 2}
+  - {fileID: 11400000, guid: 24293c8370b125f4da09a1f597d39435, type: 2}
+  - {fileID: 11400000, guid: fb2a1039074092e4eae68115711562ef, type: 2}
+  - {fileID: 11400000, guid: 6db40a13acd29074f82cdeda0fa253ab, type: 2}
+  - {fileID: 11400000, guid: 35b1087e0d8121c4bb3eee91e7ff3fff, type: 2}
   metalRoomObjects:
   - {fileID: 0}
   grassRoomTiles:
@@ -863,7 +868,7 @@ MonoBehaviour:
   chanceToCheckToGenerateNextPathes: 50
   chanceToCheckToStopGenerate: 80
   chanceToSpawnNextRoom: 100
-  minusChanceToSpawnNextRoom: 5
+  minusChanceToSpawnNextRoom: 10
   maxRoomCount: 60
 --- !u!114 &948704643
 MonoBehaviour:

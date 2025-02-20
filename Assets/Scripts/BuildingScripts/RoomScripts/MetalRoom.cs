@@ -6,9 +6,8 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts
 {
     public class MetalRoom : Room
     {
-        public MetalRoom(Vector2 entryPoint, RoomType roomType,
-            int countOfWallsUp, int countOfWallsDown, int countOfWallsLeft, int countOfWallsRight, RoomBiom roomBiom)
-            : base(entryPoint, roomType, countOfWallsUp, countOfWallsDown, countOfWallsLeft, countOfWallsRight, roomBiom) { }
+        public MetalRoom(Vector2 entryPoint, RoomType roomType, RoomWallsInfo wallsInfo, RoomBiom roomBiom)
+            : base(entryPoint, roomType, wallsInfo, roomBiom) { }
 
         public override void GenerateRoomStructure()
         {

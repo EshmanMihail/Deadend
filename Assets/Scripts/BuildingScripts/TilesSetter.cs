@@ -69,48 +69,48 @@ namespace Assets.Scripts.BuildingScripts
         private void SetTilesOnRightPartOfRoom(Room room, Tile[] tile)
         {
             //upper part
-            for (int i = 1; i < room.countOfWallsRight; i++)
+            for (int i = 1; i < room.wallsInfo.countOfWallsRight; i++)
             {
-                Vector3Int tilePosition = new Vector3Int((int)room.entryPoint.x + i, (int)room.entryPoint.y + room.countOfWallsUp, 10);
+                Vector3Int tilePosition = new Vector3Int((int)room.entryPoint.x + i, (int)room.entryPoint.y + room.wallsInfo.countOfWallsUp, 10);
                 wallsTilemap.SetTile(tilePosition, tile[2]);
 
                 buildingGenerator.AddTileToTileListData(tilePosition, tile[2], 0);
-                buildingGenerator.AddPlaceToOccupiedPlaces(new Vector2((int)room.entryPoint.x + i, (int)room.entryPoint.y + room.countOfWallsUp));
+                buildingGenerator.AddPlaceToOccupiedPlaces(new Vector2((int)room.entryPoint.x + i, (int)room.entryPoint.y + room.wallsInfo.countOfWallsUp));
             }
             // lower part
-            for (int i = 1; i < room.countOfWallsRight; i++)
+            for (int i = 1; i < room.wallsInfo.countOfWallsRight; i++)
             {
-                Vector3Int tilePosition = new Vector3Int((int)room.entryPoint.x + i, (int)room.entryPoint.y - room.countOfWallsDown, 10);
+                Vector3Int tilePosition = new Vector3Int((int)room.entryPoint.x + i, (int)room.entryPoint.y - room.wallsInfo.countOfWallsDown, 10);
                 wallsTilemap.SetTile(tilePosition, tile[6]);
 
                 buildingGenerator.AddTileToTileListData(tilePosition, tile[6], 0);
-                buildingGenerator.AddPlaceToOccupiedPlaces(new Vector2((int)room.entryPoint.x + i, (int)room.entryPoint.y - room.countOfWallsDown));
+                buildingGenerator.AddPlaceToOccupiedPlaces(new Vector2((int)room.entryPoint.x + i, (int)room.entryPoint.y - room.wallsInfo.countOfWallsDown));
 
-                AddPositionsOfFloor(new Vector2((int)room.entryPoint.x + i, (int)room.entryPoint.y - room.countOfWallsDown));
+                AddPositionsOfFloor(new Vector2((int)room.entryPoint.x + i, (int)room.entryPoint.y - room.wallsInfo.countOfWallsDown));
             }
         }
 
         private void SetTilesOnLeftPartOfRoom(Room room, Tile[] tile)
         {
             // upper part
-            for (int i = 0; i < room.countOfWallsLeft; i++)
+            for (int i = 0; i < room.wallsInfo.countOfWallsLeft; i++)
             {
-                Vector3Int tilePosition = new Vector3Int((int)room.entryPoint.x - i, (int)room.entryPoint.y + room.countOfWallsUp, 10);
+                Vector3Int tilePosition = new Vector3Int((int)room.entryPoint.x - i, (int)room.entryPoint.y + room.wallsInfo.countOfWallsUp, 10);
                 wallsTilemap.SetTile(tilePosition, tile[2]);
 
                 buildingGenerator.AddTileToTileListData(tilePosition, tile[2], 0);
-                buildingGenerator.AddPlaceToOccupiedPlaces(new Vector2((int)room.entryPoint.x - i, (int)room.entryPoint.y + room.countOfWallsUp));
+                buildingGenerator.AddPlaceToOccupiedPlaces(new Vector2((int)room.entryPoint.x - i, (int)room.entryPoint.y + room.wallsInfo.countOfWallsUp));
             }
             //lower part
-            for (int i = 0; i < room.countOfWallsLeft; i++)
+            for (int i = 0; i < room.wallsInfo.countOfWallsLeft; i++)
             {
-                Vector3Int tilePosition = new Vector3Int((int)room.entryPoint.x - i, (int)room.entryPoint.y - room.countOfWallsDown, 10);
+                Vector3Int tilePosition = new Vector3Int((int)room.entryPoint.x - i, (int)room.entryPoint.y - room.wallsInfo.countOfWallsDown, 10);
                 wallsTilemap.SetTile(tilePosition, tile[6]);
 
                 buildingGenerator.AddTileToTileListData(tilePosition, tile[6], 0);
-                buildingGenerator.AddPlaceToOccupiedPlaces(new Vector2((int)room.entryPoint.x - i, (int)room.entryPoint.y - room.countOfWallsDown));
+                buildingGenerator.AddPlaceToOccupiedPlaces(new Vector2((int)room.entryPoint.x - i, (int)room.entryPoint.y - room.wallsInfo.countOfWallsDown));
 
-                AddPositionsOfFloor(new Vector2((int)room.entryPoint.x - i, (int)room.entryPoint.y - room.countOfWallsDown));
+                AddPositionsOfFloor(new Vector2((int)room.entryPoint.x - i, (int)room.entryPoint.y - room.wallsInfo.countOfWallsDown));
             }
         }
 
@@ -122,58 +122,58 @@ namespace Assets.Scripts.BuildingScripts
         private void SetTileOfRightRoomWall(Room room, Tile[] tile)
         {
             // set up
-            for (int i = 0; i < room.countOfWallsUp; i++)
+            for (int i = 0; i < room.wallsInfo.countOfWallsUp; i++)
             {
-                Vector3Int tilePosition = new Vector3Int((int)room.entryPoint.x + room.countOfWallsRight, (int)room.entryPoint.y + i, 10);
+                Vector3Int tilePosition = new Vector3Int((int)room.entryPoint.x + room.wallsInfo.countOfWallsRight, (int)room.entryPoint.y + i, 10);
                 wallsTilemap.SetTile(tilePosition, tile[4]);
 
                 buildingGenerator.AddTileToTileListData(tilePosition, tile[4], 0);
-                buildingGenerator.AddPlaceToOccupiedPlaces(new Vector2((int)room.entryPoint.x + room.countOfWallsRight, (int)room.entryPoint.y + i));
+                buildingGenerator.AddPlaceToOccupiedPlaces(new Vector2((int)room.entryPoint.x + room.wallsInfo.countOfWallsRight, (int)room.entryPoint.y + i));
             }
             // set down
-            for (int i = 0; i < room.countOfWallsDown; i++)
+            for (int i = 0; i < room.wallsInfo.countOfWallsDown; i++)
             {
-                Vector3Int tilePosition = new Vector3Int((int)room.entryPoint.x + room.countOfWallsRight, (int)room.entryPoint.y - i, 10);
+                Vector3Int tilePosition = new Vector3Int((int)room.entryPoint.x + room.wallsInfo.countOfWallsRight, (int)room.entryPoint.y - i, 10);
                 wallsTilemap.SetTile(tilePosition, tile[4]);
 
                 buildingGenerator.AddTileToTileListData(tilePosition, tile[4], 0);
-                buildingGenerator.AddPlaceToOccupiedPlaces(new Vector2((int)room.entryPoint.x + room.countOfWallsRight, (int)room.entryPoint.y - i));
+                buildingGenerator.AddPlaceToOccupiedPlaces(new Vector2((int)room.entryPoint.x + room.wallsInfo.countOfWallsRight, (int)room.entryPoint.y - i));
             }
         }
 
         private void SetTileOfLeftRoomWall(Room room, Tile[] tile)
         {
             // set up
-            for (int i = 0; i < room.countOfWallsUp; i++)
+            for (int i = 0; i < room.wallsInfo.countOfWallsUp; i++)
             {
-                Vector3Int tilePosition = new Vector3Int((int)room.entryPoint.x - room.countOfWallsLeft, (int)room.entryPoint.y + i, 10);
+                Vector3Int tilePosition = new Vector3Int((int)room.entryPoint.x - room.wallsInfo.countOfWallsLeft, (int)room.entryPoint.y + i, 10);
                 wallsTilemap.SetTile(tilePosition, tile[0]);
 
                 buildingGenerator.AddTileToTileListData(tilePosition, tile[0], 0);
-                buildingGenerator.AddPlaceToOccupiedPlaces(new Vector2((int)room.entryPoint.x - room.countOfWallsLeft, (int)room.entryPoint.y + i));
+                buildingGenerator.AddPlaceToOccupiedPlaces(new Vector2((int)room.entryPoint.x - room.wallsInfo.countOfWallsLeft, (int)room.entryPoint.y + i));
             }
             // set down
-            for (int i = 0; i < room.countOfWallsDown; i++)
+            for (int i = 0; i < room.wallsInfo.countOfWallsDown; i++)
             {
-                Vector3Int tilePosition = new Vector3Int((int)room.entryPoint.x - room.countOfWallsLeft, (int)room.entryPoint.y - i, 10);
+                Vector3Int tilePosition = new Vector3Int((int)room.entryPoint.x - room.wallsInfo.countOfWallsLeft, (int)room.entryPoint.y - i, 10);
                 wallsTilemap.SetTile(tilePosition, tile[0]);
 
                 buildingGenerator.AddTileToTileListData(tilePosition, tile[0], 0);
-                buildingGenerator.AddPlaceToOccupiedPlaces(new Vector2((int)room.entryPoint.x - room.countOfWallsLeft, (int)room.entryPoint.y - i));
+                buildingGenerator.AddPlaceToOccupiedPlaces(new Vector2((int)room.entryPoint.x - room.wallsInfo.countOfWallsLeft, (int)room.entryPoint.y - i));
             }
         }
 
         private void SetAngleTiles(Room room, Tile[] tile)
         {
-            Vector2 positionOfRightUpperTile = new Vector2(room.entryPoint.x + room.countOfWallsRight, room.entryPoint.y + room.countOfWallsUp);
-            Vector2 positionOfRightDownTile = new Vector2(room.entryPoint.x + room.countOfWallsRight, room.entryPoint.y - room.countOfWallsDown);
-            Vector2 positionOfLeftUpperTile = new Vector2(room.entryPoint.x - room.countOfWallsLeft, room.entryPoint.y + room.countOfWallsUp);
-            Vector2 positionOfLeftDownTile = new Vector2(room.entryPoint.x - room.countOfWallsLeft, room.entryPoint.y - room.countOfWallsDown);
+            Vector2 positionOfRightUpperTile = new Vector2(room.entryPoint.x + room.wallsInfo.countOfWallsRight, room.entryPoint.y + room.wallsInfo.countOfWallsUp);
+            Vector2 positionOfRightDownTile = new Vector2(room.entryPoint.x + room.wallsInfo.countOfWallsRight, room.entryPoint.y - room.wallsInfo.countOfWallsDown);
+            Vector2 positionOfLeftUpperTile = new Vector2(room.entryPoint.x - room.wallsInfo.countOfWallsLeft, room.entryPoint.y + room.wallsInfo.countOfWallsUp);
+            Vector2 positionOfLeftDownTile = new Vector2(room.entryPoint.x - room.wallsInfo.countOfWallsLeft, room.entryPoint.y - room.wallsInfo.countOfWallsDown);
 
-            Vector3Int positionOfRightUpperTileINT = new Vector3Int((int)room.entryPoint.x + room.countOfWallsRight, (int)room.entryPoint.y + room.countOfWallsUp, 10);
-            Vector3Int positionOfRightDownTileINT = new Vector3Int((int)room.entryPoint.x + room.countOfWallsRight, (int)room.entryPoint.y - room.countOfWallsDown, 10);
-            Vector3Int positionOfLeftUpperTileINT = new Vector3Int((int)room.entryPoint.x - room.countOfWallsLeft, (int)room.entryPoint.y + room.countOfWallsUp, 10);
-            Vector3Int positionOfLeftDownTileINT = new Vector3Int((int)room.entryPoint.x - room.countOfWallsLeft, (int)room.entryPoint.y - room.countOfWallsDown, 10);
+            Vector3Int positionOfRightUpperTileINT = new Vector3Int((int)room.entryPoint.x + room.wallsInfo.countOfWallsRight, (int)room.entryPoint.y + room.wallsInfo.countOfWallsUp, 10);
+            Vector3Int positionOfRightDownTileINT = new Vector3Int((int)room.entryPoint.x + room.wallsInfo.countOfWallsRight, (int)room.entryPoint.y - room.wallsInfo.countOfWallsDown, 10);
+            Vector3Int positionOfLeftUpperTileINT = new Vector3Int((int)room.entryPoint.x - room.wallsInfo.countOfWallsLeft, (int)room.entryPoint.y + room.wallsInfo.countOfWallsUp, 10);
+            Vector3Int positionOfLeftDownTileINT = new Vector3Int((int)room.entryPoint.x - room.wallsInfo.countOfWallsLeft, (int)room.entryPoint.y - room.wallsInfo.countOfWallsDown, 10);
 
             wallsTilemap.SetTile(positionOfRightUpperTileINT, tile[3]);
             wallsTilemap.SetTile(positionOfRightDownTileINT, tile[5]);
@@ -193,10 +193,10 @@ namespace Assets.Scripts.BuildingScripts
 
         private void SetTilesInsideRoom(Room room, Tile[] tile)
         {
-            int positionOfLeftWall = (int)(room.entryPoint.x - room.countOfWallsLeft);
-            int positionOfRightWall = (int)(room.entryPoint.x + room.countOfWallsRight);
-            int positionOfFloor = (int)room.entryPoint.y - room.countOfWallsDown;
-            int positionOfCeiling = (int)room.entryPoint.y + room.countOfWallsUp;
+            int positionOfLeftWall = (int)(room.entryPoint.x - room.wallsInfo.countOfWallsLeft);
+            int positionOfRightWall = (int)(room.entryPoint.x + room.wallsInfo.countOfWallsRight);
+            int positionOfFloor = (int)room.entryPoint.y - room.wallsInfo.countOfWallsDown;
+            int positionOfCeiling = (int)room.entryPoint.y + room.wallsInfo.countOfWallsUp;
 
             for (int i = positionOfLeftWall + 1; i < positionOfRightWall; i++)
             {
@@ -274,10 +274,10 @@ namespace Assets.Scripts.BuildingScripts
 
         private void SetTilesInsideRoomBiom(Room room, Tile[] tile)
         {
-            int positionOfLeftWall = (int)(room.entryPoint.x - room.countOfWallsLeft);
-            int positionOfRightWall = (int)(room.entryPoint.x + room.countOfWallsRight);
-            int positionOfFloor = (int)room.entryPoint.y - room.countOfWallsDown;
-            int positionOfCeiling = (int)room.entryPoint.y + room.countOfWallsUp;
+            int positionOfLeftWall = (int)(room.entryPoint.x - room.wallsInfo.countOfWallsLeft);
+            int positionOfRightWall = (int)(room.entryPoint.x + room.wallsInfo.countOfWallsRight);
+            int positionOfFloor = (int)room.entryPoint.y - room.wallsInfo.countOfWallsDown;
+            int positionOfCeiling = (int)room.entryPoint.y + room.wallsInfo.countOfWallsUp;
 
             for (int i = positionOfLeftWall + 1; i < positionOfRightWall; i++)
             {

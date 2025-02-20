@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Assets.Scripts.BuildingScripts.RoomScripts;
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -8,10 +10,7 @@ namespace Assets.Scripts.BuildingScripts
     {
         public Vector2 entryPoint;
 
-        public int countOfWallsUp;
-        public int countOfWallsDown;
-        public int countOfWallsRight;
-        public int countOfWallsLeft;
+        public RoomWallsInfo wallsInfo;
 
         public RoomType roomType;
         public RoomBiom roomBiom;
@@ -22,16 +21,15 @@ namespace Assets.Scripts.BuildingScripts
         protected Tile[] tiles;
         protected GameObject[] gameObjects;
 
-        public Room(Vector2 entryPoint, RoomType roomType,
-            int countOfWallsUp, int countOfWallsDown,
-            int countOfWallsLeft, int countOfWallsRight, RoomBiom roomBiom) 
+        protected List<Vector2> positionOfWalls;
+        protected List<Vector2> freePlacesToSpawn;
+        protected List<Vector2> nodes;
+
+        public Room(Vector2 entryPoint, RoomType roomType, RoomWallsInfo wallsInfo, RoomBiom roomBiom) 
         {
             this.entryPoint = entryPoint;
             this.roomType = roomType;
-            this.countOfWallsUp = countOfWallsUp;
-            this.countOfWallsDown = countOfWallsDown;
-            this.countOfWallsLeft = countOfWallsLeft;
-            this.countOfWallsRight = countOfWallsRight;
+            this.wallsInfo = wallsInfo;
             this.roomBiom = roomBiom;
         }
 
@@ -39,12 +37,12 @@ namespace Assets.Scripts.BuildingScripts
 
         public abstract void SpawnRoomObjects();
 
-        public void GetGameObjects(GameObject[] gameObjects)
+        public void SetGameObjects(GameObject[] gameObjects)
         {
             this.gameObjects = gameObjects;
         }
 
-        public void GetTilesAndTileSetter(Tile[] tiles, TilesSetter tilesSetter)
+        public void SetTilesAndTileSetter(Tile[] tiles, TilesSetter tilesSetter)
         {
             this.tiles = tiles;
             this.tileSetter = tilesSetter;
@@ -57,12 +55,12 @@ namespace Assets.Scripts.BuildingScripts
 
         public Vector2 GetLeftUpperAngle()
         {
-            return new Vector2((int)entryPoint.x - countOfWallsLeft, (int)entryPoint.y + countOfWallsUp);
+            return new Vector2((int)entryPoint.x - wallsInfo.countOfWallsLeft, (int)entryPoint.y + wallsInfo.countOfWallsUp);
         }
 
         public Vector2 GetRightBottomAngle()
         {
-            return new Vector2((int)entryPoint.x + countOfWallsRight, (int)entryPoint.y - countOfWallsDown);
+            return new Vector2((int)entryPoint.x + wallsInfo.countOfWallsRight, (int)entryPoint.y - wallsInfo.countOfWallsDown);
         }
     }
 }
