@@ -7,12 +7,12 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Room_s_factory
 {
     public class FrozenRoomFactory : IRoomFactory
     {
-        private RoomStructureGenerator structureGenerator;
+        private IRoomStructure structureGenerator;
         private Tile[] tiles;
         private GameObject[] objects;
         private TilesSetter tilesSetter;
 
-        public FrozenRoomFactory(RoomStructureGenerator structureGenerator, Tile[] tiles, GameObject[] objects, TilesSetter tilesSetter)
+        public FrozenRoomFactory(IRoomStructure structureGenerator, Tile[] tiles, GameObject[] objects, TilesSetter tilesSetter)
         {
             this.structureGenerator = structureGenerator;
             this.tiles = tiles;

@@ -16,9 +16,9 @@ namespace Assets.Scripts.BuildingScripts
         public RoomType roomType;
         public RoomBiom roomBiom;
 
-        protected RoomStructureGenerator structureGenerator;
+        protected IRoomStructure structureGenerator;
 
-        protected TilesSetter tileSetter;
+        public TilesSetter tileSetter;
 
         protected Tile[] tiles;
         protected GameObject[] gameObjects;
@@ -50,7 +50,7 @@ namespace Assets.Scripts.BuildingScripts
             this.tileSetter = tilesSetter;
         }
 
-        public void SetStructureGenerator(RoomStructureGenerator structureGenerator)
+        public void SetStructureGenerator(IRoomStructure structureGenerator)
         {
             this.structureGenerator = structureGenerator;
         }

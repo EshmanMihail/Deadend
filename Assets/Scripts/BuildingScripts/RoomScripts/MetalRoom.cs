@@ -11,7 +11,7 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts
 
         public override void GenerateRoomStructure()
         {
-            
+            structureGenerator.Generate(this);
         }
 
         public override void SpawnRoomObjects()

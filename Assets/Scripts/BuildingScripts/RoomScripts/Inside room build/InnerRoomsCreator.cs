@@ -1,12 +1,15 @@
-﻿using System;
+﻿using Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Inner_rooms;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build
 {
     public class InnerRoomsCreator
     {
         private Room room;
+        private Tile[] roomTiles;
 
         private System.Random rand;
 
@@ -16,43 +19,69 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build
         }
 
         private List<Vector2> ocupiedPlaces;
-        private List<Vector2> laderPlaces;
+        private  List<Vector2> laderPlaces;
 
-        private int chanceToSpawnRoom = 80;
+        private int chanceToSpawnInnerRoom = 80;
         private int reduceChance = 20;
 
         public InnerRoomsCreator(Room room, System.Random random)
         {
             this.room = room;
             this.rand = random;
+
+            roomTiles = room.GetTiles();
+
             ocupiedPlaces = new List<Vector2>();
             laderPlaces = new List<Vector2>();
         }
 
         public void CreateInnerRooms()
         {
-            while (rand.Next(0, chanceToSpawnRoom) < chanceToSpawnRoom)
+            List<int> innerRoomTypesValues = new List<int>() { 0, 1, 2, 3 };
+
+            while (chanceToSpawnInnerRoom > 0 && innerRoomTypesValues.Count > 0)
             {
+                int randomIndex = rand.Next(0, innerRoomTypesValues.Count);
+                InnerRoomType innerRoomType = (InnerRoomType)innerRoomTypesValues[randomIndex];
 
+                //if (rand.Next(0, chanceToSpawnInnerRoom) < chanceToSpawnInnerRoom)
+                //    InnerRoomManager(innerRoomType);
+                InnerRoomManager(innerRoomType);
 
-                chanceToSpawnRoom -= reduceChance;
+                innerRoomTypesValues.RemoveAt(randomIndex);
+                chanceToSpawnInnerRoom -= reduceChance;
             }
         }
 
-        private void CraeteLeftTopRoom()
+        private void InnerRoomManager(InnerRoomType innerRoomType)
+        {
+            switch (innerRoomType)
+            {
+                case InnerRoomType.TopLeft:
+                    InnerRoom topLeftRoom = new TopLeftRoom(room, rand, roomTiles, ocupiedPlaces, laderPlaces);
+                    topLeftRoom.CraeteRoom();
+                    break;
+
+                case InnerRoomType.TopRight:
+                    InnerRoom topRightRoom = new TopRightRoom(room, rand, roomTiles, ocupiedPlaces, laderPlaces);
+                    topRightRoom.CraeteRoom();
+                    break;
+
+                case InnerRoomType.BottomLeft:
+                    CraeteBottomLeftRoom();
+                    break;
+
+                case InnerRoomType.BottomRight:
+                    CraeteBottomRightRoom();
+                    break;
+            }
+        }
+
+        private void CraeteBottomLeftRoom()
         {
 
         }
-
-        private void CraeteRightTopRoom()
-        {
-
-        }
-        private void CraeteLeftBottomRoom()
-        {
-
-        }
-        private void CraeteRightBottomRoom()
+        private void CraeteBottomRightRoom()
         {
 
         }

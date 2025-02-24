@@ -1,18 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using UnityEngine;
 
 namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build
 {
-    public class RoomStructureGenerator
+    public class RoomStructureGenerator : IRoomStructure
     {
         protected System.Random rand;
 
         public RoomStructureGenerator(System.Random random)
         {
             rand = random;
+            
         }
 
         public virtual void Generate(Room room)

@@ -452,7 +452,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -815,6 +815,7 @@ MonoBehaviour:
   syncInterval: 0
   wallsTilemap: {fileID: 868325556}
   backgroundWalls: {fileID: 1831194716}
+  ladder: {fileID: 693643147}
   wallMetalTile: {fileID: 11400000, guid: fae03de1dc53c9545af7a1383ed943fa, type: 2}
   lampTile: {fileID: 11400000, guid: 4c1700aacba79e04596d351a072a160d, type: 2}
   startTile: {fileID: 11400000, guid: b86f22adf1035e243923d571aa3132fd, type: 2}
@@ -869,7 +870,7 @@ MonoBehaviour:
   chanceToCheckToStopGenerate: 80
   chanceToSpawnNextRoom: 100
   minusChanceToSpawnNextRoom: 10
-  maxRoomCount: 60
+  maxRoomCount: 30
 --- !u!114 &948704643
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1098,7 +1099,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: -2
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
