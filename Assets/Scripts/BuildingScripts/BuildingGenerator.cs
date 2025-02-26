@@ -49,10 +49,7 @@ public class BuildingGenerator : NetworkBehaviour
     [SerializeField] private int maxRoomCount = 20;
     private List<Room> roomList = new List<Room>(); 
 
-    private List<TileDataInfo> mapData = new List<TileDataInfo>();
     private List<Vector2> occupiedPlaces = new List<Vector2>();
-    private List<Vector2> walls = new List<Vector2>();
-    private List<Vector2> freePlacesToSpawn = new List<Vector2>();
 
     void Start()
     {
@@ -74,20 +71,6 @@ public class BuildingGenerator : NetworkBehaviour
             Debug.Log(roomCount.ToString());
 
             Debug.Log("server end generation");
-        }
-        else
-        {
-            for (int i = 0; i < mapData.Count; i++)
-            {
-                if (mapData[i].tileLayer == 0)
-                {
-                    wallsTilemap.SetTile(mapData[i].position, mapData[i].tile);
-                }
-                else if (mapData[i].tileLayer == -1)
-                {
-                    backgroundWalls.SetTile(mapData[i].position, mapData[i].tile);
-                }
-            }
         }
     }
 
@@ -120,7 +103,7 @@ public class BuildingGenerator : NetworkBehaviour
     private void GenerateBuilding(Vector2 startPosition, RoomType roomType)
     {
         GenerateRoom(roomType, startPosition, chanceToSpawnNextRoom);
-        CreateRoomStructure();
+        //CreateRoomStructure();
         SpawnRoomsBioms();
         //StartCoroutine(GenerateRooms());
     }
@@ -143,14 +126,14 @@ public class BuildingGenerator : NetworkBehaviour
     //}
 
 
-    private void GenerateRoom(RoomType roomType, Vector2 entryPoint, double chanceToSpawnNextRoom)
+    private Room GenerateRoom(RoomType roomType, Vector2 entryPoint, double chanceToSpawnNextRoom)
     {
-        if (roomCount >= maxRoomCount) return;
-        if (rand.Next(0, chanceToCheckToStopGenerate) > chanceToSpawnNextRoom) return;
+        if (roomCount >= maxRoomCount) return null;
+        if (rand.Next(0, chanceToCheckToStopGenerate) > chanceToSpawnNextRoom) return null;
 
         Room room = CreateRoom(roomType, entryPoint);
 
-        if (!IsRoomCanExsite(room)) return;
+        if (!IsRoomCanExsite(room)) return null;
 
         tilesSetter.SetRoomTiles(room);
         roomList.Add(room);
@@ -163,6 +146,10 @@ public class BuildingGenerator : NetworkBehaviour
 
         RandomizeNextRoomsPathes(entryPoint, room, chanceToSpawnNextRoom,
             isHavePathToUpperRoom, isHavePathToLowerRoom, isHavePathToRightRoom, isHavePathToLeftRoom);
+
+        CreatePathToUpperForBottomRoom(room);
+
+        return room;
     }
 
     private Room CreateRoom(RoomType roomType, Vector2 entryPoint)
@@ -379,7 +366,20 @@ public class BuildingGenerator : NetworkBehaviour
     {
         Vector2 nextRoomEntryPoint = building.GeneratePathToNextRoom(entryPoint, NextRoomType, room, rand);
         //StartCoroutine(PauseAndExecute(NextRoomType, nextRoomEntryPoint, chanceToSpawnNextRoom));
-        GenerateRoom(NextRoomType, nextRoomEntryPoint, chanceToSpawnNextRoom);
+        Room nextRoom = GenerateRoom(NextRoomType, nextRoomEntryPoint, chanceToSpawnNextRoom);
+
+        if (nextRoom != null && nextRoom.roomType == RoomType.Upper)
+        {
+            tilesSetter.CreateLadderPathToNextRoom(nextRoom.entryPoint, room, (int)(room.entryPoint.y - room.wallsInfo.countOfWallsDown));
+        }
+    }
+
+    private void CreatePathToUpperForBottomRoom(Room room)
+    {
+        if (room.roomType == RoomType.Bottom)
+        {
+            tilesSetter.CreateLadderPathToNextRoom(room.entryPoint, room, (int)(room.entryPoint.y - room.wallsInfo.countOfWallsDown));
+        }
     }
 
     IEnumerator PauseAndExecute(RoomType roomtype, Vector2 nextRoomEntryPoint, double chanceToSpawnNextRoom)
@@ -389,41 +389,10 @@ public class BuildingGenerator : NetworkBehaviour
         GenerateRoom(roomtype, nextRoomEntryPoint, chanceToSpawnNextRoom);
     }
 
-
-    #region Build room  
     public void AddPlaceToOccupiedPlaces(Vector2 position)
     {
         occupiedPlaces.Add(position);
     }
-
-    public void AddWallPositionToListOfWallsPositions(Vector2 position)
-    {
-        walls.Add(position);
-    }
-
-    public void AddTileToTileListData(Vector3Int position, Tile tile, int tileLayer)
-    {
-        TileDataInfo tileData = new TileDataInfo
-        {
-            position = position,
-            tile = tile,
-            tileLayer = tileLayer
-        };
-        mapData.Add(tileData);
-    }
-
-    public void RemoveTileFromTileListData(Vector3Int positionToRemove)
-    {
-        for (int i = 0; i < mapData.Count; ++i)
-        {
-            if (mapData[i].position == positionToRemove)
-            {
-                mapData.RemoveAt(i);
-                break;
-            }
-        }
-    }
-    #endregion
 
     #region Make rooms bioms
 
@@ -455,7 +424,7 @@ public class BuildingGenerator : NetworkBehaviour
     {
         for (int i = 0; i < roomList.Count; i++)
         {
-            if (roomList[i].roomBiom == RoomBiom.metal) roomList[i].GenerateRoomStructure();
+            /*if (roomList[i].roomBiom == RoomBiom.metal)*/ roomList[i].GenerateRoomStructure();
         }
     }
     #endregion

@@ -16,7 +16,7 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Inner_roo
             int roomLength = room.wallsInfo.countOfWallsRight + room.wallsInfo.countOfWallsLeft;
             int roomWidth = room.wallsInfo.countOfWallsDown + room.wallsInfo.countOfWallsUp;
 
-            int countOfWallsRight = rand.Next(3, roomLength / 2 + 3);
+            int countOfWallsRight = rand.Next(roomLength / 2 - 1, roomLength / 2 + 3);
             int countOfWallsDown = rand.Next(3, roomWidth / 2 + 3);
 
             CorrectLeftRoomSize(ref countOfWallsRight, ref countOfWallsDown);

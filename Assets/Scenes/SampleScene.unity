@@ -836,6 +836,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: fb2a1039074092e4eae68115711562ef, type: 2}
   - {fileID: 11400000, guid: 6db40a13acd29074f82cdeda0fa253ab, type: 2}
   - {fileID: 11400000, guid: 35b1087e0d8121c4bb3eee91e7ff3fff, type: 2}
+  - {fileID: 11400000, guid: ee7357a4d0a9fcf4ea33792251833df5, type: 2}
+  - {fileID: 11400000, guid: be29e8b791d089243b053db713e980f5, type: 2}
+  - {fileID: 11400000, guid: a0efef4897a890045bd4a3d60eee1c18, type: 2}
   metalRoomObjects:
   - {fileID: 0}
   grassRoomTiles:
@@ -849,7 +852,15 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 1873d9ae1f964d14ea4acf03757859bd, type: 2}
   - {fileID: 11400000, guid: 4fde7e7409c2d3f40951ccb517938e4d, type: 2}
   - {fileID: 11400000, guid: 4fde7e7409c2d3f40951ccb517938e4d, type: 2}
-  - {fileID: 11400000, guid: fae03de1dc53c9545af7a1383ed943fa, type: 2}
+  - {fileID: 11400000, guid: 9aeb0593940bc114ebeb7e81337b3295, type: 2}
+  - {fileID: 11400000, guid: c73809c3a7e27b149813eef5467aaa7d, type: 2}
+  - {fileID: 11400000, guid: 24293c8370b125f4da09a1f597d39435, type: 2}
+  - {fileID: 11400000, guid: fb2a1039074092e4eae68115711562ef, type: 2}
+  - {fileID: 11400000, guid: 6db40a13acd29074f82cdeda0fa253ab, type: 2}
+  - {fileID: 11400000, guid: 35b1087e0d8121c4bb3eee91e7ff3fff, type: 2}
+  - {fileID: 11400000, guid: ee7357a4d0a9fcf4ea33792251833df5, type: 2}
+  - {fileID: 11400000, guid: be29e8b791d089243b053db713e980f5, type: 2}
+  - {fileID: 11400000, guid: a0efef4897a890045bd4a3d60eee1c18, type: 2}
   grassRoomObjects:
   - {fileID: 0}
   frozenRoomTiles:
@@ -863,7 +874,15 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3641f8fb776c7824b868a9222a4cbf9f, type: 2}
   - {fileID: 11400000, guid: 733a4f5206a59c6489ef285b5ae3fb80, type: 2}
   - {fileID: 11400000, guid: 2a9fa2df8d5789446a5364ca2b49bff7, type: 2}
-  - {fileID: 11400000, guid: fae03de1dc53c9545af7a1383ed943fa, type: 2}
+  - {fileID: 11400000, guid: 9aeb0593940bc114ebeb7e81337b3295, type: 2}
+  - {fileID: 11400000, guid: c73809c3a7e27b149813eef5467aaa7d, type: 2}
+  - {fileID: 11400000, guid: 24293c8370b125f4da09a1f597d39435, type: 2}
+  - {fileID: 11400000, guid: fb2a1039074092e4eae68115711562ef, type: 2}
+  - {fileID: 11400000, guid: ee7357a4d0a9fcf4ea33792251833df5, type: 2}
+  - {fileID: 11400000, guid: be29e8b791d089243b053db713e980f5, type: 2}
+  - {fileID: 11400000, guid: ee7357a4d0a9fcf4ea33792251833df5, type: 2}
+  - {fileID: 11400000, guid: be29e8b791d089243b053db713e980f5, type: 2}
+  - {fileID: 11400000, guid: a0efef4897a890045bd4a3d60eee1c18, type: 2}
   frozenRoomObjects:
   - {fileID: 0}
   chanceToCheckToGenerateNextPathes: 50

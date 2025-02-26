@@ -68,22 +68,13 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build
                     break;
 
                 case InnerRoomType.BottomLeft:
-                    CraeteBottomLeftRoom();
+                    
                     break;
 
                 case InnerRoomType.BottomRight:
-                    CraeteBottomRightRoom();
+                    
                     break;
             }
-        }
-
-        private void CraeteBottomLeftRoom()
-        {
-
-        }
-        private void CraeteBottomRightRoom()
-        {
-
         }
     }
 }

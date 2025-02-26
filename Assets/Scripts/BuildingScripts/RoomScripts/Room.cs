@@ -23,10 +23,6 @@ namespace Assets.Scripts.BuildingScripts
         protected Tile[] tiles;
         protected GameObject[] gameObjects;
 
-        protected List<Vector2> positionOfWalls;
-        protected List<Vector2> freePlacesToSpawn;
-        protected List<Vector2> nodes;
-
         public Room(Vector2 entryPoint, RoomType roomType, RoomWallsInfo wallsInfo, RoomBiom roomBiom) 
         {
             this.entryPoint = entryPoint;
@@ -59,6 +55,8 @@ namespace Assets.Scripts.BuildingScripts
         { 
             return this.tiles; 
         }
+
+        
 
         public Vector2 GetLeftUpperAngle()
         {

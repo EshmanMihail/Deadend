@@ -1,9 +1,9 @@
-﻿using System;
+﻿using Assets.Scripts.BuildingScripts.BuildingTypes;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using UnityEngine.UIElements;
-using static UnityEditor.Experimental.GraphView.GraphView;
 
 namespace Assets.Scripts.BuildingScripts
 {
@@ -13,7 +13,7 @@ namespace Assets.Scripts.BuildingScripts
 
         private Tilemap wallsTilemap;
         private Tilemap backgroundWalls;
-        private Tilemap ladder;
+        private Tilemap ladderTilemap;
 
         private Tile[] metalRoomTiles;
         private Tile lampTile;
@@ -22,7 +22,7 @@ namespace Assets.Scripts.BuildingScripts
         {
             this.buildingGenerator = buildingGenerator;
             this.wallsTilemap = wallsTilemap;
-            this.ladder = ladder;
+            this.ladderTilemap = ladder;
             this.backgroundWalls = backgroundWalls;
             this.metalRoomTiles = metalRoomTiles;
             this.lampTile = lampTile;
@@ -31,7 +31,7 @@ namespace Assets.Scripts.BuildingScripts
         private void RemoveTile(Vector3Int positionToRemove, Tilemap tilemap)
         {
             tilemap.SetTile(positionToRemove, null);
-            buildingGenerator.RemoveTileFromTileListData(positionToRemove);
+            BuildingData.RemoveTileFromTileListData(positionToRemove);
         }
 
         public void SetTile(Tile tile, int x, int y, int layer)
@@ -42,14 +42,20 @@ namespace Assets.Scripts.BuildingScripts
                 RemoveTile(tilePosition, wallsTilemap);
                 wallsTilemap.SetTile(tilePosition, tile);
 
-                buildingGenerator.AddTileToTileListData(tilePosition, tile, layer);
+                BuildingData.AddTileToTileListData(tilePosition, tile, layer);
             }
             else if (layer == ObjectsLayers.BackgroundWalls)
             {
                 RemoveTile(tilePosition, backgroundWalls);
                 backgroundWalls.SetTile(tilePosition, tile);
 
-                buildingGenerator.AddTileToTileListData(tilePosition, tile, layer);
+                BuildingData.AddTileToTileListData(tilePosition, tile, layer);
+            }
+            else if (layer == ObjectsLayers.Ladder)
+            {
+                ladderTilemap.SetTile(tilePosition, tile);
+                BuildingData.ladder.Add(new Vector2(x, y));
+                BuildingData.AddTileToTileListData(tilePosition, tile, ObjectsLayers.Ladder);
             }
         }
 
@@ -88,7 +94,7 @@ namespace Assets.Scripts.BuildingScripts
                 Vector3Int tilePosition = new Vector3Int((int)room.entryPoint.x + i, (int)room.entryPoint.y + room.wallsInfo.countOfWallsUp, 10);
                 wallsTilemap.SetTile(tilePosition, tile[2]);
 
-                buildingGenerator.AddTileToTileListData(tilePosition, tile[2], ObjectsLayers.Walls);
+                BuildingData.AddTileToTileListData(tilePosition, tile[2], ObjectsLayers.Walls);
                 buildingGenerator.AddPlaceToOccupiedPlaces(new Vector2((int)room.entryPoint.x + i, (int)room.entryPoint.y + room.wallsInfo.countOfWallsUp));
             }
             // lower part
@@ -97,10 +103,8 @@ namespace Assets.Scripts.BuildingScripts
                 Vector3Int tilePosition = new Vector3Int((int)room.entryPoint.x + i, (int)room.entryPoint.y - room.wallsInfo.countOfWallsDown, 10);
                 wallsTilemap.SetTile(tilePosition, tile[6]);
 
-                buildingGenerator.AddTileToTileListData(tilePosition, tile[6], ObjectsLayers.Walls);
+                BuildingData.AddTileToTileListData(tilePosition, tile[6], ObjectsLayers.Walls);
                 buildingGenerator.AddPlaceToOccupiedPlaces(new Vector2((int)room.entryPoint.x + i, (int)room.entryPoint.y - room.wallsInfo.countOfWallsDown));
-
-                AddPositionsOfFloor(new Vector2((int)room.entryPoint.x + i, (int)room.entryPoint.y - room.wallsInfo.countOfWallsDown));
             }
         }
 
@@ -112,7 +116,7 @@ namespace Assets.Scripts.BuildingScripts
                 Vector3Int tilePosition = new Vector3Int((int)room.entryPoint.x - i, (int)room.entryPoint.y + room.wallsInfo.countOfWallsUp, 10);
                 wallsTilemap.SetTile(tilePosition, tile[2]);
 
-                buildingGenerator.AddTileToTileListData(tilePosition, tile[2], ObjectsLayers.Walls);
+                BuildingData.AddTileToTileListData(tilePosition, tile[2], ObjectsLayers.Walls);
                 buildingGenerator.AddPlaceToOccupiedPlaces(new Vector2((int)room.entryPoint.x - i, (int)room.entryPoint.y + room.wallsInfo.countOfWallsUp));
             }
             //lower part
@@ -121,16 +125,9 @@ namespace Assets.Scripts.BuildingScripts
                 Vector3Int tilePosition = new Vector3Int((int)room.entryPoint.x - i, (int)room.entryPoint.y - room.wallsInfo.countOfWallsDown, 10);
                 wallsTilemap.SetTile(tilePosition, tile[6]);
 
-                buildingGenerator.AddTileToTileListData(tilePosition, tile[6], ObjectsLayers.Walls);
+                BuildingData.AddTileToTileListData(tilePosition, tile[6], ObjectsLayers.Walls);
                 buildingGenerator.AddPlaceToOccupiedPlaces(new Vector2((int)room.entryPoint.x - i, (int)room.entryPoint.y - room.wallsInfo.countOfWallsDown));
-
-                AddPositionsOfFloor(new Vector2((int)room.entryPoint.x - i, (int)room.entryPoint.y - room.wallsInfo.countOfWallsDown));
             }
-        }
-
-        private void AddPositionsOfFloor(Vector2 position)
-        {
-            buildingGenerator.AddWallPositionToListOfWallsPositions(position);
         }
 
         private void SetTileOfRightRoomWall(Room room, Tile[] tile)
@@ -141,7 +138,7 @@ namespace Assets.Scripts.BuildingScripts
                 Vector3Int tilePosition = new Vector3Int((int)room.entryPoint.x + room.wallsInfo.countOfWallsRight, (int)room.entryPoint.y + i, 10);
                 wallsTilemap.SetTile(tilePosition, tile[4]);
 
-                buildingGenerator.AddTileToTileListData(tilePosition, tile[4], ObjectsLayers.Walls);
+                BuildingData.AddTileToTileListData(tilePosition, tile[4], ObjectsLayers.Walls);
                 buildingGenerator.AddPlaceToOccupiedPlaces(new Vector2((int)room.entryPoint.x + room.wallsInfo.countOfWallsRight, (int)room.entryPoint.y + i));
             }
             // set down
@@ -150,7 +147,7 @@ namespace Assets.Scripts.BuildingScripts
                 Vector3Int tilePosition = new Vector3Int((int)room.entryPoint.x + room.wallsInfo.countOfWallsRight, (int)room.entryPoint.y - i, 10);
                 wallsTilemap.SetTile(tilePosition, tile[4]);
 
-                buildingGenerator.AddTileToTileListData(tilePosition, tile[4], ObjectsLayers.Walls);
+                BuildingData.AddTileToTileListData(tilePosition, tile[4], ObjectsLayers.Walls);
                 buildingGenerator.AddPlaceToOccupiedPlaces(new Vector2((int)room.entryPoint.x + room.wallsInfo.countOfWallsRight, (int)room.entryPoint.y - i));
             }
         }
@@ -163,7 +160,7 @@ namespace Assets.Scripts.BuildingScripts
                 Vector3Int tilePosition = new Vector3Int((int)room.entryPoint.x - room.wallsInfo.countOfWallsLeft, (int)room.entryPoint.y + i, 10);
                 wallsTilemap.SetTile(tilePosition, tile[0]);
 
-                buildingGenerator.AddTileToTileListData(tilePosition, tile[0], ObjectsLayers.Walls);
+                BuildingData.AddTileToTileListData(tilePosition, tile[0], ObjectsLayers.Walls);
                 buildingGenerator.AddPlaceToOccupiedPlaces(new Vector2((int)room.entryPoint.x - room.wallsInfo.countOfWallsLeft, (int)room.entryPoint.y + i));
             }
             // set down
@@ -172,7 +169,7 @@ namespace Assets.Scripts.BuildingScripts
                 Vector3Int tilePosition = new Vector3Int((int)room.entryPoint.x - room.wallsInfo.countOfWallsLeft, (int)room.entryPoint.y - i, 10);
                 wallsTilemap.SetTile(tilePosition, tile[0]);
 
-                buildingGenerator.AddTileToTileListData(tilePosition, tile[0], ObjectsLayers.Walls);
+                BuildingData.AddTileToTileListData(tilePosition, tile[0], ObjectsLayers.Walls);
                 buildingGenerator.AddPlaceToOccupiedPlaces(new Vector2((int)room.entryPoint.x - room.wallsInfo.countOfWallsLeft, (int)room.entryPoint.y - i));
             }
         }
@@ -194,10 +191,10 @@ namespace Assets.Scripts.BuildingScripts
             wallsTilemap.SetTile(positionOfLeftUpperTileINT, tile[1]);
             wallsTilemap.SetTile(positionOfLeftDownTileINT, tile[7]);
 
-            buildingGenerator.AddTileToTileListData(positionOfRightUpperTileINT, tile[3], ObjectsLayers.Walls);
-            buildingGenerator.AddTileToTileListData(positionOfRightDownTileINT, tile[5], ObjectsLayers.Walls);
-            buildingGenerator.AddTileToTileListData(positionOfLeftUpperTileINT, tile[1], ObjectsLayers.Walls);
-            buildingGenerator.AddTileToTileListData(positionOfLeftDownTileINT, tile[7], ObjectsLayers.Walls);
+            BuildingData.AddTileToTileListData(positionOfRightUpperTileINT, tile[3], ObjectsLayers.Walls);
+            BuildingData.AddTileToTileListData(positionOfRightDownTileINT, tile[5], ObjectsLayers.Walls);
+            BuildingData.AddTileToTileListData(positionOfLeftUpperTileINT, tile[1], ObjectsLayers.Walls);
+            BuildingData.AddTileToTileListData(positionOfLeftDownTileINT, tile[7], ObjectsLayers.Walls);
 
             buildingGenerator.AddPlaceToOccupiedPlaces(positionOfRightUpperTile);
             buildingGenerator.AddPlaceToOccupiedPlaces(positionOfRightDownTile);
@@ -217,7 +214,7 @@ namespace Assets.Scripts.BuildingScripts
                 for (int j = positionOfFloor + 1; j < positionOfCeiling; j++)
                 {
                     backgroundWalls.SetTile(new Vector3Int(i, j, 10), tile[8]);
-                    buildingGenerator.AddTileToTileListData(new Vector3Int(i, j, 10), tile[8], ObjectsLayers.BackgroundWalls);
+                    BuildingData.AddTileToTileListData(new Vector3Int(i, j, 10), tile[8], ObjectsLayers.BackgroundWalls);
                     buildingGenerator.AddPlaceToOccupiedPlaces(new Vector2(i, j));
                 }
             }
@@ -229,6 +226,33 @@ namespace Assets.Scripts.BuildingScripts
 
             RemoveTile(new Vector3Int((int)room.entryPoint.x, (int)room.entryPoint.y, 10), backgroundWalls);
             backgroundWalls.SetTile(new Vector3Int((int)room.entryPoint.x, (int)room.entryPoint.y, 10), lampTile);
+        }
+
+        public void CreateLadderPathToNextRoom(Vector2 beginPos, Room room, int roomFloorY)
+        {
+            int beginX = (int)beginPos.x;
+            int beginY = (int)beginPos.y;
+
+            Tile[] tile = room.GetTiles();
+
+            Vector3Int firstLadderposition = new Vector3Int(beginX, beginY, 10);
+            ladderTilemap.SetTile(firstLadderposition, tile[16]);
+            BuildingData.ladder.Add(beginPos);
+            BuildingData.AddTileToTileListData(firstLadderposition, tile[16], ObjectsLayers.Ladder);
+
+            for (int y = beginY - 1; y > roomFloorY + 1; y--)
+            {
+                Vector3Int ladderposition = new Vector3Int(beginX, y, 10);
+                ladderTilemap.SetTile(ladderposition, tile[17]);
+
+                BuildingData.ladder.Add(new Vector2(beginX, y));
+                BuildingData.AddTileToTileListData(ladderposition, tile[17], ObjectsLayers.Ladder);
+            }
+
+            Vector3Int lastLadderposition = new Vector3Int(beginX, roomFloorY + 1, 10);
+            ladderTilemap.SetTile(lastLadderposition, tile[18]);
+            BuildingData.ladder.Add(new Vector2(beginX, roomFloorY + 1));
+            BuildingData.AddTileToTileListData(lastLadderposition, tile[18], ObjectsLayers.Ladder);
         }
         #endregion
 
@@ -251,8 +275,8 @@ namespace Assets.Scripts.BuildingScripts
                 wallsTilemap.SetTile(new Vector3Int(i, upperY, 10), tiles[2]);
                 wallsTilemap.SetTile(new Vector3Int(i, bottomY, 10), tiles[6]);
 
-                buildingGenerator.AddTileToTileListData(new Vector3Int(i, upperY, 10), tiles[2], ObjectsLayers.Walls);
-                buildingGenerator.AddTileToTileListData(new Vector3Int(i, bottomY, 10), tiles[6], ObjectsLayers.Walls);
+                BuildingData.AddTileToTileListData(new Vector3Int(i, upperY, 10), tiles[2], ObjectsLayers.Walls);
+                BuildingData.AddTileToTileListData(new Vector3Int(i, bottomY, 10), tiles[6], ObjectsLayers.Walls);
             }
             for (int i = bottomY; i <= upperY; i++)
             {
@@ -262,8 +286,8 @@ namespace Assets.Scripts.BuildingScripts
                 wallsTilemap.SetTile(new Vector3Int(leftX, i, 10), tiles[0]);
                 wallsTilemap.SetTile(new Vector3Int(rightX, i, 10), tiles[4]);
 
-                buildingGenerator.AddTileToTileListData(new Vector3Int(leftX, i, 10), tiles[0], ObjectsLayers.Walls);
-                buildingGenerator.AddTileToTileListData(new Vector3Int(rightX, i, 10), tiles[4], ObjectsLayers.Walls);
+                BuildingData.AddTileToTileListData(new Vector3Int(leftX, i, 10), tiles[0], ObjectsLayers.Walls);
+                BuildingData.AddTileToTileListData(new Vector3Int(rightX, i, 10), tiles[4], ObjectsLayers.Walls);
             }
 
             RemoveTile(new Vector3Int(leftX, upperY, 10), wallsTilemap);
@@ -276,10 +300,10 @@ namespace Assets.Scripts.BuildingScripts
             wallsTilemap.SetTile(new Vector3Int(rightX, bottomY, 10), tiles[5]);
             wallsTilemap.SetTile(new Vector3Int(leftX, bottomY, 10), tiles[7]);
 
-            buildingGenerator.AddTileToTileListData(new Vector3Int(leftX, upperY, 10), tiles[1], ObjectsLayers.Walls);
-            buildingGenerator.AddTileToTileListData(new Vector3Int(rightX, upperY, 10), tiles[3], ObjectsLayers.Walls);
-            buildingGenerator.AddTileToTileListData(new Vector3Int(rightX, bottomY, 10), tiles[5], ObjectsLayers.Walls);
-            buildingGenerator.AddTileToTileListData(new Vector3Int(leftX, bottomY, 10), tiles[7], ObjectsLayers.Walls);
+            BuildingData.AddTileToTileListData(new Vector3Int(leftX, upperY, 10), tiles[1], ObjectsLayers.Walls);
+            BuildingData.AddTileToTileListData(new Vector3Int(rightX, upperY, 10), tiles[3], ObjectsLayers.Walls);
+            BuildingData.AddTileToTileListData(new Vector3Int(rightX, bottomY, 10), tiles[5], ObjectsLayers.Walls);
+            BuildingData.AddTileToTileListData(new Vector3Int(leftX, bottomY, 10), tiles[7], ObjectsLayers.Walls);
 
             SetTilesInsideRoomBiom(room, tiles);
 
@@ -300,7 +324,7 @@ namespace Assets.Scripts.BuildingScripts
                     RemoveTile(new Vector3Int(i, j, 10), backgroundWalls);
 
                     backgroundWalls.SetTile(new Vector3Int(i, j, 10), tile[8]);
-                    buildingGenerator.AddTileToTileListData(new Vector3Int(i, j, 10), tile[8], ObjectsLayers.BackgroundWalls);
+                    BuildingData.AddTileToTileListData(new Vector3Int(i, j, 10), tile[8], ObjectsLayers.BackgroundWalls);
                 }
             }
         }
