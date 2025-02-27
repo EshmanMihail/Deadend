@@ -1,10 +1,12 @@
-﻿using System;
+﻿using Assets.Scripts.BuildingScripts.BuildingTypes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using static UnityEngine.EventSystems.EventTrigger;
 
 namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Inner_rooms
 {
@@ -14,15 +16,13 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Inner_roo
         protected System.Random rand;
         protected Tile[] roomTiles;
         protected List<Vector2> ocupiedPlaces;
-        protected List<Vector2> laderPlaces;
 
-        public InnerRoom(Room room, System.Random rand, Tile[] roomTiles, List<Vector2> ocupiedPlaces, List<Vector2> laderPlaces)
+        public InnerRoom(Room room, System.Random rand, Tile[] roomTiles, List<Vector2> ocupiedPlaces)
         {
             this.room = room;
             this.rand = rand;
             this.roomTiles = roomTiles;
             this.ocupiedPlaces = ocupiedPlaces;
-            this.laderPlaces = laderPlaces;
         }
 
         public abstract void CraeteRoom();
@@ -33,6 +33,18 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Inner_roo
                 return false;
 
             return true;
+        }
+
+        protected bool IsOnLadderPosition(int x, int y)
+        {
+            Vector2 position = new Vector2(x, y);
+            return BuildingData.ladder.Contains(position);
+        }
+
+        protected void AddTileToMapData(int x, int y, Tile tile, int layer)
+        {
+            Vector3Int position = new Vector3Int(x, y, 10);
+            BuildingData.AddTileToTileListData(position, tile, layer);
         }
     }
 }

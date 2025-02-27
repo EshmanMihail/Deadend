@@ -28,6 +28,12 @@ namespace Assets.Scripts.BuildingScripts
             this.lampTile = lampTile;
         }
 
+        public void RemoveWall(Vector3Int positionToRemove)
+        {
+            wallsTilemap.SetTile(positionToRemove, null);
+            BuildingData.RemoveTileFromTileListData(positionToRemove);
+        }
+
         private void RemoveTile(Vector3Int positionToRemove, Tilemap tilemap)
         {
             tilemap.SetTile(positionToRemove, null);

@@ -103,7 +103,7 @@ public class BuildingGenerator : NetworkBehaviour
     private void GenerateBuilding(Vector2 startPosition, RoomType roomType)
     {
         GenerateRoom(roomType, startPosition, chanceToSpawnNextRoom);
-        //CreateRoomStructure();
+        CreateRoomStructure();
         SpawnRoomsBioms();
         //StartCoroutine(GenerateRooms());
     }
@@ -323,6 +323,8 @@ public class BuildingGenerator : NetworkBehaviour
         Array values = Enum.GetValues(typeof(RoomBiom));
         int randomIndex = rand.Next(values.Length);
         RoomBiom randomBiom = (RoomBiom)values.GetValue(randomIndex);
+
+        //randomBiom = RoomBiom.metal;
 
         return roomFactoryManager.CreateRoom(entryPoint, roomType, wallsInfo, randomBiom);
     }

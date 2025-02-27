@@ -15,8 +15,11 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build
 
         public virtual void Generate(Room room)
         {
-            InnerRoomsCreator innerRoomsCreator = new InnerRoomsCreator(room, rand);
-            innerRoomsCreator.CreateInnerRooms();
+            if (room.wallsInfo.countOfWallsDown + room.wallsInfo.countOfWallsUp > 5)
+            {
+                InnerRoomsCreator innerRoomsCreator = new InnerRoomsCreator(room, rand);
+                innerRoomsCreator.CreateInnerRooms();
+            }
 
             CreatePlatformsOfWalls();
         }

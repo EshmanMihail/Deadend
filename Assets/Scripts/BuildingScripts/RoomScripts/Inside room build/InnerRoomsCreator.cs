@@ -19,7 +19,6 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build
         }
 
         private List<Vector2> ocupiedPlaces;
-        private  List<Vector2> laderPlaces;
 
         private int chanceToSpawnInnerRoom = 80;
         private int reduceChance = 20;
@@ -32,13 +31,17 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build
             roomTiles = room.GetTiles();
 
             ocupiedPlaces = new List<Vector2>();
-            laderPlaces = new List<Vector2>();
         }
 
         public void CreateInnerRooms()
         {
             List<int> innerRoomTypesValues = new List<int>() { 0, 1, 2, 3 };
 
+            //InnerRoomType innerRoomType1 = InnerRoomType.TopLeft;
+            //InnerRoomType innerRoomType2 = InnerRoomType.TopRight;
+
+            //InnerRoomManager(innerRoomType1);
+            //InnerRoomManager(innerRoomType2);
             while (chanceToSpawnInnerRoom > 0 && innerRoomTypesValues.Count > 0)
             {
                 int randomIndex = rand.Next(0, innerRoomTypesValues.Count);
@@ -58,13 +61,14 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build
             switch (innerRoomType)
             {
                 case InnerRoomType.TopLeft:
-                    InnerRoom topLeftRoom = new TopLeftRoom(room, rand, roomTiles, ocupiedPlaces, laderPlaces);
+                    InnerRoom topLeftRoom = new TopLeftRoom(room, rand, roomTiles, ocupiedPlaces);
                     topLeftRoom.CraeteRoom();
                     break;
 
                 case InnerRoomType.TopRight:
-                    InnerRoom topRightRoom = new TopRightRoom(room, rand, roomTiles, ocupiedPlaces, laderPlaces);
+                    InnerRoom topRightRoom = new TopRightRoom(room, rand, roomTiles, ocupiedPlaces);
                     topRightRoom.CraeteRoom();
+                    Debug.Log("size of array after right room = " + ocupiedPlaces.Count);
                     break;
 
                 case InnerRoomType.BottomLeft:
