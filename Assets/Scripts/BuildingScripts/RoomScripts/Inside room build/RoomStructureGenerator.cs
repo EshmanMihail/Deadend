@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Platforms;
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build
@@ -7,28 +9,39 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build
     {
         protected System.Random rand;
 
+        private int chanceToCreateInnerRooms = 100;
+        private int chanceToCreateWallsPlatforms = 50;
+
+        List<Vector2> insideRoomWalls;
+
         public RoomStructureGenerator(System.Random random)
         {
             rand = random;
-            
+            insideRoomWalls = new List<Vector2>();
         }
 
-        public virtual void Generate(Room room)
+        public void Generate(Room room)
         {
             if (room.wallsInfo.countOfWallsDown + room.wallsInfo.countOfWallsUp > 5)
             {
-                InnerRoomsCreator innerRoomsCreator = new InnerRoomsCreator(room, rand);
-                innerRoomsCreator.CreateInnerRooms();
-            }
+                if (rand.Next(0, 100) < chanceToCreateInnerRooms)
+                {
+                    InnerRoomsCreator innerRoomsCreator = new InnerRoomsCreator(room, rand);
+                    insideRoomWalls = innerRoomsCreator.CreateInnerRooms();
+                }
 
-            CreatePlatformsOfWalls();
+                if (rand.Next(0, 100) < chanceToCreateInnerRooms || insideRoomWalls.Count == 0)
+                {
+                    WallPlatformsCreator wallPlatformsCreator = new WallPlatformsCreator(room, rand, insideRoomWalls);
+                    wallPlatformsCreator.CreatePlatfroms();
+                }
+            }
         }
 
-        
-
-        public void CreatePlatformsOfWalls()
+        public void SetChancesForStructures(int chanceToCreateInnerRooms, int chanceToCreateWallsPlatforms)
         {
-
+            this.chanceToCreateInnerRooms = chanceToCreateInnerRooms;
+            this.chanceToCreateWallsPlatforms = chanceToCreateWallsPlatforms;
         }
     }
 }

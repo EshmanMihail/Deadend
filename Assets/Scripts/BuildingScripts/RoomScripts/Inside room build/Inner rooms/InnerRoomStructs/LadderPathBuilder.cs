@@ -14,8 +14,15 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Inner_roo
             SetLadder(entryToInnerRoom, room);
         }
 
+        public static void MakePathFromCertainPosition(Vector2 beginPosition, Room room)
+        {
+            SetLadder(beginPosition, room);
+        }
+
         private static void SetLadder(Vector2 entry, Room room)
         {
+            //room.tileSetter.RemoveWall(new Vector3Int((int)entry.x, (int)entry.y + 1, 10));
+
             Tile[] roomTiles = room.GetTiles();
 
             int roomFloorY = (int)room.entryPoint.y - room.wallsInfo.countOfWallsDown;
@@ -28,6 +35,7 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Inner_roo
             {
                 room.tileSetter.SetTile(roomTiles[17], (int)entry.x, y, ObjectsLayers.Ladder);
                 BuildingData.ladder.Add(new Vector2((int)entry.x, y));
+                room.tileSetter.RemoveWall(new Vector3Int((int)entry.x, y, 10));
             }
 
             room.tileSetter.SetTile(roomTiles[18], (int)entry.x, roomFloorY + 1, ObjectsLayers.Ladder);

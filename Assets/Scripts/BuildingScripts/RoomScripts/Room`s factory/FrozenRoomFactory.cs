@@ -22,7 +22,7 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Room_s_factory
 
         public Room CreateRoom(Vector2 entryPoint, RoomType roomType, RoomWallsInfo wallsInfo)
         {
-            return new GrassRoom(entryPoint, roomType, wallsInfo, RoomBiom.frozen);
+            return new FrozenRoom(entryPoint, roomType, wallsInfo, RoomBiom.frozen);
         }
 
         public void ConfigureRoom(Room room)

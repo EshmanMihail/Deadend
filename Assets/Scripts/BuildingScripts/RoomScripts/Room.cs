@@ -56,8 +56,6 @@ namespace Assets.Scripts.BuildingScripts
             return this.tiles; 
         }
 
-        
-
         public Vector2 GetLeftUpperAngle()
         {
             return new Vector2((int)entryPoint.x - wallsInfo.countOfWallsLeft, (int)entryPoint.y + wallsInfo.countOfWallsUp);

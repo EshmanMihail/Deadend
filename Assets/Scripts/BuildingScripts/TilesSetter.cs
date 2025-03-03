@@ -14,15 +14,18 @@ namespace Assets.Scripts.BuildingScripts
         private Tilemap wallsTilemap;
         private Tilemap backgroundWalls;
         private Tilemap ladderTilemap;
+        private Tilemap platformsTilemap;
 
         private Tile[] metalRoomTiles;
         private Tile lampTile;
 
-        public TilesSetter(BuildingGenerator buildingGenerator, Tilemap wallsTilemap, Tilemap backgroundWalls, Tilemap ladder, Tile[] metalRoomTiles, Tile lampTile)
+        public TilesSetter(BuildingGenerator buildingGenerator, Tilemap wallsTilemap, Tilemap backgroundWalls,
+            Tilemap ladder, Tilemap platformsTilmap, Tile[] metalRoomTiles, Tile lampTile)
         {
             this.buildingGenerator = buildingGenerator;
             this.wallsTilemap = wallsTilemap;
             this.ladderTilemap = ladder;
+            this.platformsTilemap = platformsTilmap;
             this.backgroundWalls = backgroundWalls;
             this.metalRoomTiles = metalRoomTiles;
             this.lampTile = lampTile;
@@ -63,6 +66,12 @@ namespace Assets.Scripts.BuildingScripts
                 BuildingData.ladder.Add(new Vector2(x, y));
                 BuildingData.AddTileToTileListData(tilePosition, tile, ObjectsLayers.Ladder);
             }
+        }
+
+        public void SetPlatfromTile(Tile tile, int x, int y)
+        {
+            Vector3Int tilePosition = new Vector3Int(x, y, 10);
+            platformsTilemap.SetTile(tilePosition, tile);
         }
 
         public void RotateTile(int x, int y, float angle)

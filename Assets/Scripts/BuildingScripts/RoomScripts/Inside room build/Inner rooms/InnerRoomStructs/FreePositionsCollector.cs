@@ -5,11 +5,11 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Inner_roo
 {
     public class FreePositionsCollector
     {
-        public static void CollectFreePositions(int leftX, int rightX, int y)
+        public static void CollectFreePositions(int leftX, int rightX, int freePositionY)
         {
             for (int x = leftX + 1; x < rightX; x++)
             {
-                BuildingData.freePlace.Add(new Vector2(x, y));
+                BuildingData.freePlace.Add(new Vector2(x, freePositionY));
             }
         }
     }

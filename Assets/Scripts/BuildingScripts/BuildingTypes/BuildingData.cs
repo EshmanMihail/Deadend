@@ -17,6 +17,8 @@ namespace Assets.Scripts.BuildingScripts.BuildingTypes
 
         public static List<Vector2> lamp = new List<Vector2>();
 
+        public static List<Vector2> door = new List<Vector2>();
+
 
         public static void AddTileToTileListData(Vector3Int position, Tile tile, int tileLayer)
         {

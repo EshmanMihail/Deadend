@@ -28,7 +28,7 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Inner_roo
             int roomWidth = room.wallsInfo.countOfWallsDown + room.wallsInfo.countOfWallsUp;
 
             countOfWallsRight = rand.Next(roomLength / 2 - 1, roomLength / 2 + 3);
-            countOfWallsDown = rand.Next(3, roomWidth / 2 + 3);
+            countOfWallsDown = rand.Next(3, roomWidth / 2 + 1);
 
             CorrectLeftRoomSize();
 
@@ -42,10 +42,10 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Inner_roo
             SpawnLamps();
 
             int centerX = (startX + countOfWallsRight + startX) / 2;
-            int y = startY - countOfWallsDown + 1;
-            NodeSpawner.SpawnNode(centerX, y);
+            int NodePositionY = startY - countOfWallsDown + 1;
+            NodeSpawner.SpawnNode(centerX, NodePositionY);
 
-            FreePositionsCollector.CollectFreePositions(startX + 1, startX + countOfWallsRight, startY - countOfWallsDown + 1);
+            FreePositionsCollector.CollectFreePositions(startX, startX + countOfWallsRight, startY - countOfWallsDown + 1);
         }
 
         private void CorrectLeftRoomSize()
@@ -184,7 +184,7 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Inner_roo
             int floorY = startY - countOfWallsDown;
             int ceilingY = startY;
 
-            LampsSpawner.SpawnLamps(leftWall, rightWall, floorY, ceilingY, room, rand);
+            LampsSpawner.SpawnLamps(leftWall, rightWall, floorY, ceilingY, room);
         }
     }
 }

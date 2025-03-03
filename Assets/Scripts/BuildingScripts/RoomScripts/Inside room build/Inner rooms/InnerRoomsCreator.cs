@@ -33,27 +33,23 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build
             ocupiedPlaces = new List<Vector2>();
         }
 
-        public void CreateInnerRooms()
+        public List<Vector2> CreateInnerRooms()
         {
             List<int> innerRoomTypesValues = new List<int>() { 0, 1, 2, 3 };
 
-            //InnerRoomType innerRoomType1 = InnerRoomType.TopLeft;
-            //InnerRoomType innerRoomType2 = InnerRoomType.TopRight;
-
-            //InnerRoomManager(innerRoomType1);
-            //InnerRoomManager(innerRoomType2);
             while (chanceToSpawnInnerRoom > 0 && innerRoomTypesValues.Count > 0)
             {
                 int randomIndex = rand.Next(0, innerRoomTypesValues.Count);
                 InnerRoomType innerRoomType = (InnerRoomType)innerRoomTypesValues[randomIndex];
 
-                //if (rand.Next(0, chanceToSpawnInnerRoom) < chanceToSpawnInnerRoom)
-                //    InnerRoomManager(innerRoomType);
-                InnerRoomManager(innerRoomType);
+                if (rand.Next(0, 100) < chanceToSpawnInnerRoom)
+                    InnerRoomManager(innerRoomType);
 
                 innerRoomTypesValues.RemoveAt(randomIndex);
                 chanceToSpawnInnerRoom -= reduceChance;
             }
+
+            return ocupiedPlaces;
         }
 
         private void InnerRoomManager(InnerRoomType innerRoomType)
@@ -68,15 +64,16 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build
                 case InnerRoomType.TopRight:
                     InnerRoom topRightRoom = new TopRightRoom(room, rand, roomTiles, ocupiedPlaces);
                     topRightRoom.CraeteRoom();
-                    Debug.Log("size of array after right room = " + ocupiedPlaces.Count);
                     break;
 
                 case InnerRoomType.BottomLeft:
-                    
+                    InnerRoom bottomLeftRoom = new BottomLeftRoom(room, rand, roomTiles, ocupiedPlaces);
+                    bottomLeftRoom.CraeteRoom();
                     break;
 
                 case InnerRoomType.BottomRight:
-                    
+                    InnerRoom bottomRightRoom = new BottomRightRoom(room, rand, roomTiles, ocupiedPlaces);
+                    bottomRightRoom.CraeteRoom();
                     break;
             }
         }

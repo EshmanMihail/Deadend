@@ -11,6 +11,7 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts
 
         public override void GenerateRoomStructure()
         {
+            structureGenerator.SetChancesForStructures(100, 100);
             structureGenerator.Generate(this);
         }
 

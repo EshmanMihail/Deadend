@@ -32,6 +32,10 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Inner_roo
             if ((countOfWallsLeft + countOfWallsRight) * (countOfWallsDown + countOfWallsUp) < 4)
                 return false;
 
+            if (countOfWallsLeft + countOfWallsRight < 3) return false;
+
+            if (countOfWallsDown + countOfWallsUp < 3) return false;
+
             return true;
         }
 

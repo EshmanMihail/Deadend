@@ -9,5 +9,7 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build
     public interface IRoomStructure
     {
         void Generate(Room room);
+
+        void SetChancesForStructures(int chanceToCreateInnerRooms, int chanceToCreateWallsPlatforms);
     }
 }

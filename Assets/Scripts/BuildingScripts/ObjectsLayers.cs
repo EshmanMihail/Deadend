@@ -14,6 +14,8 @@ namespace Assets.Scripts.BuildingScripts
 
         public static int Walls = 0;
 
+        public static int Platforms = 0;
+
         public static int BackgroundWalls = -2;
     }
 }

@@ -24,6 +24,7 @@ public class BuildingGenerator : NetworkBehaviour
     [SerializeField] private Tilemap wallsTilemap;
     [SerializeField] private Tilemap backgroundWalls;
     [SerializeField] private Tilemap ladder;
+    [SerializeField] private Tilemap platforms;
 
     [SerializeField] private Tile wallMetalTile;
     [SerializeField] private Tile lampTile;
@@ -54,7 +55,7 @@ public class BuildingGenerator : NetworkBehaviour
     void Start()
     {
         rand = new System.Random(Guid.NewGuid().GetHashCode());
-        tilesSetter = new TilesSetter(this, wallsTilemap, backgroundWalls, ladder, metalRoomTiles, lampTile);
+        tilesSetter = new TilesSetter(this, wallsTilemap, backgroundWalls, ladder, platforms, metalRoomTiles, lampTile);
         InitializeRoomFactories();
 
         isGenerationEnd = false;
@@ -96,15 +97,13 @@ public class BuildingGenerator : NetworkBehaviour
         };
 
         roomFactoryManager = new RoomFactoryManager(factories);
-
-        Debug.Log("");
     }
 
     private void GenerateBuilding(Vector2 startPosition, RoomType roomType)
     {
         GenerateRoom(roomType, startPosition, chanceToSpawnNextRoom);
-        CreateRoomStructure();
         SpawnRoomsBioms();
+        CreateRoomStructure();
         //StartCoroutine(GenerateRooms());
     }
 

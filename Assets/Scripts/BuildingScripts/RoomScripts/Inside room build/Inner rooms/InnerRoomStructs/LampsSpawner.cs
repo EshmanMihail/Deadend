@@ -6,7 +6,7 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Inner_roo
 {
     public class LampsSpawner
     {
-        public static void SpawnLamps(Vector2 leftWall, Vector2 rightWall, int roomFloorY, int roomCeilingY, Room room, System.Random rand)
+        public static void SpawnLamps(Vector2 leftWall, Vector2 rightWall, int roomFloorY, int roomCeilingY, Room room)
         {
             if ((int)(rightWall.x - leftWall.x) <= 9)
             {

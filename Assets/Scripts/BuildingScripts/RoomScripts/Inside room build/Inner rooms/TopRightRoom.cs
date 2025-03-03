@@ -27,7 +27,7 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Inner_roo
             int roomWidth = room.wallsInfo.countOfWallsDown + room.wallsInfo.countOfWallsUp;
 
             countOfWallsLeft = rand.Next(roomLength / 2 + 2, roomLength / 2 + 3);
-            countOfWallsDown = rand.Next(3, roomWidth / 2 + 3);
+            countOfWallsDown = rand.Next(3, roomWidth / 2 + 1);
 
             CorrectRightRoomSize();
 
@@ -170,7 +170,7 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Inner_roo
             int floorY = startY - countOfWallsDown;
             int ceilingY = startY;
 
-            LampsSpawner.SpawnLamps(leftWall, rightWall, floorY, ceilingY, room, rand);
+            LampsSpawner.SpawnLamps(leftWall, rightWall, floorY, ceilingY, room);
         }
     }
 }
