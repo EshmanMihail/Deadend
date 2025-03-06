@@ -45,7 +45,8 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Inner_roo
             int NodePositionY = startY - countOfWallsDown + 1;
             NodeSpawner.SpawnNode(centerX, NodePositionY);
 
-            FreePositionsCollector.CollectFreePositions(startX, startX + countOfWallsRight, startY - countOfWallsDown + 1);
+            //FreePositionsCollector.CollectFreePositions(startX, startX + countOfWallsRight, startY - countOfWallsDown + 1);
+            CollectFloorWalls(startX + 1, startX + countOfWallsRight - 1, startY -  countOfWallsDown);
         }
 
         private void CorrectLeftRoomSize()

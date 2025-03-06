@@ -25,6 +25,7 @@ public class BuildingGenerator : NetworkBehaviour
     [SerializeField] private Tilemap backgroundWalls;
     [SerializeField] private Tilemap ladder;
     [SerializeField] private Tilemap platforms;
+    [SerializeField] private Tilemap frontTiles;
 
     [SerializeField] private Tile wallMetalTile;
     [SerializeField] private Tile lampTile;
@@ -55,7 +56,7 @@ public class BuildingGenerator : NetworkBehaviour
     void Start()
     {
         rand = new System.Random(Guid.NewGuid().GetHashCode());
-        tilesSetter = new TilesSetter(this, wallsTilemap, backgroundWalls, ladder, platforms, metalRoomTiles, lampTile);
+        tilesSetter = new TilesSetter(this, wallsTilemap, backgroundWalls, ladder, platforms, frontTiles, metalRoomTiles);
         InitializeRoomFactories();
 
         isGenerationEnd = false;

@@ -19,6 +19,7 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build
         }
 
         private List<Vector2> ocupiedPlaces;
+        private List<Vector2> floorWalls;
 
         private int chanceToSpawnInnerRoom = 80;
         private int reduceChance = 20;
@@ -31,6 +32,7 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build
             roomTiles = room.GetTiles();
 
             ocupiedPlaces = new List<Vector2>();
+            floorWalls = new List<Vector2>();
         }
 
         public List<Vector2> CreateInnerRooms()
@@ -59,23 +61,45 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build
                 case InnerRoomType.TopLeft:
                     InnerRoom topLeftRoom = new TopLeftRoom(room, rand, roomTiles, ocupiedPlaces);
                     topLeftRoom.CraeteRoom();
+
+                    List<Vector2> floorWallFromTopLeftRoom = topLeftRoom.GetFLoorWalls();
+                    SetFloorWalls(floorWallFromTopLeftRoom);
                     break;
 
                 case InnerRoomType.TopRight:
                     InnerRoom topRightRoom = new TopRightRoom(room, rand, roomTiles, ocupiedPlaces);
                     topRightRoom.CraeteRoom();
+
+                    List<Vector2> floorWallFromTopRightRoom = topRightRoom.GetFLoorWalls();
+                    SetFloorWalls(floorWallFromTopRightRoom);
                     break;
 
                 case InnerRoomType.BottomLeft:
                     InnerRoom bottomLeftRoom = new BottomLeftRoom(room, rand, roomTiles, ocupiedPlaces);
                     bottomLeftRoom.CraeteRoom();
+
+                    List<Vector2> floorWallFromBottomLeftRoom = bottomLeftRoom.GetFLoorWalls();
+                    SetFloorWalls(floorWallFromBottomLeftRoom);
                     break;
 
                 case InnerRoomType.BottomRight:
                     InnerRoom bottomRightRoom = new BottomRightRoom(room, rand, roomTiles, ocupiedPlaces);
                     bottomRightRoom.CraeteRoom();
+
+                    List<Vector2> floorWallFromBottomRightRoom = bottomRightRoom.GetFLoorWalls();
+                    SetFloorWalls(floorWallFromBottomRightRoom);
                     break;
             }
         }
+
+        private void SetFloorWalls(List<Vector2> floorWallsFromRoom)
+        {
+            for (int i = 0; i < floorWallsFromRoom.Count; i++)
+            {
+                floorWalls.Add(floorWallsFromRoom[i]);
+            }
+        }
+
+        public List<Vector2> GetFloorWalls() { return floorWalls; }
     }
 }

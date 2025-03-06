@@ -941,6 +941,7 @@ MonoBehaviour:
   backgroundWalls: {fileID: 1831194716}
   ladder: {fileID: 693643147}
   platforms: {fileID: 853269631}
+  frontTiles: {fileID: 2031870958}
   wallMetalTile: {fileID: 11400000, guid: fae03de1dc53c9545af7a1383ed943fa, type: 2}
   lampTile: {fileID: 11400000, guid: 4c1700aacba79e04596d351a072a160d, type: 2}
   startTile: {fileID: 11400000, guid: b86f22adf1035e243923d571aa3132fd, type: 2}
@@ -964,6 +965,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ee7357a4d0a9fcf4ea33792251833df5, type: 2}
   - {fileID: 11400000, guid: be29e8b791d089243b053db713e980f5, type: 2}
   - {fileID: 11400000, guid: a0efef4897a890045bd4a3d60eee1c18, type: 2}
+  - {fileID: 11400000, guid: bfe0ef322a3e5b0438999dd66a8fbaab, type: 2}
   metalRoomObjects:
   - {fileID: 0}
   grassRoomTiles:
@@ -977,15 +979,24 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 41858258df188c045942b167e0e9d128, type: 2}
   - {fileID: 11400000, guid: 4239c72701f403842b84dfb76b63203a, type: 2}
   - {fileID: 11400000, guid: d2c481eaa2d68ae4c88be40f45a627f6, type: 2}
-  - {fileID: 11400000, guid: 9aeb0593940bc114ebeb7e81337b3295, type: 2}
-  - {fileID: 11400000, guid: c73809c3a7e27b149813eef5467aaa7d, type: 2}
-  - {fileID: 11400000, guid: 24293c8370b125f4da09a1f597d39435, type: 2}
+  - {fileID: 11400000, guid: 0745c3f25767f9449bccd657868f0f30, type: 2}
+  - {fileID: 11400000, guid: a3b47cefe6ea6154d91c2b2f42035eaa, type: 2}
+  - {fileID: 11400000, guid: 003bece740027b74db4f99df270e8aa6, type: 2}
   - {fileID: 11400000, guid: fb2a1039074092e4eae68115711562ef, type: 2}
-  - {fileID: 11400000, guid: 6db40a13acd29074f82cdeda0fa253ab, type: 2}
+  - {fileID: 11400000, guid: 0ddf8340b428f5446bdbab115ff31498, type: 2}
   - {fileID: 11400000, guid: 35b1087e0d8121c4bb3eee91e7ff3fff, type: 2}
-  - {fileID: 11400000, guid: ee7357a4d0a9fcf4ea33792251833df5, type: 2}
-  - {fileID: 11400000, guid: be29e8b791d089243b053db713e980f5, type: 2}
-  - {fileID: 11400000, guid: a0efef4897a890045bd4a3d60eee1c18, type: 2}
+  - {fileID: 11400000, guid: 7140301d31c709b41b469caf6f7a6fcc, type: 2}
+  - {fileID: 11400000, guid: 1468419c42fa86f4a9e5290da7d3917d, type: 2}
+  - {fileID: 11400000, guid: 3f750b3d794608d43bdbb4fef9e4a938, type: 2}
+  - {fileID: 11400000, guid: bfe0ef322a3e5b0438999dd66a8fbaab, type: 2}
+  - {fileID: 11400000, guid: 33f569b11fd31594bae00fa62f3afbb8, type: 2}
+  - {fileID: 11400000, guid: c88c4c94fc21ca24e9e74f7d8844b2d9, type: 2}
+  - {fileID: 11400000, guid: 562d6b558fe8e43408f720211bd0b766, type: 2}
+  - {fileID: 11400000, guid: 4874edc8eb1c07d42924a01751d1e0f8, type: 2}
+  - {fileID: 11400000, guid: 3661b105db568be47a244fd8100f38dc, type: 2}
+  - {fileID: 11400000, guid: 15b156f3c2e42ff48a5b1f2f89a5019e, type: 2}
+  - {fileID: 11400000, guid: 75476ef2354288d44ad63adf02fe1d49, type: 2}
+  - {fileID: 11400000, guid: 18fede3182ca3a646b721287f9819d64, type: 2}
   grassRoomObjects:
   - {fileID: 0}
   frozenRoomTiles:
@@ -997,24 +1008,25 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ec5e7505b7fa87d4aa5edb0b9b247c01, type: 2}
   - {fileID: 11400000, guid: 3fd9962ec194bb04fa806b6a64d0dd7a, type: 2}
   - {fileID: 11400000, guid: 3641f8fb776c7824b868a9222a4cbf9f, type: 2}
-  - {fileID: 11400000, guid: 733a4f5206a59c6489ef285b5ae3fb80, type: 2}
-  - {fileID: 11400000, guid: 2a9fa2df8d5789446a5364ca2b49bff7, type: 2}
-  - {fileID: 11400000, guid: 9aeb0593940bc114ebeb7e81337b3295, type: 2}
-  - {fileID: 11400000, guid: c73809c3a7e27b149813eef5467aaa7d, type: 2}
-  - {fileID: 11400000, guid: 24293c8370b125f4da09a1f597d39435, type: 2}
+  - {fileID: 11400000, guid: e935709decd074949a3a1dfa7cd5231b, type: 2}
+  - {fileID: 11400000, guid: 68bb38ce02e54b64599b03e176d59a9a, type: 2}
+  - {fileID: 11400000, guid: f9016e25ff4ddfa4fab5c966a1013fb6, type: 2}
+  - {fileID: 11400000, guid: 6c9cf397424b5b143aa354847bd4ea9a, type: 2}
+  - {fileID: 11400000, guid: bf45775cd32b94e489482ff72e93d707, type: 2}
   - {fileID: 11400000, guid: fb2a1039074092e4eae68115711562ef, type: 2}
-  - {fileID: 11400000, guid: 6db40a13acd29074f82cdeda0fa253ab, type: 2}
+  - {fileID: 11400000, guid: 1e6b4eaa424cb4c4bbc037dad7f9dabf, type: 2}
   - {fileID: 11400000, guid: 35b1087e0d8121c4bb3eee91e7ff3fff, type: 2}
-  - {fileID: 11400000, guid: ee7357a4d0a9fcf4ea33792251833df5, type: 2}
-  - {fileID: 11400000, guid: be29e8b791d089243b053db713e980f5, type: 2}
-  - {fileID: 11400000, guid: a0efef4897a890045bd4a3d60eee1c18, type: 2}
+  - {fileID: 11400000, guid: 8e162eb701d815245a81f45fb0f2a005, type: 2}
+  - {fileID: 11400000, guid: 051b39b12c6e6174f958768565d7b835, type: 2}
+  - {fileID: 11400000, guid: 4febf004251183246baf29f7c83ec72a, type: 2}
+  - {fileID: 11400000, guid: 250a137a32b995f4ebb15968186ea60a, type: 2}
   frozenRoomObjects:
   - {fileID: 0}
   chanceToCheckToGenerateNextPathes: 50
   chanceToCheckToStopGenerate: 80
   chanceToSpawnNextRoom: 100
   minusChanceToSpawnNextRoom: 10
-  maxRoomCount: 30
+  maxRoomCount: 2
 --- !u!114 &948704643
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1336,8 +1348,129 @@ Transform:
   - {fileID: 1831194714}
   - {fileID: 693643144}
   - {fileID: 853269629}
+  - {fileID: 2031870956}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2031870955
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2031870956}
+  - component: {fileID: 2031870958}
+  - component: {fileID: 2031870957}
+  m_Layer: 0
+  m_Name: FrontObjects
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2031870956
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2031870955}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1939390892}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!483693784 &2031870957
+TilemapRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2031870955}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 1
+  m_ChunkSize: {x: 32, y: 32, z: 32}
+  m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
+  m_MaxChunkCount: 16
+  m_MaxFrameAge: 16
+  m_SortOrder: 0
+  m_Mode: 0
+  m_DetectChunkCullingBounds: 0
+  m_MaskInteraction: 0
+--- !u!1839735485 &2031870958
+Tilemap:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2031870955}
+  m_Enabled: 1
+  m_Tiles: {}
+  m_AnimatedTiles: {}
+  m_TileAssetArray: []
+  m_TileSpriteArray: []
+  m_TileMatrixArray: []
+  m_TileColorArray: []
+  m_TileObjectToInstantiateArray: []
+  m_AnimationFrameRate: 1
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Origin: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0, y: 0, z: 1}
+  m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
+  m_TileOrientation: 0
+  m_TileOrientationMatrix:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

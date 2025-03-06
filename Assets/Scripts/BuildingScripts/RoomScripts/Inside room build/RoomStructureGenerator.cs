@@ -14,10 +14,13 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build
 
         List<Vector2> insideRoomWalls;
 
+        List<Vector2> placesToSpawnObjects;
+
         public RoomStructureGenerator(System.Random random)
         {
             rand = random;
             insideRoomWalls = new List<Vector2>();
+            placesToSpawnObjects = new List<Vector2>();
         }
 
         public void Generate(Room room)
@@ -28,13 +31,27 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build
                 {
                     InnerRoomsCreator innerRoomsCreator = new InnerRoomsCreator(room, rand);
                     insideRoomWalls = innerRoomsCreator.CreateInnerRooms();
+                    placesToSpawnObjects = innerRoomsCreator.GetFloorWalls();
                 }
 
-                if (rand.Next(0, 100) < chanceToCreateInnerRooms || insideRoomWalls.Count == 0)
+                if (rand.Next(0, 100) < chanceToCreateWallsPlatforms || insideRoomWalls.Count == 0)
                 {
                     WallPlatformsCreator wallPlatformsCreator = new WallPlatformsCreator(room, rand, insideRoomWalls);
-                    wallPlatformsCreator.CreatePlatfroms();
+                    List<Vector2> wallFromPlatfroms = wallPlatformsCreator.CreatePlatfroms();
+
+                    for (int i = 0; i < wallFromPlatfroms.Count; i++)
+                    {
+                        placesToSpawnObjects.Add(wallFromPlatfroms[i]);
+                    }
                 }
+
+                Debug.Log(placesToSpawnObjects.Count);
+
+                //for (int i = 0; i < placesToSpawnObjects.Count; i++)
+                //{
+                //    placesToSpawnObjects.Add(placesToSpawnObjects[i]);
+                //    room.tileSetter.SetTile(room.GetTiles()[9], (int)placesToSpawnObjects[i].x, (int)placesToSpawnObjects[i].y, ObjectsLayers.FrontObjects);
+                //}
             }
         }
 

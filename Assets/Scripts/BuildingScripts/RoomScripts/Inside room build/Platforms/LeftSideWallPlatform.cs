@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.BuildingScripts.BuildingTypes;
+using Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Inner_rooms;
 using Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Inner_rooms.InnerRoomStructs;
 using System;
 using System.Collections.Generic;
@@ -15,9 +16,10 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Platforms
         System.Random rand;
         private List<Vector2> occupiedPlaces;
         private List<Vector2> platformWall = new List<Vector2>();
+        private List<Vector2> platformsPositions = new List<Vector2>();
 
-        private int chanceToCreatePlatform = 70;
-        private int chaceToMakeHoleInPlatform = 60;
+        private int chanceToCreateWallPlatform = 70;
+        private int chanceToMakePlatform = 20;
 
         public LeftSideWallPlatform(Room room, System.Random rand, List<Vector2> occupiedPlaces)
         {
@@ -26,7 +28,7 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Platforms
             this.occupiedPlaces = occupiedPlaces;
         }
 
-        public void CreatePlatformsOnLeftSide()
+        public List<Vector2> CreatePlatformsOnLeftSide()
         {
             int startY = (int)room.entryPoint.y - room.wallsInfo.countOfWallsDown + 3;
             int startX = (int)room.entryPoint.x - room.wallsInfo.countOfWallsLeft;
@@ -34,6 +36,8 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Platforms
             int roomCeilingY = (int)room.entryPoint.y + room.wallsInfo.countOfWallsUp;
 
             CreatePlatfroms(startX, startY, roomCeilingY);
+
+            return platformWall;
         }
 
         private void CreatePlatfroms(int startX, int startY, int roomCeilingY)
@@ -42,7 +46,7 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Platforms
 
             for (int y = startY; y < roomCeilingY - 2; y += 4)
             {
-                if (rand.Next(0, 100) < chanceToCreatePlatform) CreatePlatform(startX, y, roomLength);
+                if (rand.Next(0, 100) < chanceToCreateWallPlatform) CreatePlatform(startX, y, roomLength);
             }
         }
 
@@ -68,7 +72,13 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Platforms
 
             if (platformLength > 5) NodeSpawner.SpawnNode((startX + 2), y);
 
-            //if (platformLength > 5) MakeHoles(startX, y, platformLength);
+            if (platformLength > 4)
+                platformsPositions = WallToPlatformChanger.MakeWallToPlatform(room, startX + 1, startX + platformLength, y, rand, chanceToMakePlatform);
+
+            CorrectListOfWallsPositions();
+
+            if (platformLength > 3 && room.roomBiom == RoomBiom.grass)
+                SpawnGrassOnFloor(startX + 1, y + 1, platformLength);
         }
 
         private void CorrectLeftPlatformLength(ref int platformLength, int startX, int startY, ref bool isHaveLadderPath)
@@ -76,9 +86,10 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Platforms
             bool flag = false;
             for (int x = startX; x < startX + platformLength; x++)
             {
-                if (occupiedPlaces.Contains(new Vector2(x + 1, startY)))
+                if (occupiedPlaces.Contains(new Vector2(x + 1, startY)) || occupiedPlaces.Contains(new Vector2(x + 1, startY + 1)))
                 {
-                    platformLength = x - startX - 1;
+                    platformLength = x + 1 - startX;
+                    platformLength -= 2;
                     flag = true;
                 }
                 if (BuildingData.ladder.Contains(new Vector2(x + 1, startY)))
@@ -89,6 +100,10 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Platforms
                 }
 
                 if (flag) break;
+            }
+            if (occupiedPlaces.Contains(new Vector2(startX + platformLength + 1, startY + 1)))
+            {
+                platformLength--;
             }
         }
 
@@ -141,6 +156,7 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Platforms
             int platfromCenxterX = (startX + startX + platformLength) / 2;
 
             room.tileSetter.SetTile(lampTile, platfromCenxterX, lampY, ObjectsLayers.BackgroundWalls);
+            BuildingData.lamp.Add((new Vector2(platfromCenxterX, lampY), room.roomBiom));
         }
 
         private void SpawnLamps(int startX, int startY, int platformLength, int lampY)
@@ -154,9 +170,11 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Platforms
 
             int x1 = (platfromCenxterX + (int)rightEnd.x) / 2;
             room.tileSetter.SetTile(lampTile, x1, lampY, ObjectsLayers.BackgroundWalls);
+            BuildingData.lamp.Add((new Vector2(x1, lampY), room.roomBiom));
 
             int x2 = ((int)leftEnd.x + platfromCenxterX) / 2;
             room.tileSetter.SetTile(lampTile, x2, lampY, ObjectsLayers.BackgroundWalls);
+            BuildingData.lamp.Add((new Vector2(x2, lampY), room.roomBiom));
         }
 
         private void MakePathToPlatform(Vector2 beginPosition)
@@ -189,23 +207,24 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Platforms
             if (!isMeetPlatform) room.tileSetter.SetTile(tile[18], x, roomFloorY, ObjectsLayers.Ladder);
         }
 
-        private void MakeHoles(int startX, int y, int platformLength)
+        private void SpawnGrassOnFloor(int startX, int y, int platformLength)
         {
-            bool isCanPlaceHole = true;
-            for (int x = startX + 1; x < startX + platformLength; x++)
+            Tile[] tile = room.GetTiles();
+            Tile[] grass = { tile[20], tile[21], tile[22] };
+
+            for (int x = startX; x < startX + platformLength; x++)
             {
-                if (isCanPlaceHole && rand.Next(0, 100) < chaceToMakeHoleInPlatform)
+                if (!platformsPositions.Contains(new Vector2(x, y - 1)))
                 {
-                    int holeLength = rand.Next(2, 4);
-                    for (int i = x; i <= x + holeLength; i++)
-                    {
-                        room.tileSetter.RemoveWall(new Vector3Int(i, y, 10));
-                    }
-                    x += holeLength + 1;
-                    isCanPlaceHole = false;
+                    int randIndex = rand.Next(0, grass.Length);
+                    room.tileSetter.SetTile(grass[randIndex], x, y, ObjectsLayers.FrontObjects);
                 }
-                else isCanPlaceHole = true;
             }
+        }
+
+        private void CorrectListOfWallsPositions()
+        {
+            platformWall.RemoveAll(position => platformsPositions.Contains(position));
         }
     }
 }

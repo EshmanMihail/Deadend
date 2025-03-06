@@ -44,7 +44,8 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Inner_roo
 
             if (rand.Next(0, 101) > 30) SpawnLamps();
 
-            FreePositionsCollector.CollectFreePositions(startX - countOfWallsLeft, startX, startY + 1);
+            //FreePositionsCollector.CollectFreePositions(startX - countOfWallsLeft, startX, startY + 1);
+            CollectFloorWalls(startX - 1, startX - countOfWallsLeft + 1, startY);
         }
 
         private void CorrectRightRoomSize()
@@ -69,6 +70,8 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Inner_roo
                 }
             }
             countOfWallsLeft = minPossibleLengthLeft;
+
+            if (startX - countOfWallsLeft == (int)room.entryPoint.x) countOfWallsLeft--;
 
             //correct width
             int minPossibleWidthUp = countOfWallsUp;
@@ -187,7 +190,7 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Inner_roo
             int doorY = startY + 1;
 
             room.tileSetter.RemoveWall(new Vector3Int(doorX, doorY, 10));
-            if (rand.Next(0, 101) > 50) BuildingData.door.Add(new Vector2(doorX, doorY));
+            if (rand.Next(0, 101) > 50) BuildingData.door.Add((new Vector2(doorX, doorY), room.roomBiom));
 
             if (!isHaveLadderEntrance && rand.Next(0, 101) > 30)
             {

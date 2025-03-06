@@ -39,6 +39,8 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Inner_roo
             MakeLadderPath();
 
             SpawnLamps();
+
+            CollectFloorWalls(startX - 1, startX - countOfWallsLeft + 1, startY - countOfWallsDown);
         }
 
         private void CorrectRightRoomSize()
@@ -125,9 +127,12 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Inner_roo
 
         private void SetTilesByWidth()
         {
-            room.tileSetter.SetTile(roomTiles[10], startX - countOfWallsLeft, startY, ObjectsLayers.Walls);
-            room.tileSetter.RotateTile(startX - countOfWallsLeft, startY, 270);
-            AddTileToMapData(startX - countOfWallsLeft, startY, roomTiles[10], ObjectsLayers.Walls);
+            if (!IsOnLadderPosition(startX - countOfWallsLeft, startY))
+            {
+                room.tileSetter.SetTile(roomTiles[10], startX - countOfWallsLeft, startY, ObjectsLayers.Walls);
+                room.tileSetter.RotateTile(startX - countOfWallsLeft, startY, 270);
+                AddTileToMapData(startX - countOfWallsLeft, startY, roomTiles[10], ObjectsLayers.Walls);
+            }
 
             for (int y = startY - 1; y > startY - countOfWallsDown; y--)
             {

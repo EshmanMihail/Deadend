@@ -28,7 +28,7 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Inner_roo
             if (roomCeilingY - roomFloorY >= 6) y = (roomCeilingY + roomFloorY) / 2;
 
             room.tileSetter.SetTile(roomTiles[9], centerX, y, ObjectsLayers.BackgroundWalls);
-            BuildingData.lamp.Add(new Vector2(centerX, y));
+            BuildingData.lamp.Add((new Vector2(centerX, y), room.roomBiom));
         }
 
         private static void SpawnTwoLamps(Vector2 leftWall, Vector2 rightWall, int roomFloorY, int roomCeilingY, Room room)
@@ -46,10 +46,10 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Inner_roo
             if (roomCeilingY - roomFloorY >= 6) y2 = (roomCeilingY + roomFloorY) / 2;
 
             room.tileSetter.SetTile(roomTiles[9], x1, y1, ObjectsLayers.BackgroundWalls);
-            BuildingData.lamp.Add(new Vector2(x1, y1));
+            BuildingData.lamp.Add((new Vector2(x1, y1), room.roomBiom));
 
             room.tileSetter.SetTile(roomTiles[9], x2, y2, ObjectsLayers.BackgroundWalls);
-            BuildingData.lamp.Add(new Vector2(x2, y2));
+            BuildingData.lamp.Add((new Vector2(x2, y2), room.roomBiom));
         }
     }
 }

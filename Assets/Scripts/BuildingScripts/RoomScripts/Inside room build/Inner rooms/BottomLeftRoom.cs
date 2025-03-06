@@ -48,7 +48,8 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Inner_roo
             int NodePositionY = startY + 1;
             NodeSpawner.SpawnNode(centerX, NodePositionY);
 
-            FreePositionsCollector.CollectFreePositions(startX, startX + countOfWallsRight, startY + 1);
+            //FreePositionsCollector.CollectFreePositions(startX, startX + countOfWallsRight, startY + 1);
+            CollectFloorWalls(startX + 1, startX + countOfWallsRight - 1, startY);
         }
 
         private void CorrectLeftRoomSize()
@@ -74,6 +75,8 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Inner_roo
                 }
             }
             countOfWallsRight = minPossibleLengthRight;
+
+            if (startX + countOfWallsRight == (int)room.entryPoint.x) countOfWallsRight--;
 
             //correct width
             int minPossibleWidthUp = countOfWallsUp;
@@ -106,6 +109,7 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Inner_roo
 
         private void SetTilesByLength()
         {
+
             room.tileSetter.SetTile(roomTiles[10], startX, startY + countOfWallsUp, ObjectsLayers.Walls);
             AddTileToMapData(startX, startY + countOfWallsUp, roomTiles[10], ObjectsLayers.Walls);
 
@@ -144,7 +148,7 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Inner_roo
             room.tileSetter.RotateTile(startX + countOfWallsRight, startY, 90);
             AddTileToMapData(startX + countOfWallsRight, startY, roomTiles[10], ObjectsLayers.Walls);
 
-            for (int y = startY + 1; y < startY + countOfWallsUp; y++)
+            for (int y = startY + 1; y < startY + countOfWallsUp; y++) 
             {
                 if (!IsOnLadderPosition(startX + countOfWallsRight, y))
                 {
@@ -191,7 +195,7 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Inner_roo
             int doorY = startY + 1;
 
             room.tileSetter.RemoveWall(new Vector3Int(doorX, doorY, 10));
-            if (rand.Next(0, 101) > 50) BuildingData.door.Add(new Vector2(doorX, doorY));
+            if (rand.Next(0, 101) > 50) BuildingData.door.Add((new Vector2(doorX, doorY), room.roomBiom));
 
             if (!isHaveLadderEntrance && rand.Next(0, 101) > 30)
             {

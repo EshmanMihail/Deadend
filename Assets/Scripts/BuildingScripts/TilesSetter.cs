@@ -15,20 +15,20 @@ namespace Assets.Scripts.BuildingScripts
         private Tilemap backgroundWalls;
         private Tilemap ladderTilemap;
         private Tilemap platformsTilemap;
+        private Tilemap frontTiles;
 
         private Tile[] metalRoomTiles;
-        private Tile lampTile;
 
         public TilesSetter(BuildingGenerator buildingGenerator, Tilemap wallsTilemap, Tilemap backgroundWalls,
-            Tilemap ladder, Tilemap platformsTilmap, Tile[] metalRoomTiles, Tile lampTile)
+            Tilemap ladder, Tilemap platformsTilmap, Tilemap frontTiles, Tile[] metalRoomTiles)
         {
             this.buildingGenerator = buildingGenerator;
             this.wallsTilemap = wallsTilemap;
             this.ladderTilemap = ladder;
             this.platformsTilemap = platformsTilmap;
             this.backgroundWalls = backgroundWalls;
+            this.frontTiles = frontTiles;
             this.metalRoomTiles = metalRoomTiles;
-            this.lampTile = lampTile;
         }
 
         public void RemoveWall(Vector3Int positionToRemove)
@@ -65,6 +65,11 @@ namespace Assets.Scripts.BuildingScripts
                 ladderTilemap.SetTile(tilePosition, tile);
                 BuildingData.ladder.Add(new Vector2(x, y));
                 BuildingData.AddTileToTileListData(tilePosition, tile, ObjectsLayers.Ladder);
+            }
+            else if (layer == ObjectsLayers.FrontObjects)
+            {
+                frontTiles.SetTile(tilePosition, tile);
+                BuildingData.AddTileToTileListData(tilePosition , tile, ObjectsLayers.FrontObjects);
             }
         }
 
@@ -237,10 +242,13 @@ namespace Assets.Scripts.BuildingScripts
 
         public void MakeEntrance(Room room)
         {
-            wallsTilemap.SetTile(new Vector3Int((int)room.entryPoint.x, (int)room.entryPoint.y, 10), null);
+            Tile backTile = room.GetTiles()[8];
 
+            // remove wall
+            wallsTilemap.SetTile(new Vector3Int((int)room.entryPoint.x, (int)room.entryPoint.y, 10), null);
             RemoveTile(new Vector3Int((int)room.entryPoint.x, (int)room.entryPoint.y, 10), backgroundWalls);
-            backgroundWalls.SetTile(new Vector3Int((int)room.entryPoint.x, (int)room.entryPoint.y, 10), lampTile);
+
+            backgroundWalls.SetTile(new Vector3Int((int)room.entryPoint.x, (int)room.entryPoint.y, 10), backTile);
         }
 
         public void CreateLadderPathToNextRoom(Vector2 beginPos, Room room, int roomFloorY)

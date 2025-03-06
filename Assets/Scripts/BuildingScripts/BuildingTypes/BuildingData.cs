@@ -15,9 +15,11 @@ namespace Assets.Scripts.BuildingScripts.BuildingTypes
 
         public static List<Vector2> ladder = new List<Vector2>();
 
-        public static List<Vector2> lamp = new List<Vector2>();
+        public static List<(Vector2, RoomBiom)> lamp = new List<(Vector2, RoomBiom)>();
 
-        public static List<Vector2> door = new List<Vector2>();
+        public static List<(Vector2, RoomBiom)> door = new List<(Vector2, RoomBiom)>();
+
+        public static List<Vector2> loot = new List<Vector2>();
 
 
         public static void AddTileToTileListData(Vector3Int position, Tile tile, int tileLayer)
@@ -28,7 +30,7 @@ namespace Assets.Scripts.BuildingScripts.BuildingTypes
                 tile = tile,
                 tileLayer = tileLayer
             };
-            mapData.Add(tileData);
+            //mapData.Add(tileData);
         }
 
         public static void RemoveTileFromTileListData(Vector3Int positionToRemove)
