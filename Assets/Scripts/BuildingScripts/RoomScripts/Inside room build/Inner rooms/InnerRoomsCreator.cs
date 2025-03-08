@@ -39,6 +39,12 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build
         {
             List<int> innerRoomTypesValues = new List<int>() { 0, 1, 2, 3 };
 
+            //InnerRoomType innerRoomType1 = InnerRoomType.BottomRight;
+            //InnerRoomManager(innerRoomType1);
+
+            //InnerRoomType innerRoomType = InnerRoomType.BottomLeft;
+            //InnerRoomManager(innerRoomType);
+
             while (chanceToSpawnInnerRoom > 0 && innerRoomTypesValues.Count > 0)
             {
                 int randomIndex = rand.Next(0, innerRoomTypesValues.Count);

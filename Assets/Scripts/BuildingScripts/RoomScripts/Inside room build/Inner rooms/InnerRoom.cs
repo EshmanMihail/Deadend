@@ -1,22 +1,25 @@
 ﻿using Assets.Scripts.BuildingScripts.BuildingTypes;
+using Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Inner_rooms.InnerRoomStructs;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Tilemaps;
-using static UnityEngine.EventSystems.EventTrigger;
 
 namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Inner_rooms
 {
     public abstract class InnerRoom
     {
-        protected Room room;
+        public Room room;
         protected System.Random rand;
         protected Tile[] roomTiles;
 
+        protected int startX = 0;
+        protected int startY = 0;
+        protected RoomWallsInfo innerWalls;
+
         protected List<Vector2> ocupiedPlaces;
+        protected RoomSizeCorrector sizeCorrector;
+
         protected List<Vector2> floorWalls;
         protected List<Vector2> platforms;
 
@@ -26,20 +29,26 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Inner_roo
             this.rand = rand;
             this.roomTiles = roomTiles;
             this.ocupiedPlaces = ocupiedPlaces;
+
             floorWalls = new List<Vector2>();
             platforms = new List<Vector2>();
         }
 
         public abstract void CraeteRoom();
 
-        protected bool IsInnerRoomCanExist(int countOfWallsLeft, int countOfWallsRight, int countOfWallsDown, int countOfWallsUp)
+        public Vector2 GetStartPosition()
         {
-            if ((countOfWallsLeft + countOfWallsRight) * (countOfWallsDown + countOfWallsUp) < 4)
+            return new Vector2(startX, startY);
+        }
+
+        protected bool IsInnerRoomCanExist()
+        {
+            if ((innerWalls.countOfWallsLeft + innerWalls.countOfWallsRight) * (innerWalls.countOfWallsDown + innerWalls.countOfWallsUp) < 4)
                 return false;
 
-            if (countOfWallsLeft + countOfWallsRight < 3) return false;
+            if (innerWalls.countOfWallsLeft + innerWalls.countOfWallsRight < 3) return false;
 
-            if (countOfWallsDown + countOfWallsUp < 3) return false;
+            if (innerWalls.countOfWallsDown + innerWalls.countOfWallsUp < 3) return false;
 
             return true;
         }
@@ -50,10 +59,14 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Inner_roo
             return BuildingData.ladder.Contains(position);
         }
 
-        protected void AddTileToMapData(int x, int y, Tile tile, int layer)
+        protected void SpawnLamps()
         {
-            Vector3Int position = new Vector3Int(x, y, 10);
-            BuildingData.AddTileToTileListData(position, tile, layer);
+            Vector2 leftWall = new Vector2(startX - innerWalls.countOfWallsLeft, startY);
+            Vector2 rightWall = new Vector2(startX + innerWalls.countOfWallsRight, startY);
+            int floorY = startY - innerWalls.countOfWallsDown;
+            int ceilingY = startY + innerWalls.countOfWallsUp;
+
+            LampsSpawner.SpawnLamps(leftWall, rightWall, floorY, ceilingY, room);
         }
 
         protected void CollectFloorWalls(int leftX, int rightX, int y)

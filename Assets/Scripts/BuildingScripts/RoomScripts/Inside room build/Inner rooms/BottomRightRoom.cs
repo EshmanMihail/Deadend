@@ -9,15 +9,6 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Inner_roo
 {
     public class BottomRightRoom : InnerRoom
     {
-        private int startX = 0;
-        private int startY = 0;
-
-        private int countOfWallsLeft = 1;
-        private int countOfWallsUp = 1;
-
-        private bool isHaveLadderEntrance = false;
-        private int isCollisionWithRoom = 0;
-
         public BottomRightRoom(Room room, System.Random rand, Tile[] roomTiles, List<Vector2> ocupiedPlaces)
             : base(room, rand, roomTiles, ocupiedPlaces)
         {
@@ -27,15 +18,12 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Inner_roo
 
         public override void CraeteRoom()
         {
-            int roomLength = room.wallsInfo.countOfWallsRight + room.wallsInfo.countOfWallsLeft;
-            int roomWidth = room.wallsInfo.countOfWallsDown + room.wallsInfo.countOfWallsUp;
+            DetermineRoomSize();
 
-            countOfWallsLeft = rand.Next(roomLength / 2 - 1, roomLength / 2 + 3);
-            countOfWallsUp = rand.Next(3, roomWidth / 2 + 1);
+            sizeCorrector = new RoomSizeCorrector(this, ocupiedPlaces);
+            sizeCorrector.CorrectSize(ref innerWalls);
 
-            CorrectRightRoomSize();
-
-            if (!IsInnerRoomCanExist(countOfWallsLeft, 0, 0, countOfWallsUp)) return;
+            if (!IsInnerRoomCanExist()) return;
 
             SetRoomTiles();
             AddInnerOcupatePlaces();
@@ -44,56 +32,25 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Inner_roo
 
             if (rand.Next(0, 101) > 30) SpawnLamps();
 
-            //FreePositionsCollector.CollectFreePositions(startX - countOfWallsLeft, startX, startY + 1);
-            CollectFloorWalls(startX - 1, startX - countOfWallsLeft + 1, startY);
+            CollectFloorWalls(startX - 1, startX - innerWalls.countOfWallsLeft + 1, startY);
         }
 
-        private void CorrectRightRoomSize()
+        private void DetermineRoomSize()
         {
-            //correct length
-            int minPossibleLengthLeft = countOfWallsLeft;
+            int roomLength = room.wallsInfo.countOfWallsRight + room.wallsInfo.countOfWallsLeft;
+            int roomWidth = room.wallsInfo.countOfWallsDown + room.wallsInfo.countOfWallsUp;
 
-            for (int y = startY + 1; y <= startY + countOfWallsUp; y++)
+            int countOfWallsLeft = rand.Next(roomLength / 2 - 1, roomLength / 2 + 3);
+            int countOfWallsUp = rand.Next(3, roomWidth / 2 + 1);
+
+            innerWalls = new RoomWallsInfo
             {
-                for (int x = startX; x >= startX - countOfWallsLeft; x--)
-                {
-                    Vector2 position = new Vector2(x, y);
-
-                    if (ocupiedPlaces.Contains(position))
-                    {
-                        if (minPossibleLengthLeft > startX - x)
-                        {
-                            minPossibleLengthLeft = startX - x;
-                            isCollisionWithRoom++;
-                        }
-                    }
-                }
-            }
-            countOfWallsLeft = minPossibleLengthLeft;
-
-            if (startX - countOfWallsLeft == (int)room.entryPoint.x) countOfWallsLeft--;
-
-            //correct width
-            int minPossibleWidthUp = countOfWallsUp;
-
-            for (int x = startX; x > startX - countOfWallsLeft; x--)
-            {
-                for (int y = startY + 1; y <= startY + countOfWallsUp; y++)
-                {
-                    Vector2 position = new Vector2(x, y);
-
-                    if (ocupiedPlaces.Contains(position))
-                    {
-                        if (minPossibleWidthUp < startY + y)
-                        {
-                            minPossibleWidthUp = startY + y;
-                        }
-                    }
-                }
-            }
-            countOfWallsUp = minPossibleWidthUp;
+                countOfWallsRight = 0,
+                countOfWallsLeft = countOfWallsLeft,
+                countOfWallsUp = countOfWallsUp,
+                countOfWallsDown = 0
+            };
         }
-
 
         private void SetRoomTiles()
         {
@@ -104,20 +61,16 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Inner_roo
 
         private void SetTilesByLength()
         {
-            room.tileSetter.SetTile(roomTiles[10], startX, startY + countOfWallsUp, ObjectsLayers.Walls);
-            room.tileSetter.RotateTile(startX, startY + countOfWallsUp, 180);
-            AddTileToMapData(startX, startY + countOfWallsUp, roomTiles[10], ObjectsLayers.Walls);
+            room.tileSetter.SetTile(roomTiles[10], startX, startY + innerWalls.countOfWallsUp, ObjectsLayers.Walls);
+            room.tileSetter.RotateTile(startX, startY + innerWalls.countOfWallsUp, 180);
 
-            for (int x = startX - 1; x > startX - countOfWallsLeft; x--)
+            for (int x = startX - 1; x > startX - innerWalls.countOfWallsLeft; x--)
             {
-                if (!IsOnLadderPosition(x, startY + countOfWallsUp))
+                if (!IsOnLadderPosition(x, startY + innerWalls.countOfWallsUp))
                 {
-                    room.tileSetter.SetTile(roomTiles[11], x, startY + countOfWallsUp, ObjectsLayers.Walls);
-                    AddTileToMapData(x, startY + countOfWallsUp, roomTiles[10], ObjectsLayers.Walls);
-
-                    ocupiedPlaces.Add(new Vector2(x, startY + countOfWallsUp));
+                    room.tileSetter.SetTile(roomTiles[11], x, startY + innerWalls.countOfWallsUp, ObjectsLayers.Walls);
+                    ocupiedPlaces.Add(new Vector2(x, startY + innerWalls.countOfWallsUp));
                 }
-                else isHaveLadderEntrance = true;
             }
 
             SetAngleTile();
@@ -125,81 +78,54 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Inner_roo
 
         private void SetAngleTile()
         {
-            if (!IsOnLadderPosition(startX - countOfWallsLeft, startY + countOfWallsUp))
+            if (!IsOnLadderPosition(startX - innerWalls.countOfWallsLeft, startY + innerWalls.countOfWallsUp))
             {
-                room.tileSetter.SetTile(roomTiles[14], startX - countOfWallsLeft, startY + countOfWallsUp, ObjectsLayers.Walls);
-                room.tileSetter.RotateTile(startX - countOfWallsLeft, startY + countOfWallsUp, 180);
-                AddTileToMapData(startX - countOfWallsLeft, startY + countOfWallsUp, roomTiles[14], ObjectsLayers.Walls);
-
-                ocupiedPlaces.Add(new Vector2(startX - countOfWallsLeft, startY + countOfWallsUp));
+                room.tileSetter.SetTile(roomTiles[14], startX - innerWalls.countOfWallsLeft, startY + innerWalls.countOfWallsUp, ObjectsLayers.Walls);
+                room.tileSetter.RotateTile(startX - innerWalls.countOfWallsLeft, startY + innerWalls.countOfWallsUp, 180);
+                ocupiedPlaces.Add(new Vector2(startX - innerWalls.countOfWallsLeft, startY + innerWalls.countOfWallsUp));
             }
-            else isHaveLadderEntrance = true;
         }
 
         private void SetTilesByWidth()
         {
-            room.tileSetter.SetTile(roomTiles[10], startX - countOfWallsLeft, startY, ObjectsLayers.Walls);
-            room.tileSetter.RotateTile(startX - countOfWallsLeft, startY, 90);
-            AddTileToMapData(startX - countOfWallsLeft, startY, roomTiles[10], ObjectsLayers.Walls);
-
-            for (int y = startY + 1; y < startY + countOfWallsUp; y++)
+            room.tileSetter.SetTile(roomTiles[10], startX - innerWalls.countOfWallsLeft, startY, ObjectsLayers.Walls);
+            room.tileSetter.RotateTile(startX - innerWalls.countOfWallsLeft, startY, 90);
+            for (int y = startY + 1; y < startY + innerWalls.countOfWallsUp; y++)
             {
-                if (!IsOnLadderPosition(startX - countOfWallsLeft, y))
+                if (!IsOnLadderPosition(startX - innerWalls.countOfWallsLeft, y))
                 {
-                    room.tileSetter.SetTile(roomTiles[11], startX - countOfWallsLeft, y, ObjectsLayers.Walls);
-                    room.tileSetter.RotateTile(startX - countOfWallsLeft, y, 90);
-
-                    AddTileToMapData(startX - countOfWallsLeft, y, roomTiles[11], ObjectsLayers.Walls);
-
-                    ocupiedPlaces.Add(new Vector2(startX - countOfWallsLeft, y));
+                    room.tileSetter.SetTile(roomTiles[11], startX - innerWalls.countOfWallsLeft, y, ObjectsLayers.Walls);
+                    room.tileSetter.RotateTile(startX - innerWalls.countOfWallsLeft, y, 90);
+                    ocupiedPlaces.Add(new Vector2(startX - innerWalls.countOfWallsLeft, y));
                 }
             }
 
-            Vector2 ladderPositionFromEntry = new Vector2(startX - countOfWallsLeft, startY);
+            Vector2 ladderPositionFromEntry = new Vector2(startX - innerWalls.countOfWallsLeft, startY);
             if (BuildingData.ladder.Contains(ladderPositionFromEntry))
             {
-                room.tileSetter.RemoveWall(new Vector3Int(startX - countOfWallsLeft, startY + 1));
+                room.tileSetter.RemoveWall(new Vector3Int(startX - innerWalls.countOfWallsLeft, startY + 1));
             }
         }
 
 
         private void AddInnerOcupatePlaces()
         {
-            for (int x = startX - 1; x >= startX - countOfWallsLeft; x--)
+            for (int x = startX - 1; x >= startX - innerWalls.countOfWallsLeft; x--)
             {
-                for (int y = startY; y <= startY + countOfWallsUp; y++)
+                for (int y = startY; y <= startY + innerWalls.countOfWallsUp; y++)
                 {
                     ocupiedPlaces.Add(new Vector2(x, y));
                 }
             }
         }
 
-        private void SpawnLamps()
-        {
-            Vector2 leftWall = new Vector2(startX, startY);
-            Vector2 rightWall = new Vector2(startX - countOfWallsLeft, startY);
-            int floorY = startY;
-            int ceilingY = startY + countOfWallsUp;
-
-            LampsSpawner.SpawnLamps(leftWall, rightWall, floorY, ceilingY, room);
-        }
-
         private void MakeEntranceToRoom()
         {
-            int doorX = startX - countOfWallsLeft;
+            int doorX = startX - innerWalls.countOfWallsLeft;
             int doorY = startY + 1;
 
             room.tileSetter.RemoveWall(new Vector3Int(doorX, doorY, 10));
             if (rand.Next(0, 101) > 50) BuildingData.door.Add((new Vector2(doorX, doorY), room.roomBiom));
-
-            if (!isHaveLadderEntrance && rand.Next(0, 101) > 30)
-            {
-                Vector2 leftWall = new Vector2(startX - countOfWallsLeft, startY);
-                Vector2 rightWall = new Vector2(startX, startY);
-                int innerRoomCeiling = startY + countOfWallsUp;
-
-                LadderPathBuilder.MakePathToRoom(leftWall, rightWall, innerRoomCeiling, room, rand);
-            }
         }
     }
 }

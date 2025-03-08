@@ -25,40 +25,48 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build
 
         public void Generate(Room room)
         {
-            if (room.wallsInfo.countOfWallsDown + room.wallsInfo.countOfWallsUp > 5)
+            if (rand.Next(0, 100) < chanceToCreateInnerRooms)
             {
-                if (rand.Next(0, 100) < chanceToCreateInnerRooms)
-                {
-                    InnerRoomsCreator innerRoomsCreator = new InnerRoomsCreator(room, rand);
-                    insideRoomWalls = innerRoomsCreator.CreateInnerRooms();
-                    placesToSpawnObjects = innerRoomsCreator.GetFloorWalls();
-                }
-
-                if (rand.Next(0, 100) < chanceToCreateWallsPlatforms || insideRoomWalls.Count == 0)
-                {
-                    WallPlatformsCreator wallPlatformsCreator = new WallPlatformsCreator(room, rand, insideRoomWalls);
-                    List<Vector2> wallFromPlatfroms = wallPlatformsCreator.CreatePlatfroms();
-
-                    for (int i = 0; i < wallFromPlatfroms.Count; i++)
-                    {
-                        placesToSpawnObjects.Add(wallFromPlatfroms[i]);
-                    }
-                }
-
-                Debug.Log(placesToSpawnObjects.Count);
-
-                //for (int i = 0; i < placesToSpawnObjects.Count; i++)
-                //{
-                //    placesToSpawnObjects.Add(placesToSpawnObjects[i]);
-                //    room.tileSetter.SetTile(room.GetTiles()[9], (int)placesToSpawnObjects[i].x, (int)placesToSpawnObjects[i].y, ObjectsLayers.FrontObjects);
-                //}
+                CreateInnerRooms(room);
             }
+
+            if (rand.Next(0, 100) < chanceToCreateWallsPlatforms || insideRoomWalls.Count == 0)
+            {
+                CreateWallPlatforms(room);
+            }
+
+            Debug.Log(placesToSpawnObjects.Count);
         }
 
         public void SetChancesForStructures(int chanceToCreateInnerRooms, int chanceToCreateWallsPlatforms)
         {
             this.chanceToCreateInnerRooms = chanceToCreateInnerRooms;
             this.chanceToCreateWallsPlatforms = chanceToCreateWallsPlatforms;
+        }
+
+        private void CreateInnerRooms(Room room)
+        {
+            InnerRoomsCreator innerRoomsCreator = new InnerRoomsCreator(room, rand);
+            insideRoomWalls = innerRoomsCreator.CreateInnerRooms();
+
+            List<Vector2> innerRoomPositionsToSpawn = innerRoomsCreator.GetFloorWalls();
+            AddPositionForSpawnObjects(innerRoomPositionsToSpawn);
+        }
+
+        private void CreateWallPlatforms(Room room)
+        {
+            WallPlatformsCreator wallPlatformsCreator = new WallPlatformsCreator(room, rand, insideRoomWalls);
+
+            List<Vector2> wallFromPlatfroms = wallPlatformsCreator.CreatePlatfroms();
+            AddPositionForSpawnObjects(wallFromPlatfroms);
+        }
+
+        private void AddPositionForSpawnObjects(List<Vector2> newPositions)
+        {
+            for (int i = 0; i < newPositions.Count; i++)
+            {
+                placesToSpawnObjects.Add(newPositions[i]);
+            }
         }
     }
 }

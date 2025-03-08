@@ -92,9 +92,9 @@ public class BuildingGenerator : NetworkBehaviour
     {
         var factories = new Dictionary<RoomBiom, IRoomFactory>
         {
-            { RoomBiom.metal, new MetalRoomFactory(new RoomStructureGenerator(rand), metalRoomTiles, metalRoomObjects, tilesSetter) },
-            { RoomBiom.grass, new GrassRoomFactory(new RoomStructureGenerator(rand), grassRoomTiles, grassRoomObjects, tilesSetter) },
-            { RoomBiom.frozen, new FrozenRoomFactory(new RoomStructureGenerator(rand), frozenRoomTiles, frozenRoomObjects, tilesSetter) }
+            { RoomBiom.metal, new MetalRoomFactory(metalRoomTiles, metalRoomObjects, tilesSetter, rand) },
+            { RoomBiom.grass, new GrassRoomFactory(grassRoomTiles, grassRoomObjects, tilesSetter, rand) },
+            { RoomBiom.frozen, new FrozenRoomFactory(frozenRoomTiles, frozenRoomObjects, tilesSetter, rand) }
         };
 
         roomFactoryManager = new RoomFactoryManager(factories);
@@ -324,7 +324,7 @@ public class BuildingGenerator : NetworkBehaviour
         int randomIndex = rand.Next(values.Length);
         RoomBiom randomBiom = (RoomBiom)values.GetValue(randomIndex);
 
-        //randomBiom = RoomBiom.metal;
+        randomBiom = RoomBiom.metal;
 
         return roomFactoryManager.CreateRoom(entryPoint, roomType, wallsInfo, randomBiom);
     }

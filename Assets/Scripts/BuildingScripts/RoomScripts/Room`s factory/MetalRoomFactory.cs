@@ -7,27 +7,26 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Room_s_factory
 {
     public class MetalRoomFactory : IRoomFactory
     {
-        private IRoomStructure structureGenerator;
         private Tile[] tiles;
         private GameObject[] objects;
         private TilesSetter tilesSetter;
+        private System.Random rand;
 
-        public MetalRoomFactory(IRoomStructure structureGenerator, Tile[] tiles, GameObject[] objects, TilesSetter tilesSetter)
+        public MetalRoomFactory(Tile[] tiles, GameObject[] objects, TilesSetter tilesSetter, System.Random rand)
         {
-            this.structureGenerator = structureGenerator;
             this.tiles = tiles;
             this.objects = objects;
             this.tilesSetter = tilesSetter;
+            this.rand = rand;
         }
 
         public Room CreateRoom(Vector2 entryPoint, RoomType roomType, RoomWallsInfo wallsInfo)
         {
-            return new MetalRoom(entryPoint, roomType, wallsInfo, RoomBiom.metal);
+            return new MetalRoom(entryPoint, roomType, wallsInfo, RoomBiom.metal, new RoomStructureGenerator(rand));
         }
 
         public void ConfigureRoom(Room room)
         {
-            room.SetStructureGenerator(structureGenerator);
             room.SetTilesAndTileSetter(tiles, tilesSetter);
             room.SetGameObjects(objects);
         }

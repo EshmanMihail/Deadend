@@ -10,7 +10,6 @@ namespace Assets.Scripts.BuildingScripts
     public abstract class Room
     {
         public Vector2 entryPoint;
-
         public RoomWallsInfo wallsInfo;
 
         public RoomType roomType;
@@ -19,16 +18,20 @@ namespace Assets.Scripts.BuildingScripts
         protected IRoomStructure structureGenerator;
 
         public TilesSetter tileSetter;
-
         protected Tile[] tiles;
-        protected GameObject[] gameObjects;
 
-        public Room(Vector2 entryPoint, RoomType roomType, RoomWallsInfo wallsInfo, RoomBiom roomBiom) 
+        protected GameObject[] gameObjects;
+        protected List<Vector2> positionsToSpawnObjects;
+
+        public Room(Vector2 entryPoint, RoomType roomType, RoomWallsInfo wallsInfo, RoomBiom roomBiom, IRoomStructure structureGenerator) 
         {
             this.entryPoint = entryPoint;
             this.roomType = roomType;
             this.wallsInfo = wallsInfo;
             this.roomBiom = roomBiom;
+            this.structureGenerator = structureGenerator;
+
+            positionsToSpawnObjects = new List<Vector2>();
         }
 
         public abstract void GenerateRoomStructure();
