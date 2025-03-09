@@ -15,11 +15,11 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Platforms
         private Room room;
         System.Random rand;
         private List<Vector2> occupiedPlaces;
-        private List<Vector2> platformWall = new List<Vector2>();
+        private List<Vector2> floorWalls = new List<Vector2>();
         private List<Vector2> platformsPositions = new List<Vector2>();
 
         private int chanceToCreateWallPlatform = 70;
-        private int chanceToMakePlatform = 20;
+        private int chanceToMakePlatform = 10;
 
         public LeftSideWallPlatform(Room room, System.Random rand, List<Vector2> occupiedPlaces)
         {
@@ -37,7 +37,12 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Platforms
 
             CreatePlatfroms(startX, startY, roomCeilingY);
 
-            return platformWall;
+            for (int i = 0; i < floorWalls.Count; i++)
+            {
+                floorWalls[i] = new Vector2(floorWalls[i].x, floorWalls[i].y + 1);
+            }
+
+            return floorWalls;
         }
 
         private void CreatePlatfroms(int startX, int startY, int roomCeilingY)
@@ -127,14 +132,14 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Platforms
                 if (!BuildingData.ladder.Contains(new Vector2(x, startY)))
                 {
                     room.tileSetter.SetTile(tile[11], x, startY, ObjectsLayers.Walls);
-                    platformWall.Add(new Vector2(x, startY));
+                    floorWalls.Add(new Vector2(x, startY));
                 }
                 else isHaveLadderPath = true;
             }
             if (!BuildingData.ladder.Contains(new Vector2(startX + platformLength, startY)))
             {
                 room.tileSetter.SetTile(tile[12], startX + platformLength, startY, ObjectsLayers.Walls);
-                platformWall.Add(new Vector2(startX + platformLength, startY));
+                floorWalls.Add(new Vector2(startX + platformLength, startY));
             }
             else isHaveLadderPath = true;
         }
@@ -193,7 +198,7 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Platforms
 
             while (upperTheFloorY < y)
             {
-                if (platformWall.Contains(new Vector2(x, y)) || occupiedPlaces.Contains(new Vector2(x, y)))
+                if (floorWalls.Contains(new Vector2(x, y)) || occupiedPlaces.Contains(new Vector2(x, y)))
                 {
                     room.tileSetter.SetTile(tile[18], x, y, ObjectsLayers.Ladder);
                     isMeetPlatform = true;
@@ -224,7 +229,7 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Platforms
 
         private void CorrectListOfWallsPositions()
         {
-            platformWall.RemoveAll(position => platformsPositions.Contains(position));
+            floorWalls.RemoveAll(position => platformsPositions.Contains(position));
         }
     }
 }

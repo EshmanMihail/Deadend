@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using UnityEngine;
 
 namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build
 {
@@ -11,5 +9,7 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build
         void Generate(Room room);
 
         void SetChancesForStructures(int chanceToCreateInnerRooms, int chanceToCreateWallsPlatforms);
+
+        List<Vector2> GetPlacesToSetObjects();
     }
 }

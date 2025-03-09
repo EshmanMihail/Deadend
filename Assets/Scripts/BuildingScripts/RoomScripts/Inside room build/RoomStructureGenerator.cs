@@ -68,5 +68,10 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build
                 placesToSpawnObjects.Add(newPositions[i]);
             }
         }
+
+        public List<Vector2> GetPlacesToSetObjects()
+        {
+            return placesToSpawnObjects;
+        }
     }
 }

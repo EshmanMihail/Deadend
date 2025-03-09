@@ -36,11 +36,6 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Inner_roo
 
         public abstract void CraeteRoom();
 
-        public Vector2 GetStartPosition()
-        {
-            return new Vector2(startX, startY);
-        }
-
         protected bool IsInnerRoomCanExist()
         {
             if ((innerWalls.countOfWallsLeft + innerWalls.countOfWallsRight) * (innerWalls.countOfWallsDown + innerWalls.countOfWallsUp) < 4)
@@ -59,30 +54,54 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Inner_roo
             return BuildingData.ladder.Contains(position);
         }
 
+        protected void CreateStoreies()
+        {
+            StoreyCreator storeyCreator = new StoreyCreator(this, rand);
+            storeyCreator.CreateStoreies();
+
+            List<Vector2> pos = storeyCreator.GetFlooyPositions();
+            for (int i = 0; i < pos.Count; i++)
+            {
+                floorWalls.Add(pos[i]);
+            }
+        }
+
         protected void SpawnLamps()
         {
-            Vector2 leftWall = new Vector2(startX - innerWalls.countOfWallsLeft, startY);
-            Vector2 rightWall = new Vector2(startX + innerWalls.countOfWallsRight, startY);
+            int leftX = startX - innerWalls.countOfWallsLeft;
+            int rightX = startX + innerWalls.countOfWallsRight;
             int floorY = startY - innerWalls.countOfWallsDown;
             int ceilingY = startY + innerWalls.countOfWallsUp;
 
-            LampsSpawner.SpawnLamps(leftWall, rightWall, floorY, ceilingY, room);
+            if (rightX -  leftX > 6)
+               LampsSpawner.SpawnTwoLamps(leftX, rightX, floorY, ceilingY, room);
+            else
+                LampsSpawner.SpawnLampInCenter(leftX, rightX, floorY, ceilingY, room);
         }
 
-        protected void CollectFloorWalls(int leftX, int rightX, int y)
+        protected void CollectFloorWalls()
         {
+            int leftX = startX - innerWalls.countOfWallsLeft + 1;
+            int rightX = startX + innerWalls.countOfWallsRight;
+            int floorY = startY - innerWalls.countOfWallsDown;
+
             for (int x = leftX; x < rightX; x++)
             {
-                if (!IsOnLadderPosition(x, y + 1) && !platforms.Contains(new Vector2(x, y)))
+                if (!IsOnLadderPosition(x, floorY + 1) && !platforms.Contains(new Vector2(x, floorY)))
                 {
-                    floorWalls.Add(new Vector2Int(x, y));
+                    floorWalls.Add(new Vector2Int(x, floorY + 1));
                 }
             }
         }
 
-        protected void SetPlatformToList(int x, int y)
+        public RoomWallsInfo GetInnerRoomWallsInfo()
         {
-            platforms.Add(new Vector2Int(x, y));
+            return innerWalls;
+        }
+
+        public Vector2 GetStartPosition()
+        {
+            return new Vector2(startX, startY);
         }
 
         public List<Vector2> GetFLoorWalls()

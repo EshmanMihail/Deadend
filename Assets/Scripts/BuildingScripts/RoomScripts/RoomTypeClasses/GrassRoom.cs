@@ -1,5 +1,6 @@
 ﻿using Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build;
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -16,6 +17,7 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts
             {
                 structureGenerator.SetChancesForStructures(10, 100);
                 structureGenerator.Generate(this);
+                positionsToSpawnObjects = structureGenerator.GetPlacesToSetObjects();
             }
         }
 

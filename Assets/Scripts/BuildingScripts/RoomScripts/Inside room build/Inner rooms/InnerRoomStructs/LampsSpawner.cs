@@ -6,23 +6,11 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Inner_roo
 {
     public class LampsSpawner
     {
-        public static void SpawnLamps(Vector2 leftWall, Vector2 rightWall, int roomFloorY, int roomCeilingY, Room room)
-        {
-            if ((int)(rightWall.x - leftWall.x) <= 9)
-            {
-                SpawnLampInCenter(leftWall, rightWall, roomFloorY, roomCeilingY, room);
-            }
-            else
-            {
-                SpawnTwoLamps(leftWall, rightWall, roomFloorY, roomCeilingY, room);
-            }
-        }
-
-        private static void SpawnLampInCenter(Vector2 leftWall, Vector2 rightWall, int roomFloorY, int roomCeilingY, Room room)
+        public static void SpawnLampInCenter(int leftX, int rightX, int roomFloorY, int roomCeilingY, Room room)
         {
             Tile[] roomTiles = room.GetTiles();
 
-            int centerX = ((int)(rightWall.x + leftWall.x)) / 2;
+            int centerX = (rightX + leftX) / 2;
             int y = roomCeilingY - 1;
 
             if (roomCeilingY - roomFloorY >= 6) y = (roomCeilingY + roomFloorY) / 2;
@@ -31,17 +19,17 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Inner_roo
             BuildingData.lamp.Add((new Vector2(centerX, y), room.roomBiom));
         }
 
-        private static void SpawnTwoLamps(Vector2 leftWall, Vector2 rightWall, int roomFloorY, int roomCeilingY, Room room)
+        public static void SpawnTwoLamps(int leftX, int rightX, int roomFloorY, int roomCeilingY, Room room)
         {
             Tile[] roomTiles = room.GetTiles();
 
-            int centerX = ((int)(rightWall.x + leftWall.x)) / 2;
+            int centerX = (rightX + leftX) / 2;
 
-            int x1 = (centerX + (int)rightWall.x) / 2;
+            int x1 = (centerX + rightX) / 2;
             int y1 = roomCeilingY - 1;
             if (roomCeilingY - roomFloorY >= 6) y1 = (roomCeilingY + roomFloorY) / 2;
 
-            int x2 = ((int)leftWall.x + centerX) / 2;
+            int x2 = (leftX + centerX) / 2;
             int y2 = roomCeilingY - 1;
             if (roomCeilingY - roomFloorY >= 6) y2 = (roomCeilingY + roomFloorY) / 2;
 

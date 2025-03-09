@@ -30,9 +30,15 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Inner_roo
 
             MakeLadderPath();
 
-            SpawnLamps();
+            bool isHaveStories = false;
+            if (innerWalls.countOfWallsUp + innerWalls.countOfWallsDown > 5 && innerWalls.countOfWallsRight + innerWalls.countOfWallsLeft > 7)
+            {
+                isHaveStories = true;
+                CreateStoreies();
+            }
 
-            CollectFloorWalls(startX + 1, startX + innerWalls.countOfWallsRight - 1, startY -  innerWalls.countOfWallsDown);
+            if (!isHaveStories && rand.Next(0, 101) < 100) SpawnLamps();
+            if (!isHaveStories) CollectFloorWalls();
         }
 
         private void DetermineRoomSize()

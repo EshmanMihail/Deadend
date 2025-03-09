@@ -16,6 +16,7 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts
             {
                 structureGenerator.SetChancesForStructures(70, 70);
                 structureGenerator.Generate(this);
+                positionsToSpawnObjects = structureGenerator.GetPlacesToSetObjects();
             }
         }
 
