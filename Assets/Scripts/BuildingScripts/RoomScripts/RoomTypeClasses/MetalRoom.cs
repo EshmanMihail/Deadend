@@ -1,6 +1,5 @@
 ﻿using Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build;
-using System;
-using System.Collections.Generic;
+using Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_spawn;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -8,8 +7,9 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts
 {
     public class MetalRoom : Room
     {
-        public MetalRoom(Vector2 entryPoint, RoomType roomType, RoomWallsInfo wallsInfo, RoomBiom roomBiom, IRoomStructure structureGenerator)
-            : base(entryPoint, roomType, wallsInfo, roomBiom, structureGenerator) { }
+        public MetalRoom(Vector2 entryPoint, RoomType roomType, RoomWallsInfo wallsInfo, RoomBiom roomBiom,
+            IRoomStructure structureGenerator, IRoomObjectPlacer roomObjectPlacer)
+            : base(entryPoint, roomType, wallsInfo, roomBiom, structureGenerator, roomObjectPlacer) { }
 
         public override void GenerateRoomStructure()
         {
@@ -28,7 +28,7 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts
 
         public override void SpawnRoomObjects()
         {
-            
+            roomObjectPlacer.SetRoomObjects(this);
         }
     }
 }

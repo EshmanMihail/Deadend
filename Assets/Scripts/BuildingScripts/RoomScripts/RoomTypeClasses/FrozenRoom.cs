@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build;
+using Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_spawn;
 using System;
 using UnityEngine;
 using UnityEngine.Tilemaps;
@@ -7,8 +8,9 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts
 {
     public class FrozenRoom : Room
     {
-        public FrozenRoom(Vector2 entryPoint, RoomType roomType, RoomWallsInfo wallsInfo, RoomBiom roomBiom, IRoomStructure structureGenerator)
-            : base(entryPoint, roomType, wallsInfo, roomBiom, structureGenerator) { }
+        public FrozenRoom(Vector2 entryPoint, RoomType roomType, RoomWallsInfo wallsInfo, RoomBiom roomBiom,
+            IRoomStructure structureGenerator, IRoomObjectPlacer roomObjectPlacer)
+            : base(entryPoint, roomType, wallsInfo, roomBiom, structureGenerator, roomObjectPlacer) { }
 
         public override void GenerateRoomStructure()
         {
@@ -22,7 +24,7 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts
 
         public override void SpawnRoomObjects()
         {
-
+            roomObjectPlacer.SetRoomObjects(this);
         }
     }
 }

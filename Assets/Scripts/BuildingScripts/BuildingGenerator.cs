@@ -324,7 +324,7 @@ public class BuildingGenerator : NetworkBehaviour
         int randomIndex = rand.Next(values.Length);
         RoomBiom randomBiom = (RoomBiom)values.GetValue(randomIndex);
 
-        randomBiom = RoomBiom.metal;
+        //randomBiom = RoomBiom.metal;
 
         return roomFactoryManager.CreateRoom(entryPoint, roomType, wallsInfo, randomBiom);
     }

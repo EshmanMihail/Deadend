@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build;
+using Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_spawn;
 using System;
 using UnityEngine;
 using UnityEngine.Tilemaps;
@@ -22,7 +23,7 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Room_s_factory
 
         public Room CreateRoom(Vector2 entryPoint, RoomType roomType, RoomWallsInfo wallsInfo)
         {
-            return new GrassRoom(entryPoint, roomType, wallsInfo, RoomBiom.grass, new RoomStructureGenerator(rand));
+            return new GrassRoom(entryPoint, roomType, wallsInfo, RoomBiom.grass, new RoomStructureGenerator(rand), new GrassRoomObjectPlacer(rand));
         }
 
         public void ConfigureRoom(Room room)

@@ -1,5 +1,6 @@
 ﻿using Assets.Scripts.BuildingScripts.RoomScripts;
 using Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build;
+using Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_spawn;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,6 +17,7 @@ namespace Assets.Scripts.BuildingScripts
         public RoomBiom roomBiom;
 
         protected IRoomStructure structureGenerator;
+        protected IRoomObjectPlacer roomObjectPlacer;
 
         public TilesSetter tileSetter;
         protected Tile[] tiles;
@@ -23,13 +25,15 @@ namespace Assets.Scripts.BuildingScripts
         protected GameObject[] gameObjects;
         protected List<Vector2> positionsToSpawnObjects;
 
-        public Room(Vector2 entryPoint, RoomType roomType, RoomWallsInfo wallsInfo, RoomBiom roomBiom, IRoomStructure structureGenerator) 
+        public Room(Vector2 entryPoint, RoomType roomType, RoomWallsInfo wallsInfo, RoomBiom roomBiom,
+            IRoomStructure structureGenerator, IRoomObjectPlacer roomObjectPlacer) 
         {
             this.entryPoint = entryPoint;
             this.roomType = roomType;
             this.wallsInfo = wallsInfo;
             this.roomBiom = roomBiom;
             this.structureGenerator = structureGenerator;
+            this.roomObjectPlacer = roomObjectPlacer;
 
             positionsToSpawnObjects = new List<Vector2>();
         }
