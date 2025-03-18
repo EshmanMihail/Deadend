@@ -21,6 +21,8 @@ namespace Assets.Scripts.BuildingScripts.BuildingTypes
 
         public static List<Vector2> loot = new List<Vector2>();
 
+        public static List<Vector2> lootSofas = new List<Vector2>();
+
 
         public static void AddTileToTileListData(Vector3Int position, Tile tile, int tileLayer)
         {
