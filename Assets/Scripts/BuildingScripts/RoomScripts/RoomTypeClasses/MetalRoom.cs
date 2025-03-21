@@ -23,7 +23,7 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts
 
         public override void SpawnRoomObjects()
         {
-            
+            roomObjectPlacer.SetRoomObjects(this);
         }
     }
 }

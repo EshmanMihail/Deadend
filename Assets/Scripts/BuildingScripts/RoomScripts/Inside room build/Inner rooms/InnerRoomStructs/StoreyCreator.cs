@@ -19,7 +19,7 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Inner_roo
         private int storeyHeight = 4;
         private int storeyRoomWidth = 6;
 
-        private List<Vector2> floorPosition;
+        private List<(Vector2, bool)> floorPosition;
 
         private bool isHaveRooms = false;
 
@@ -28,7 +28,7 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Inner_roo
             this.innerRoom = innerRoom;
             this.rand = rand;
 
-            floorPosition = new List<Vector2>();
+            floorPosition = new List<(Vector2, bool)>();
         }
 
         public void CreateStoreies()
@@ -58,7 +58,9 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Inner_roo
                     }
                     else
                     {
-                        floorPosition.Add(new Vector2(x, y - storeyHeight + 1));
+                        if (x == rightX) floorPosition.Add((new Vector2(x, y - storeyHeight + 1), true));
+                        else floorPosition.Add((new Vector2(x, y - storeyHeight + 1), false));
+
                         if (!BuildingData.ladder.Contains(new Vector2(x, y)))
                             innerRoom.room.tileSetter.SetTile(tiles[11], x, y, ObjectsLayers.Walls);
                     }
@@ -118,7 +120,7 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Inner_roo
             }
         }
 
-        public List<Vector2> GetFlooyPositions()
+        public List<(Vector2, bool)> GetFlooyPositions()
         {
             return floorPosition;
         }

@@ -19,5 +19,7 @@ namespace Assets.Scripts.BuildingScripts
         public static int BackgroundWalls = -2;
 
         public static int FrontObjects = 1;
+
+        public static int BackwardObjects = -1;
     }
 }

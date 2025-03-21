@@ -229,7 +229,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -294,7 +294,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.2
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 00000000
@@ -954,8 +954,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c71ad830f78b9f0478b9bd30bff558be, type: 2}
   - {fileID: 11400000, guid: 5e34f3c5bca8cd440afb47a0fd9ede90, type: 2}
   - {fileID: 11400000, guid: 9a4e64e3222c7a447b696490ea2dd681, type: 2}
-  - {fileID: 11400000, guid: 3ad7ef03e07345b4c83efbcbcda9b985, type: 2}
-  - {fileID: 11400000, guid: 2a9fa2df8d5789446a5364ca2b49bff7, type: 2}
+  - {fileID: 11400000, guid: b99aae238e6f0ff4ca03643b96b4a1e3, type: 2}
+  - {fileID: 11400000, guid: 9a24ebdd2f5522b40bd6112ec5544140, type: 2}
   - {fileID: 11400000, guid: 9aeb0593940bc114ebeb7e81337b3295, type: 2}
   - {fileID: 11400000, guid: c73809c3a7e27b149813eef5467aaa7d, type: 2}
   - {fileID: 11400000, guid: 24293c8370b125f4da09a1f597d39435, type: 2}
@@ -1035,6 +1035,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 250a137a32b995f4ebb15968186ea60a, type: 2}
   frozenRoomObjects:
   - {fileID: 0}
+  metalRoomLightLamp: {fileID: 5547997962153896523, guid: daa4b959d384ec846b58cbca0ee13322, type: 3}
+  frozenRoomLightLamp: {fileID: 6471227342017578025, guid: 220b6247fbff3854593ac780015870f9, type: 3}
+  grassRoomLightLamp: {fileID: 1798309350648576825, guid: dce6f346fcc14d34f8146bdecb5d3b7a, type: 3}
   chanceToCheckToGenerateNextPathes: 50
   chanceToCheckToStopGenerate: 80
   chanceToSpawnNextRoom: 100

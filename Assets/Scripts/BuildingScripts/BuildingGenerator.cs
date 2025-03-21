@@ -41,6 +41,9 @@ public class BuildingGenerator : NetworkBehaviour
     [SerializeField] private Tile[] frozenRoomTiles = new Tile[11];
     [SerializeField] private GameObject[] frozenRoomObjects = new GameObject[1];
 
+    [SerializeField] Light2D metalRoomLightLamp;
+    [SerializeField] Light2D frozenRoomLightLamp;
+    [SerializeField] Light2D grassRoomLightLamp;
 
     [SerializeField] private int chanceToCheckToGenerateNextPathes = 80;
     [SerializeField] private int chanceToCheckToStopGenerate = 80;
@@ -105,6 +108,8 @@ public class BuildingGenerator : NetworkBehaviour
         GenerateRoom(roomType, startPosition, chanceToSpawnNextRoom);
         SpawnRoomsBioms();
         CreateRoomStructure();
+
+        SpawnLamps();
         //StartCoroutine(GenerateRooms());
     }
 
@@ -426,7 +431,30 @@ public class BuildingGenerator : NetworkBehaviour
     {
         for (int i = 0; i < roomList.Count; i++)
         {
-            /*if (roomList[i].roomBiom == RoomBiom.metal)*/ roomList[i].GenerateRoomStructure();
+            roomList[i].GenerateRoomStructure();
+            roomList[i].SpawnRoomObjects();
+        }
+    }
+
+    public void SpawnLamps()
+    {
+        Quaternion rotation = Quaternion.Euler(0, 0, 180);
+
+        foreach (var l in BuildingData.lamp)
+        {
+            Vector2 postion = new Vector2(l.Item1.x + 0.5f, l.Item1.y + 0.5f);
+            if (l.Item2 == RoomBiom.metal)
+            {
+                Instantiate(metalRoomLightLamp, postion, rotation);
+            }
+            if (l.Item2 == RoomBiom.frozen)
+            {
+                Instantiate(frozenRoomLightLamp, postion, rotation);
+            }
+            if (l.Item2 == RoomBiom.grass)
+            {
+                Instantiate(grassRoomLightLamp, postion, rotation);
+            }
         }
     }
     #endregion

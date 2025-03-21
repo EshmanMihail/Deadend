@@ -20,7 +20,7 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Inner_roo
         protected List<Vector2> ocupiedPlaces;
         protected RoomSizeCorrector sizeCorrector;
 
-        protected List<Vector2> floorWalls;
+        protected List<(Vector2, bool)> floorWalls;
         protected List<Vector2> platforms;
 
         public InnerRoom(Room room, System.Random rand, Tile[] roomTiles, List<Vector2> ocupiedPlaces)
@@ -30,7 +30,7 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Inner_roo
             this.roomTiles = roomTiles;
             this.ocupiedPlaces = ocupiedPlaces;
 
-            floorWalls = new List<Vector2>();
+            floorWalls = new List<(Vector2, bool)>();
             platforms = new List<Vector2>();
         }
 
@@ -59,7 +59,7 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Inner_roo
             StoreyCreator storeyCreator = new StoreyCreator(this, rand);
             storeyCreator.CreateStoreies();
 
-            List<Vector2> pos = storeyCreator.GetFlooyPositions();
+            List<(Vector2, bool)> pos = storeyCreator.GetFlooyPositions();
             for (int i = 0; i < pos.Count; i++)
             {
                 floorWalls.Add(pos[i]);
@@ -85,13 +85,15 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Inner_roo
             int rightX = startX + innerWalls.countOfWallsRight;
             int floorY = startY - innerWalls.countOfWallsDown;
 
-            for (int x = leftX; x < rightX; x++)
+            for (int x = leftX; x < rightX - 1; x++)
             {
                 if (!IsOnLadderPosition(x, floorY + 1) && !platforms.Contains(new Vector2(x, floorY)))
                 {
-                    floorWalls.Add(new Vector2Int(x, floorY + 1));
+                    floorWalls.Add((new Vector2Int(x, floorY + 1), false));
                 }
             }
+
+            floorWalls.Add((new Vector2Int(rightX - 1, floorY + 1), true));
         }
 
         public RoomWallsInfo GetInnerRoomWallsInfo()
@@ -104,7 +106,7 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Inner_roo
             return new Vector2(startX, startY);
         }
 
-        public List<Vector2> GetFLoorWalls()
+        public List<(Vector2, bool)> GetFLoorWalls()
         {
             return floorWalls;
         }

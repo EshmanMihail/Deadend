@@ -12,7 +12,7 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Platforms
         private System.Random rand;
         private List<Vector2> occupiedPlaces;
 
-        private List<Vector2> wallPlaces = new List<Vector2>();
+        private List<(Vector2, bool)> wallPlaces = new List<(Vector2, bool)>();
 
         private enum PlatformType
         {
@@ -28,10 +28,10 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Platforms
             roomTiles = room.GetTiles();
         }
 
-        public List<Vector2> CreatePlatfroms()
+        public List<(Vector2, bool)> CreatePlatfroms()
         {
             LeftSideWallPlatform leftSideWallPlatform = new LeftSideWallPlatform(room, rand, occupiedPlaces);
-            List<Vector2> wallsFromLeftPlatforms = leftSideWallPlatform.CreatePlatformsOnLeftSide();
+            List<(Vector2, bool)> wallsFromLeftPlatforms = leftSideWallPlatform.CreatePlatformsOnLeftSide();
 
             for (int i = 0; i < wallsFromLeftPlatforms.Count; i++)
             {
@@ -39,7 +39,7 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Platforms
             }
 
             RightSideWallPlatfrom rightSideWallPlatfrom = new RightSideWallPlatfrom(room, rand, occupiedPlaces);
-            List<Vector2> wallsFromRightPlatforms = rightSideWallPlatfrom.CreatePlatformsOnRightSide();
+            List<(Vector2, bool)> wallsFromRightPlatforms = rightSideWallPlatfrom.CreatePlatformsOnRightSide();
 
             for (int i = 0; i < wallsFromRightPlatforms.Count; i++)
             {

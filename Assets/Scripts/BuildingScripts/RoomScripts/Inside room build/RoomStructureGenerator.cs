@@ -14,13 +14,13 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build
 
         List<Vector2> insideRoomWalls;
 
-        List<Vector2> placesToSpawnObjects;
+        List<(Vector2, bool)> placesToSpawnObjects;
 
         public RoomStructureGenerator(System.Random random)
         {
             rand = random;
             insideRoomWalls = new List<Vector2>();
-            placesToSpawnObjects = new List<Vector2>();
+            placesToSpawnObjects = new List<(Vector2, bool)>();
         }
 
         public void Generate(Room room)
@@ -49,7 +49,7 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build
             InnerRoomsCreator innerRoomsCreator = new InnerRoomsCreator(room, rand);
             insideRoomWalls = innerRoomsCreator.CreateInnerRooms();
 
-            List<Vector2> innerRoomPositionsToSpawn = innerRoomsCreator.GetFloorWalls();
+            List<(Vector2, bool)> innerRoomPositionsToSpawn = innerRoomsCreator.GetFloorWalls();
             AddPositionForSpawnObjects(innerRoomPositionsToSpawn);
         }
 
@@ -57,11 +57,11 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build
         {
             WallPlatformsCreator wallPlatformsCreator = new WallPlatformsCreator(room, rand, insideRoomWalls);
 
-            List<Vector2> wallFromPlatfroms = wallPlatformsCreator.CreatePlatfroms();
+            List<(Vector2, bool)> wallFromPlatfroms = wallPlatformsCreator.CreatePlatfroms();
             AddPositionForSpawnObjects(wallFromPlatfroms);
         }
 
-        private void AddPositionForSpawnObjects(List<Vector2> newPositions)
+        private void AddPositionForSpawnObjects(List<(Vector2, bool)> newPositions)
         {
             for (int i = 0; i < newPositions.Count; i++)
             {
@@ -69,7 +69,7 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build
             }
         }
 
-        public List<Vector2> GetPlacesToSetObjects()
+        public List<(Vector2, bool)> GetPlacesToSetObjects()
         {
             return placesToSpawnObjects;
         }

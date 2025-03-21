@@ -6,19 +6,30 @@ using Mirror;
 public class PlayerMovment : NetworkBehaviour
 {
     private Rigidbody2D rb;
+
+    [SerializeField] private float moveSpeed = 5f; // Скорость перемещения
+
+    private Vector2 movementInput; // Хранит направление движения
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (!isLocalPlayer) return;
+
+        float moveX = Input.GetAxisRaw("Horizontal");
+        float moveY = Input.GetAxisRaw("Vertical");
+
+        movementInput = new Vector2(moveX, moveY).normalized;
     }
 
     private void FixedUpdate()
     {
-        
+        if (!isLocalPlayer) return;
+
+        rb.velocity = movementInput * moveSpeed;
     }
 }

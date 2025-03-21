@@ -10,6 +10,6 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build
 
         void SetChancesForStructures(int chanceToCreateInnerRooms, int chanceToCreateWallsPlatforms);
 
-        List<Vector2> GetPlacesToSetObjects();
+        List<(Vector2, bool)> GetPlacesToSetObjects();
     }
 }
