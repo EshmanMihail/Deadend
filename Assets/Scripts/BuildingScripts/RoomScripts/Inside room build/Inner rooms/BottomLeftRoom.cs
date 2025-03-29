@@ -130,7 +130,8 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Inner_roo
             int doorY = startY + 1;
 
             room.tileSetter.RemoveWall(new Vector3Int(doorX, doorY, 10));
-            if (rand.Next(0, 101) > 50) BuildingData.door.Add((new Vector2(doorX, doorY), room.roomBiom));
+            /*if (rand.Next(0, 101) > 50)*/
+            if (!BuildingData.ladder.Contains(new Vector2(doorX, doorY))) BuildingData.door.Add((new Vector2(doorX, doorY), room.roomBiom));
         }
     }
 }

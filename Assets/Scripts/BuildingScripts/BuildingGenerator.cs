@@ -27,9 +27,7 @@ public class BuildingGenerator : NetworkBehaviour
     [SerializeField] private Tilemap platforms;
     [SerializeField] private Tilemap frontTiles;
 
-    [SerializeField] private Tile wallMetalTile;
-    [SerializeField] private Tile lampTile;
-    [SerializeField] private Tile startTile;
+    [SerializeField] private GameObject doorSpawner;
 
     [SerializeField] private Tile[] metalRoomTiles = new Tile[16];
     [SerializeField] private GameObject[] metalRoomObjects = new GameObject[1];
@@ -122,6 +120,9 @@ public class BuildingGenerator : NetworkBehaviour
         SpawnRoomsBioms();
         CreateRoomStructure();
         SpawnLamps();
+
+        AddEntryDoors();
+        doorSpawner.GetComponent<DoorSpawner>().Spawn();
     }
 
     // Вызывайте этот метод вместо обычного GenerateBuilding
@@ -447,6 +448,19 @@ public class BuildingGenerator : NetworkBehaviour
             if (l.Item2 == RoomBiom.grass)
             {
                 Instantiate(grassRoomLightLamp, postion, rotation);
+            }
+        }
+    }
+
+    private void AddEntryDoors()
+    {
+        
+        for (int i = 0; i < roomList.Count; i++)
+        {
+            if (roomList[i].roomType == RoomType.Right || roomList[i].roomType == RoomType.Left)
+            {
+                Vector2 position = new Vector2(roomList[i].entryPoint.x, roomList[i].entryPoint.y);
+                BuildingData.door.Add((position, roomList[i].roomBiom));
             }
         }
     }

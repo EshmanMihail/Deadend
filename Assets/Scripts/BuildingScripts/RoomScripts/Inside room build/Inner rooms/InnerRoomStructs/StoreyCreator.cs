@@ -93,7 +93,7 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Inner_roo
                 innerRoom.room.tileSetter.RotateTile(x, y, 90);
             }
 
-            BuildingData.door.Add((new Vector2(x, startY - storeyHeight), innerRoom.room.roomBiom));
+            BuildingData.door.Add((new Vector2(x, startY - storeyHeight + 1), innerRoom.room.roomBiom));
 
             LampsSpawner.SpawnLampInCenter(x - storeyRoomWidth, x, startY - storeyHeight, startY, innerRoom.room);
         }

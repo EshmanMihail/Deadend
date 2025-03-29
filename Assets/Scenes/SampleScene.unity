@@ -942,9 +942,7 @@ MonoBehaviour:
   ladder: {fileID: 693643147}
   platforms: {fileID: 853269631}
   frontTiles: {fileID: 2031870958}
-  wallMetalTile: {fileID: 11400000, guid: fae03de1dc53c9545af7a1383ed943fa, type: 2}
-  lampTile: {fileID: 11400000, guid: 4c1700aacba79e04596d351a072a160d, type: 2}
-  startTile: {fileID: 11400000, guid: b86f22adf1035e243923d571aa3132fd, type: 2}
+  doorSpawner: {fileID: 2033995763}
   metalRoomTiles:
   - {fileID: 11400000, guid: 52801dd64aabf8b499fe16b971c4b1d5, type: 2}
   - {fileID: 11400000, guid: c83d2b2770d7b664481bf1e3e79dd624, type: 2}
@@ -995,7 +993,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0745c3f25767f9449bccd657868f0f30, type: 2}
   - {fileID: 11400000, guid: a3b47cefe6ea6154d91c2b2f42035eaa, type: 2}
   - {fileID: 11400000, guid: 003bece740027b74db4f99df270e8aa6, type: 2}
-  - {fileID: 11400000, guid: fb2a1039074092e4eae68115711562ef, type: 2}
+  - {fileID: 11400000, guid: a334031f62f8c694b8f3023f33d56700, type: 2}
   - {fileID: 11400000, guid: 0ddf8340b428f5446bdbab115ff31498, type: 2}
   - {fileID: 11400000, guid: 35b1087e0d8121c4bb3eee91e7ff3fff, type: 2}
   - {fileID: 11400000, guid: 7140301d31c709b41b469caf6f7a6fcc, type: 2}
@@ -1028,7 +1026,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f9016e25ff4ddfa4fab5c966a1013fb6, type: 2}
   - {fileID: 11400000, guid: 6c9cf397424b5b143aa354847bd4ea9a, type: 2}
   - {fileID: 11400000, guid: bf45775cd32b94e489482ff72e93d707, type: 2}
-  - {fileID: 11400000, guid: fb2a1039074092e4eae68115711562ef, type: 2}
+  - {fileID: 11400000, guid: 4fbfa23b2025e524585ed67635727067, type: 2}
   - {fileID: 11400000, guid: 1e6b4eaa424cb4c4bbc037dad7f9dabf, type: 2}
   - {fileID: 11400000, guid: 35b1087e0d8121c4bb3eee91e7ff3fff, type: 2}
   - {fileID: 11400000, guid: 8e162eb701d815245a81f45fb0f2a005, type: 2}
@@ -1083,7 +1081,8 @@ Transform:
   m_LocalPosition: {x: 0.2807521, y: -0.08561943, z: -0.004500015}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 2033995765}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &991512351
@@ -1522,6 +1521,54 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &2033995763
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2033995765}
+  - component: {fileID: 2033995764}
+  m_Layer: 0
+  m_Name: DoorSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2033995764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2033995763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4102cf433029e1e45a572fab69ead5ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doors:
+  - {fileID: 7462752392890875288, guid: f612d4ad3a0b4b74b9959fcca75c76c6, type: 3}
+  - {fileID: 3475633897024098043, guid: 5cf56ccb46a83594abef05b5e3624810, type: 3}
+  - {fileID: 6200762320297357375, guid: e35ac6016d846c7438dd4921e844ee92, type: 3}
+--- !u!4 &2033995765
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2033995763}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 948704644}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
