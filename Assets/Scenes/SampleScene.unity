@@ -229,7 +229,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 10
+  orthographic size: 20
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1011,7 +1011,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 75476ef2354288d44ad63adf02fe1d49, type: 2}
   - {fileID: 11400000, guid: 18fede3182ca3a646b721287f9819d64, type: 2}
   grassRoomObjects:
-  - {fileID: 0}
+  - {fileID: 3933614127733445321, guid: 2a2866ff0d547034d8260715df66a659, type: 3}
+  - {fileID: 8546884595891351835, guid: 8bb8abe0f4d498f4d9ed381e2caec35b, type: 3}
+  - {fileID: 741538379130659512, guid: de98881e2cec2d54cae6ff000deff667, type: 3}
   frozenRoomTiles:
   - {fileID: 11400000, guid: d36ee9d777b6ead42b0a40698df237a3, type: 2}
   - {fileID: 11400000, guid: 53764e997da5cd04a820488427ff15eb, type: 2}
@@ -1034,14 +1036,23 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4febf004251183246baf29f7c83ec72a, type: 2}
   - {fileID: 11400000, guid: 250a137a32b995f4ebb15968186ea60a, type: 2}
   frozenRoomObjects:
-  - {fileID: 0}
+  - {fileID: 1921671444835198446, guid: bc42e00b089110a49b0b67062104b6c7, type: 3}
+  - {fileID: 451508149133161361, guid: b6820feb2743c6b46a5c5712e70f9168, type: 3}
+  - {fileID: 8987521722970037069, guid: 606f86e6c1d40d243ab78961fe1db4cb, type: 3}
+  - {fileID: 2588180001902123626, guid: 71df5359c408c7c4a9cedf43480a4ae6, type: 3}
+  - {fileID: 8424412918690711757, guid: 9a7c49b729b0a014cb1e1de4fba37289, type: 3}
+  - {fileID: 5872298771111736892, guid: 92e255306ad9698479ef50484bc19ee9, type: 3}
+  - {fileID: 489921402551287456, guid: bf397130fbfa95d4cadeb6dcee3b69cb, type: 3}
+  - {fileID: 8332295123299857387, guid: 002dc8fae0beece4ba532e5ff46d8c4e, type: 3}
+  - {fileID: 3185590619074964973, guid: ae787c1e6f808a14f989ddb39851453f, type: 3}
+  - {fileID: 8546884595891351835, guid: 8bb8abe0f4d498f4d9ed381e2caec35b, type: 3}
   metalRoomLightLamp: {fileID: 5547997962153896523, guid: daa4b959d384ec846b58cbca0ee13322, type: 3}
   frozenRoomLightLamp: {fileID: 6471227342017578025, guid: 220b6247fbff3854593ac780015870f9, type: 3}
   grassRoomLightLamp: {fileID: 1798309350648576825, guid: dce6f346fcc14d34f8146bdecb5d3b7a, type: 3}
   chanceToCheckToGenerateNextPathes: 50
   chanceToCheckToStopGenerate: 80
   chanceToSpawnNextRoom: 100
-  minusChanceToSpawnNextRoom: 10
+  minusChanceToSpawnNextRoom: 5
   maxRoomCount: 40
 --- !u!114 &948704643
 MonoBehaviour:

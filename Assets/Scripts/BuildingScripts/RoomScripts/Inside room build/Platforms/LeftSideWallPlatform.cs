@@ -16,8 +16,10 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Platforms
         private Room room;
         System.Random rand;
         private List<Vector2> occupiedPlaces;
-        private List<(Vector2, bool)> floorWalls = new List<(Vector2, bool)>();
+        private List<Vector2> floorWalls = new List<Vector2>();
         private List<Vector2> platformsPositions = new List<Vector2>();
+
+        private List<PositionProperty> positionToSpawn = new List<PositionProperty>();
 
         private int chanceToCreateWallPlatform = 70;
         private int chanceToMakePlatform = 10;
@@ -29,7 +31,7 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Platforms
             this.occupiedPlaces = occupiedPlaces;
         }
 
-        public List<(Vector2, bool)> CreatePlatformsOnLeftSide()
+        public List<PositionProperty> CreatePlatformsOnLeftSide()
         {
             int startY = (int)room.entryPoint.y - room.wallsInfo.countOfWallsDown + 3;
             int startX = (int)room.entryPoint.x - room.wallsInfo.countOfWallsLeft;
@@ -38,12 +40,14 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Platforms
 
             CreatePlatfroms(startX, startY, roomCeilingY);
 
-            for (int i = 0; i < floorWalls.Count; i++)
+            for (int i = 0; i < positionToSpawn.Count; i++)
             {
-                floorWalls[i] = (new Vector2(floorWalls[i].Item1.x, floorWalls[i].Item1.y + 1), floorWalls[i].Item2);
+                PositionProperty position = positionToSpawn[i];
+                position.height = GetPositionHeight(position.X, position.Y);
+                positionToSpawn[i] = position;
             }
 
-            return floorWalls;
+            return positionToSpawn;
         }
 
         private void CreatePlatfroms(int startX, int startY, int roomCeilingY)
@@ -73,7 +77,7 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Platforms
                 else SpawnOneLamp(startX, y, platformLength, lampsY);
             }
 
-            if (!isHaveLadderPath)
+            if (!isHaveLadderPath && !BuildingData.ladder.Contains(new Vector2(startX + platformLength + 1, y)))
                 MakePathToPlatform(new Vector2(startX + platformLength + 1, y));
 
             if (platformLength > 5) NodeSpawner.SpawnNode((startX + 2), y);
@@ -100,9 +104,9 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Platforms
                 }
                 if (BuildingData.ladder.Contains(new Vector2(x + 1, startY)))
                 {
-                    platformLength = x - startX;
+                    //platformLength = x - startX;
                     isHaveLadderPath = true;
-                    flag = true;
+                    //flag = true;
                 }
 
                 if (flag) break;
@@ -133,16 +137,43 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Platforms
                 if (!BuildingData.ladder.Contains(new Vector2(x, startY)))
                 {
                     room.tileSetter.SetTile(tile[11], x, startY, ObjectsLayers.Walls);
-                    floorWalls.Add((new Vector2(x, startY), false));
+
+                    floorWalls.Add(new Vector2(x, startY));
+
+                    PositionProperty position = PositionPropertyCreator.Create(x, startY + 1, startX + platformLength - x, 1);
+                    positionToSpawn.Add(position);
                 }
                 else isHaveLadderPath = true;
             }
             if (!BuildingData.ladder.Contains(new Vector2(startX + platformLength, startY)))
             {
                 room.tileSetter.SetTile(tile[12], startX + platformLength, startY, ObjectsLayers.Walls);
-                floorWalls.Add((new Vector2(startX + platformLength, startY), true));
+
+                floorWalls.Add(new Vector2(startX + platformLength, startY));
+
+                PositionProperty position = PositionPropertyCreator.Create(startX + platformLength, startY + 1, 1, 1);
+                positionToSpawn.Add(position);
             }
             else isHaveLadderPath = true;
+        }
+
+        private int GetPositionHeight(int x, int startY)
+        {
+            int height = 0;
+            int y = startY;
+            int roomCeilingY = (int)room.entryPoint.y + room.wallsInfo.countOfWallsUp;
+
+            while (y < roomCeilingY)
+            {
+                if (floorWalls.Contains(new Vector2(x, y)) || occupiedPlaces.Contains(new Vector2(x, y)))
+                {
+                    break;
+                }
+                y++;
+                height++;
+            }
+
+            return height;
         }
 
         private bool IsCanSpawnLamps(int startX, int y, int plaformLength)
@@ -160,6 +191,8 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Platforms
         {
             Tile lampTile = room.GetTiles()[9];
             int platfromCenxterX = (startX + startX + platformLength) / 2;
+
+            if (platformLength <= 2) platfromCenxterX = startX + 1;
 
             room.tileSetter.SetTile(lampTile, platfromCenxterX, lampY, ObjectsLayers.BackgroundWalls);
             BuildingData.lamp.Add((new Vector2(platfromCenxterX, lampY), room.roomBiom));
@@ -199,8 +232,7 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Platforms
 
             while (upperTheFloorY < y)
             {
-                if (floorWalls.Contains((new Vector2(x, y), false)) || floorWalls.Contains((new Vector2(x, y), true))
-                    || occupiedPlaces.Contains(new Vector2(x, y)))
+                if (floorWalls.Contains(new Vector2(x, y)) || occupiedPlaces.Contains(new Vector2(x, y)))
                 {
                     room.tileSetter.SetTile(tile[18], x, y, ObjectsLayers.Ladder);
                     isMeetPlatform = true;
@@ -231,7 +263,20 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Platforms
 
         private void CorrectListOfWallsPositions()
         {
-            floorWalls.RemoveAll(position => platformsPositions.Contains(position.Item1));
+            List<PositionProperty> posToRemove = new List<PositionProperty>();
+            for (int i = 0; i < positionToSpawn.Count; i++)
+            {
+                Vector2 vec = new Vector2(positionToSpawn[i].X, positionToSpawn[i].Y - 1);
+                if (platformsPositions.Contains(vec))
+                {
+                    posToRemove.Add(positionToSpawn[i]);
+                }
+            }
+            
+            foreach (var pos in posToRemove)
+            {
+                positionToSpawn.Remove(pos);
+            }
         }
     }
 }

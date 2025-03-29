@@ -23,7 +23,7 @@ namespace Assets.Scripts.BuildingScripts
         protected Tile[] tiles;
 
         protected GameObject[] gameObjects;
-        protected List<(Vector2, bool)> positionsToSpawnObjects;
+        protected List<PositionProperty> positionsToSpawnObjects;
 
         public Room(Vector2 entryPoint, RoomType roomType, RoomWallsInfo wallsInfo, RoomBiom roomBiom,
             IRoomStructure structureGenerator, IRoomObjectPlacer roomObjectPlacer) 
@@ -35,7 +35,7 @@ namespace Assets.Scripts.BuildingScripts
             this.structureGenerator = structureGenerator;
             this.roomObjectPlacer = roomObjectPlacer;
 
-            positionsToSpawnObjects = new List<(Vector2, bool)>();
+            positionsToSpawnObjects = new List<PositionProperty>();
         }
 
         public abstract void GenerateRoomStructure();
@@ -68,7 +68,7 @@ namespace Assets.Scripts.BuildingScripts
             return gameObjects;
         }
 
-        public List<(Vector2, bool)> GetPositionsToPlaceObjects()
+        public List<PositionProperty> GetPositionsToPlaceObjects()
         {
             return positionsToSpawnObjects;
         }

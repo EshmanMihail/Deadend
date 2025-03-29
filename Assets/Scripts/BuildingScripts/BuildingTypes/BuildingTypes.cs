@@ -5,5 +5,6 @@ namespace Assets.Scripts.BuildingScripts
     {
         Normal,
         Randed,
+        Grassed
     }
 }

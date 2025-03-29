@@ -20,8 +20,10 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Inner_roo
         protected List<Vector2> ocupiedPlaces;
         protected RoomSizeCorrector sizeCorrector;
 
-        protected List<(Vector2, bool)> floorWalls;
+        protected List<PositionProperty> floorWalls;
         protected List<Vector2> platforms;
+
+        protected bool isHaveStories = false;
 
         public InnerRoom(Room room, System.Random rand, Tile[] roomTiles, List<Vector2> ocupiedPlaces)
         {
@@ -30,7 +32,7 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Inner_roo
             this.roomTiles = roomTiles;
             this.ocupiedPlaces = ocupiedPlaces;
 
-            floorWalls = new List<(Vector2, bool)>();
+            floorWalls = new List<PositionProperty>();
             platforms = new List<Vector2>();
         }
 
@@ -59,11 +61,12 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Inner_roo
             StoreyCreator storeyCreator = new StoreyCreator(this, rand);
             storeyCreator.CreateStoreies();
 
-            List<(Vector2, bool)> pos = storeyCreator.GetFlooyPositions();
+            List<PositionProperty> pos = storeyCreator.GetFlooyPositions();
             for (int i = 0; i < pos.Count; i++)
             {
                 floorWalls.Add(pos[i]);
             }
+            isHaveStories = true;
         }
 
         protected void SpawnLamps()
@@ -81,19 +84,24 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Inner_roo
 
         protected void CollectFloorWalls()
         {
+            if (isHaveStories) return;
+
             int leftX = startX - innerWalls.countOfWallsLeft + 1;
             int rightX = startX + innerWalls.countOfWallsRight;
             int floorY = startY - innerWalls.countOfWallsDown;
+            int ceilingY = startY + innerWalls.countOfWallsUp;
 
-            for (int x = leftX; x < rightX - 1; x++)
+            for (int x = leftX; x < rightX; x++)
             {
-                if (!IsOnLadderPosition(x, floorY + 1) && !platforms.Contains(new Vector2(x, floorY)))
+                if (!IsOnLadderPosition(x, floorY) && !IsOnLadderPosition(x, floorY + 1) && !platforms.Contains(new Vector2(x, floorY)))
                 {
-                    floorWalls.Add((new Vector2Int(x, floorY + 1), false));
+                    int widthRight = rightX - 1 - x;
+                    int height = ceilingY - (floorY + 1);
+
+                    PositionProperty property = PositionPropertyCreator.Create(x, floorY + 1, widthRight + 1, height);
+                    floorWalls.Add(property);
                 }
             }
-
-            floorWalls.Add((new Vector2Int(rightX - 1, floorY + 1), true));
         }
 
         public RoomWallsInfo GetInnerRoomWallsInfo()
@@ -106,7 +114,7 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Inner_roo
             return new Vector2(startX, startY);
         }
 
-        public List<(Vector2, bool)> GetFLoorWalls()
+        public List<PositionProperty> GetFLoorWalls()
         {
             return floorWalls;
         }

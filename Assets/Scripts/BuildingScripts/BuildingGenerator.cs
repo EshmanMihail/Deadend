@@ -73,7 +73,7 @@ public class BuildingGenerator : NetworkBehaviour
             building = DetermineBuildingType();
             GenerateBuilding(startPositionOfGeneration, firstRoomType);
             isGenerationEnd = true;
-            Debug.Log(roomCount.ToString());
+            Debug.Log("RoomCount = " + roomCount.ToString());
 
             Debug.Log("server end generation");
         }
@@ -103,32 +103,33 @@ public class BuildingGenerator : NetworkBehaviour
         roomFactoryManager = new RoomFactoryManager(factories);
     }
 
-    private void GenerateBuilding(Vector2 startPosition, RoomType roomType)
+    //private void GenerateBuilding(Vector2 startPosition, RoomType roomType)
+    //{
+    //    GenerateRoom(roomType, startPosition, chanceToSpawnNextRoom);
+    //    SpawnRoomsBioms();
+    //    CreateRoomStructure();
+
+    //    SpawnLamps();
+    //}
+
+    private IEnumerator GenerateBuildingWithPause(Vector2 startPosition, RoomType roomType)
     {
         GenerateRoom(roomType, startPosition, chanceToSpawnNextRoom);
+
+        // Пауза на 2 секунды
+        yield return new WaitForSeconds(2f);
+
         SpawnRoomsBioms();
         CreateRoomStructure();
-
         SpawnLamps();
-        //StartCoroutine(GenerateRooms());
     }
 
-    //IEnumerator GenerateRooms()
-    //{
-    //    for (int i = 0; i < roomList.Count; i++)
-    //    {
-    //        if (roomList[i].roomBiom != RoomBiom.metal)
-    //        {
-    //            MakeRoomHerBiom(roomList[i]);
-    //            yield return StartCoroutine(PauseAndMakeBiom(roomList[i], i));
-    //        }
-    //    }
-    //}
-    //IEnumerator PauseAndMakeBiom(Room room, int i)
-    //{
-    //    yield return new WaitForSeconds(2f); // Пауза на 2 секунды
-    //    MakeRoomHerBiom(room);
-    //}
+    // Вызывайте этот метод вместо обычного GenerateBuilding
+    private void GenerateBuilding(Vector2 startPosition, RoomType roomType)
+    {
+        StartCoroutine(GenerateBuildingWithPause(startPosition, roomType));
+    }
+
 
 
     private Room GenerateRoom(RoomType roomType, Vector2 entryPoint, double chanceToSpawnNextRoom)
@@ -372,7 +373,6 @@ public class BuildingGenerator : NetworkBehaviour
     private void GeneratePathToNextRoomAndCreateNextRoom(Vector2 entryPoint, RoomType NextRoomType, Room room, double chanceToSpawnNextRoom)
     {
         Vector2 nextRoomEntryPoint = building.GeneratePathToNextRoom(entryPoint, NextRoomType, room, rand);
-        //StartCoroutine(PauseAndExecute(NextRoomType, nextRoomEntryPoint, chanceToSpawnNextRoom));
         Room nextRoom = GenerateRoom(NextRoomType, nextRoomEntryPoint, chanceToSpawnNextRoom);
 
         if (nextRoom != null && nextRoom.roomType == RoomType.Upper)
@@ -387,13 +387,6 @@ public class BuildingGenerator : NetworkBehaviour
         {
             tilesSetter.CreateLadderPathToNextRoom(room.entryPoint, room, (int)(room.entryPoint.y - room.wallsInfo.countOfWallsDown));
         }
-    }
-
-    IEnumerator PauseAndExecute(RoomType roomtype, Vector2 nextRoomEntryPoint, double chanceToSpawnNextRoom)
-    {
-        yield return new WaitForSeconds(5f); // Пауза на 2 секунды
-        //Debug.Log("Next room");
-        GenerateRoom(roomtype, nextRoomEntryPoint, chanceToSpawnNextRoom);
     }
 
     public void AddPlaceToOccupiedPlaces(Vector2 position)

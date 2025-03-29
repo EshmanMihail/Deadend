@@ -19,7 +19,7 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Inner_roo
         private int storeyHeight = 4;
         private int storeyRoomWidth = 6;
 
-        private List<(Vector2, bool)> floorPosition;
+        private List<PositionProperty> floorPosition;
 
         private bool isHaveRooms = false;
 
@@ -28,12 +28,12 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Inner_roo
             this.innerRoom = innerRoom;
             this.rand = rand;
 
-            floorPosition = new List<(Vector2, bool)>();
+            floorPosition = new List<PositionProperty>();
         }
 
         public void CreateStoreies()
         {
-            wbolwevdnwvdenl();
+            InicialiseRoomComponents();
 
             int leftX = (int)startPosition.x - roomWallsInfo.countOfWallsLeft;
             int rightX = (int)startPosition.x + roomWallsInfo.countOfWallsRight;
@@ -50,16 +50,19 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Inner_roo
             {
                 for (int x = leftX; x <= rightX; x++)
                 {
-                    if (rand.Next(0, 100) < 100 && counterToRightWall == storeyRoomWidth)
+                    if (counterToRightWall == storeyRoomWidth)
                     {
                         counterToRightWall = 0;
                         isHaveRooms = true;
-                        erblkkerbjnewvny(x, y);
+                        SetTilesByStoreyRoom(x, y);
                     }
                     else
                     {
-                        if (x == rightX) floorPosition.Add((new Vector2(x, y - storeyHeight + 1), true));
-                        else floorPosition.Add((new Vector2(x, y - storeyHeight + 1), false));
+                        int posStoreyFloorY = y - storeyHeight + 1;
+                        int posWidthRight = storeyRoomWidth - counterToRightWall - 1;
+                        if (posWidthRight == 0) posWidthRight = 1;
+                        PositionProperty property = PositionPropertyCreator.Create(x, posStoreyFloorY, posWidthRight, y - posStoreyFloorY);
+                        floorPosition.Add(property);
 
                         if (!BuildingData.ladder.Contains(new Vector2(x, y)))
                             innerRoom.room.tileSetter.SetTile(tiles[11], x, y, ObjectsLayers.Walls);
@@ -72,14 +75,14 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Inner_roo
             }
         }
 
-        private void wbolwevdnwvdenl()
+        private void InicialiseRoomComponents()
         {
             tiles = innerRoom.room.GetTiles();
             roomWallsInfo = innerRoom.GetInnerRoomWallsInfo();
             startPosition = innerRoom.GetStartPosition();
         }
 
-        private void erblkkerbjnewvny(int x, int startY)
+        private void SetTilesByStoreyRoom(int x, int startY)
         {
             innerRoom.room.tileSetter.SetTile(tiles[13], x, startY, ObjectsLayers.Walls);
             innerRoom.room.tileSetter.RotateTile(x, startY, 90);
@@ -120,7 +123,7 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Inner_roo
             }
         }
 
-        public List<(Vector2, bool)> GetFlooyPositions()
+        public List<PositionProperty> GetFlooyPositions()
         {
             return floorPosition;
         }

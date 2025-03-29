@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.BuildingScripts.BuildingTypes;
+using Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,7 +11,7 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_spawn
         System.Random rand;
 
         private GameObject[] objects;
-        private List<(Vector2, bool)> positions = new List<(Vector2, bool)>();
+        private List<PositionProperty> positions = new List<PositionProperty>();
 
         public MetalRoomObjectPlacer(System.Random rand)
         {
@@ -26,21 +27,18 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_spawn
             {
                 GameObject obj = GetRandObject();
 
-                if (rand.Next(0, 100) < obj.GetComponent<ObjectProperty>().chanceToSpawn)
+                if (true || rand.Next(0, 100) < obj.GetComponent<ObjectProperty>().chanceToSpawn)
                 {
-                    if (obj.tag == "LootSofa") BuildingData.lootSofas.Add(positions[i].Item1);
+                    if (obj.tag == "LootSofa") BuildingData.lootSofas.Add(new Vector2(positions[i].X, positions[i].Y));
 
-                    if (obj.GetComponent<ObjectProperty>().Width > 1
-                        && !positions[i].Item2 && !BuildingData.ladder.Contains(positions[i].Item1))
+                    Vector2 position = new Vector2(positions[i].X, positions[i].Y);
+
+                    int objectWidth = obj.GetComponent<ObjectProperty>().Width;
+                    int objectHeight = obj.GetComponent<ObjectProperty>().Height;
+                    if (objectWidth <= positions[i].widthRight && objectHeight <= positions[i].height && !BuildingData.ladder.Contains(position))
                     {
-                        Vector2 spawnPosition = positions[i].Item1;
-                        UnityEngine.Object.Instantiate(obj, spawnPosition, Quaternion.identity);
-                        i++;
-                    }
-                    else
-                    {
-                        Vector2 spawnPosition = positions[i].Item1;
-                        UnityEngine.Object.Instantiate(obj, spawnPosition, Quaternion.identity);
+                        UnityEngine.Object.Instantiate(obj, position, Quaternion.identity);
+                        i += objectWidth - 1;
                     }
                 }
             }
