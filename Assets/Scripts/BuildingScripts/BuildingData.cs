@@ -7,21 +7,19 @@ namespace Assets.Scripts.BuildingScripts.BuildingTypes
 {
     public static class BuildingData
     {
-        public static List<TileDataInfo> mapData = new List<TileDataInfo>();
+        public static List<TileDataInfo> mapData = new();
 
-        public static List<Vector2> freePlace = new List<Vector2>();
+        public static List<Vector2> node = new();
 
-        public static List<Vector2> node = new List<Vector2>();
+        public static List<Vector2> ladder = new();
 
-        public static List<Vector2> ladder = new List<Vector2>();
+        public static List<(Vector2, RoomBiom)> lamp = new();
 
-        public static List<(Vector2, RoomBiom)> lamp = new List<(Vector2, RoomBiom)>();
+        public static List<(Vector2, RoomBiom)> door = new();
 
-        public static List<(Vector2, RoomBiom)> door = new List<(Vector2, RoomBiom)>();
+        public static List<Vector2> loot = new();
 
-        public static List<Vector2> loot = new List<Vector2>();
-
-        public static List<Vector2> lootSofas = new List<Vector2>();
+        public static List<Vector2> lootSofas = new();
 
 
         public static void AddTileToTileListData(Vector3Int position, Tile tile, int tileLayer)

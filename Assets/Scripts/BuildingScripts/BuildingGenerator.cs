@@ -11,6 +11,7 @@ using System.Linq;
 using Assets.Scripts.BuildingScripts.RoomScripts;
 using Assets.Scripts.BuildingScripts.RoomScripts.Room_s_factory;
 using Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build;
+using Unity.VisualScripting;
 
 
 public class BuildingGenerator : NetworkBehaviour
@@ -28,6 +29,9 @@ public class BuildingGenerator : NetworkBehaviour
     [SerializeField] private Tilemap frontTiles;
 
     [SerializeField] private GameObject doorSpawner;
+    [SerializeField] private GameObject lampSpawner;
+    [SerializeField] private GameObject lootSpawner;
+    [SerializeField] private GameObject nodeSpawner;
 
     [SerializeField] private Tile[] metalRoomTiles = new Tile[16];
     [SerializeField] private GameObject[] metalRoomObjects = new GameObject[1];
@@ -38,10 +42,6 @@ public class BuildingGenerator : NetworkBehaviour
 
     [SerializeField] private Tile[] frozenRoomTiles = new Tile[11];
     [SerializeField] private GameObject[] frozenRoomObjects = new GameObject[1];
-
-    [SerializeField] Light2D metalRoomLightLamp;
-    [SerializeField] Light2D frozenRoomLightLamp;
-    [SerializeField] Light2D grassRoomLightLamp;
 
     [SerializeField] private int chanceToCheckToGenerateNextPathes = 80;
     [SerializeField] private int chanceToCheckToStopGenerate = 80;
@@ -106,7 +106,6 @@ public class BuildingGenerator : NetworkBehaviour
     //    GenerateRoom(roomType, startPosition, chanceToSpawnNextRoom);
     //    SpawnRoomsBioms();
     //    CreateRoomStructure();
-
     //    SpawnLamps();
     //}
 
@@ -119,10 +118,15 @@ public class BuildingGenerator : NetworkBehaviour
 
         SpawnRoomsBioms();
         CreateRoomStructure();
-        SpawnLamps();
+        lampSpawner.GetComponent<LampSpawner>().SpawnLamps();
 
         AddEntryDoors();
         doorSpawner.GetComponent<DoorSpawner>().Spawn();
+
+        AddPositionsForLootSpawn();
+        lootSpawner.GetComponent<LootSpawner>().Spawn(rand);
+
+        nodeSpawner.GetComponent<NodeSpawner>().SpawnNodes();
     }
 
     // Вызывайте этот метод вместо обычного GenerateBuilding
@@ -429,32 +433,8 @@ public class BuildingGenerator : NetworkBehaviour
             roomList[i].SpawnRoomObjects();
         }
     }
-
-    public void SpawnLamps()
-    {
-        Quaternion rotation = Quaternion.Euler(0, 0, 180);
-
-        foreach (var l in BuildingData.lamp)
-        {
-            Vector2 postion = new Vector2(l.Item1.x + 0.5f, l.Item1.y + 0.5f);
-            if (l.Item2 == RoomBiom.metal)
-            {
-                Instantiate(metalRoomLightLamp, postion, rotation);
-            }
-            if (l.Item2 == RoomBiom.frozen)
-            {
-                Instantiate(frozenRoomLightLamp, postion, rotation);
-            }
-            if (l.Item2 == RoomBiom.grass)
-            {
-                Instantiate(grassRoomLightLamp, postion, rotation);
-            }
-        }
-    }
-
     private void AddEntryDoors()
     {
-        
         for (int i = 0; i < roomList.Count; i++)
         {
             if (roomList[i].roomType == RoomType.Right || roomList[i].roomType == RoomType.Left)
@@ -462,6 +442,14 @@ public class BuildingGenerator : NetworkBehaviour
                 Vector2 position = new Vector2(roomList[i].entryPoint.x, roomList[i].entryPoint.y);
                 BuildingData.door.Add((position, roomList[i].roomBiom));
             }
+        }
+    }
+
+    private void AddPositionsForLootSpawn()
+    {
+        for (int i = 0; i < roomList.Count; i++)
+        {
+            roomList[i].SetPositionForLoot();
         }
     }
     #endregion

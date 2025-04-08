@@ -23,7 +23,7 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Room_s_factory
 
         public Room CreateRoom(Vector2 entryPoint, RoomType roomType, RoomWallsInfo wallsInfo)
         {
-            return new FrozenRoom(entryPoint, roomType, wallsInfo, RoomBiom.frozen, new RoomStructureGenerator(rand), /*new FrozenRoomObjectPlacer(rand)*/ new MetalRoomObjectPlacer(rand));
+            return new FrozenRoom(entryPoint, roomType, wallsInfo, RoomBiom.frozen, new RoomStructureGenerator(rand), new FrozenRoomObjectPlacer(rand));
         }
 
         public void ConfigureRoom(Room room)

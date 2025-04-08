@@ -123,6 +123,53 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &101109276
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 101109278}
+  - component: {fileID: 101109277}
+  m_Layer: 0
+  m_Name: LampSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &101109277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 101109276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7706f8540521c2a418a01f724fec0ad6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  metalRoomLightLamp: {fileID: 5547997962153896523, guid: daa4b959d384ec846b58cbca0ee13322, type: 3}
+  frozenRoomLightLamp: {fileID: 6471227342017578025, guid: 220b6247fbff3854593ac780015870f9, type: 3}
+  grassRoomLightLamp: {fileID: 1798309350648576825, guid: dce6f346fcc14d34f8146bdecb5d3b7a, type: 3}
+--- !u!4 &101109278
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 101109276}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 948704644}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -336,7 +383,7 @@ Transform:
   m_GameObject: {fileID: 619394800}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.48, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -943,6 +990,9 @@ MonoBehaviour:
   platforms: {fileID: 853269631}
   frontTiles: {fileID: 2031870958}
   doorSpawner: {fileID: 2033995763}
+  lampSpawner: {fileID: 101109276}
+  lootSpawner: {fileID: 1555417725}
+  nodeSpawner: {fileID: 1482855239}
   metalRoomTiles:
   - {fileID: 11400000, guid: 52801dd64aabf8b499fe16b971c4b1d5, type: 2}
   - {fileID: 11400000, guid: c83d2b2770d7b664481bf1e3e79dd624, type: 2}
@@ -1044,9 +1094,6 @@ MonoBehaviour:
   - {fileID: 8332295123299857387, guid: 002dc8fae0beece4ba532e5ff46d8c4e, type: 3}
   - {fileID: 3185590619074964973, guid: ae787c1e6f808a14f989ddb39851453f, type: 3}
   - {fileID: 8546884595891351835, guid: 8bb8abe0f4d498f4d9ed381e2caec35b, type: 3}
-  metalRoomLightLamp: {fileID: 5547997962153896523, guid: daa4b959d384ec846b58cbca0ee13322, type: 3}
-  frozenRoomLightLamp: {fileID: 6471227342017578025, guid: 220b6247fbff3854593ac780015870f9, type: 3}
-  grassRoomLightLamp: {fileID: 1798309350648576825, guid: dce6f346fcc14d34f8146bdecb5d3b7a, type: 3}
   chanceToCheckToGenerateNextPathes: 50
   chanceToCheckToStopGenerate: 80
   chanceToSpawnNextRoom: 100
@@ -1078,11 +1125,14 @@ Transform:
   m_GameObject: {fileID: 948704641}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.2807521, y: -0.08561943, z: -0.004500015}
+  m_LocalPosition: {x: -1.25, y: -0.08561943, z: -0.004500015}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2033995765}
+  - {fileID: 1555417726}
+  - {fileID: 101109278}
+  - {fileID: 1482855241}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &991512351
@@ -1208,6 +1258,115 @@ MonoBehaviour:
   debugLog: 0
   statisticsGUI: 0
   statisticsLog: 0
+--- !u!1 &1482855239
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1482855241}
+  - component: {fileID: 1482855240}
+  m_Layer: 0
+  m_Name: NodeSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1482855240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1482855239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f0bf4e434232145bb56a6407fb844e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  node: {fileID: 2437170340934978082, guid: 02a79bbb3c5d6af4dab68507ad4c4a8c, type: 3}
+--- !u!4 &1482855241
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1482855239}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 948704644}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1555417725
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1555417726}
+  - component: {fileID: 1555417727}
+  m_Layer: 0
+  m_Name: LootSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1555417726
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1555417725}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 948704644}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1555417727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1555417725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b780627a7f7a7544a8a7576b9344516d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loot:
+  - {fileID: 1527519844176663419, guid: f7ed3196bc21cdc40a2ef4e80ce8af2d, type: 3}
+  - {fileID: 5826728772766988757, guid: 4d4e3cd87c4d74d49b548491f8dc56de, type: 3}
+  - {fileID: 2552751356595925255, guid: 41631a6d30abcb040ba3cdfeb3aa2653, type: 3}
+  - {fileID: 70455982131255256, guid: a0ec3622ac7898a46ba22ff8100baafc, type: 3}
+  - {fileID: 5635480949245368125, guid: 9680f9c8ddc61744f9b442fc27e0ed5b, type: 3}
+  - {fileID: 774781450913746435, guid: b131f335906dd8947b69c906a4e13129, type: 3}
+  - {fileID: 2537887441581174515, guid: 0a2aab07fc13ac44b9d8a9551d05f40e, type: 3}
+  - {fileID: 3501448275637262849, guid: cb79fe99f5622c84890e52648a0a7cd2, type: 3}
+  - {fileID: 4683316790416737217, guid: 5e741108a33cbcc4d80f03bc6b0b0a42, type: 3}
+  - {fileID: 6495839333570972284, guid: f137cb43505b00e4d846292e45af3a4f, type: 3}
+  - {fileID: 5555863199982470493, guid: 175244eecbfe2094f9d437e252a9fe78, type: 3}
+  - {fileID: 170510255304688314, guid: f4476fa7c30075f48bd95886594ad34b, type: 3}
+  - {fileID: 8927254023177934096, guid: 468dc8168b0698049a369e7915049ba0, type: 3}
+  - {fileID: 4221091744945144728, guid: 700866550e869eb47bbd50f0c38ebb6d, type: 3}
+  - {fileID: 8575768633945910627, guid: 0616a9952340d1a4b92166cc6c85dd3c, type: 3}
+  - {fileID: 3971219300390259815, guid: 154d718f21bcbe2438fef6f9be6dde44, type: 3}
+  - {fileID: 5591346524935027633, guid: ce3a59a1cad52f64d9255997c1f7e727, type: 3}
+  - {fileID: 6049790215222690069, guid: e69859b40497b37468151fbc4362e323, type: 3}
+  - {fileID: 3966969242167086784, guid: cd4a5e443ee62c749bc37d28c4360008, type: 3}
 --- !u!1 &1831194713
 GameObject:
   m_ObjectHideFlags: 0

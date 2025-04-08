@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - LootSofa
+  - GeneratorOfSnow
   layers:
   - Default
   - TransparentFX

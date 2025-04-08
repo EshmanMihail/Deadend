@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Platforms;
+using Assets.Scripts.NodeScripts;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -35,7 +36,7 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build
                 CreateWallPlatforms(room);
             }
 
-            Debug.Log("placeToSpawnObjectsCount = " + placesToSpawnObjects.Count);
+            SpawnNodesInBottomPartOfRoom(room);
         }
 
         public void SetChancesForStructures(int chanceToCreateInnerRooms, int chanceToCreateWallsPlatforms)
@@ -59,6 +60,15 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build
 
             List<PositionProperty> wallFromPlatfroms = wallPlatformsCreator.CreatePlatfroms();
             AddPositionForSpawnObjects(wallFromPlatfroms);
+        }
+
+        private void SpawnNodesInBottomPartOfRoom(Room room)
+        {
+            int leftX = (int)room.entryPoint.x - room.wallsInfo.countOfWallsLeft;
+            int rightX = (int)room.entryPoint.x + room.wallsInfo.countOfWallsRight;
+            int floorY = (int)room.entryPoint.y - room.wallsInfo.countOfWallsDown;
+
+            NodePositionSpawner.SpawnNodes(leftX + 1, rightX - 1, floorY + 1);
         }
 
         private void AddPositionForSpawnObjects(List<PositionProperty> newPositions)

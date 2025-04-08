@@ -1,6 +1,7 @@
 ﻿using Assets.Scripts.BuildingScripts.BuildingTypes;
 using Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Inner_rooms;
 using Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Inner_rooms.InnerRoomStructs;
+using Assets.Scripts.NodeScripts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -80,15 +81,12 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Platforms
             if (!isHaveLadderPath && !BuildingData.ladder.Contains(new Vector2(startX + platformLength + 1, y)))
                 MakePathToPlatform(new Vector2(startX + platformLength + 1, y));
 
-            if (platformLength > 5) NodeSpawner.SpawnNode((startX + 2), y);
+            NodePositionSpawner.SpawnNodes(startX + 1, startX + platformLength, y + 1);
 
             if (platformLength > 4)
                 platformsPositions = WallToPlatformChanger.MakeWallToPlatform(room, startX + 1, startX + platformLength, y, rand, chanceToMakePlatform);
 
             CorrectListOfWallsPositions();
-
-            if (platformLength > 3 && room.roomBiom == RoomBiom.grass)
-                SpawnGrassOnFloor(startX + 1, y + 1, platformLength);
         }
 
         private void CorrectLeftPlatformLength(ref int platformLength, int startX, int startY, ref bool isHaveLadderPath)
@@ -244,21 +242,6 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Platforms
             }
 
             if (!isMeetPlatform) room.tileSetter.SetTile(tile[18], x, roomFloorY, ObjectsLayers.Ladder);
-        }
-
-        private void SpawnGrassOnFloor(int startX, int y, int platformLength)
-        {
-            Tile[] tile = room.GetTiles();
-            Tile[] grass = { tile[20], tile[21], tile[22] };
-
-            for (int x = startX; x < startX + platformLength; x++)
-            {
-                if (!platformsPositions.Contains(new Vector2(x, y - 1)))
-                {
-                    int randIndex = rand.Next(0, grass.Length);
-                    room.tileSetter.SetTile(grass[randIndex], x, y, ObjectsLayers.FrontObjects);
-                }
-            }
         }
 
         private void CorrectListOfWallsPositions()

@@ -1,0 +1,545 @@
+fileFormatVersion: 2
+guid: 495d47ba4766825489668ad700798f1e
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: LootSprites_0
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 82
+        width: 42
+        height: 48
+      alignment: 9
+      pivot: {x: 0.49961063, y: -0.00023460388}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93b32121c3ade124a9b595c7cab5f31b
+      internalID: -805968577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LootSprites_1
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 80
+        width: 42
+        height: 42
+      alignment: 9
+      pivot: {x: 0.49175754, y: 0.013672783}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75da473032a77e34cba315de2ad8fdb9
+      internalID: -21556442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LootSprites_2
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 80
+        width: 39
+        height: 46
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0032799763}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b15da995e1ef93c4f8c1277f4c17a0d9
+      internalID: -892214754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LootSprites_3
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 85
+        width: 42
+        height: 36
+      alignment: 9
+      pivot: {x: 0.50824267, y: -0.00006506178}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d8ba51a7b6f58d40b8e21995297598e
+      internalID: 1667117106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LootSprites_4
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 80
+        width: 41
+        height: 42
+      alignment: 9
+      pivot: {x: 0.018699087, y: 0.005429949}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52e5dbfc8cc137e439c568c3d7fac92f
+      internalID: -1899838541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LootSprites_5
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 82
+        width: 55
+        height: 45
+      alignment: 9
+      pivot: {x: 0.5001265, y: 0.0014248318}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a89d2e0c05e90d42acd8c0953ad54a5
+      internalID: 253727019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LootSprites_6
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 80
+        width: 44
+        height: 43
+      alignment: 9
+      pivot: {x: 0.50110906, y: 0.0008294749}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cba0ca40e3e8344bae43bf17da0a780
+      internalID: 528582640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LootSprites_7
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 80
+        width: 48
+        height: 28
+      alignment: 9
+      pivot: {x: 0.4927877, y: 0.0054302216}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89665b3a69b6ad94d948dfc4c0f8537e
+      internalID: -1813265213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LootSprites_8
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 16
+        width: 58
+        height: 30
+      alignment: 9
+      pivot: {x: 0.4940312, y: 0.0037810644}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 834726ef1a1078742b41d6ef127045ba
+      internalID: 795311754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LootSprites_9
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 16
+        width: 50
+        height: 28
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0054302895}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37b555ffb131a3d44a481f7954958efe
+      internalID: -1195126691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LootSprites_10
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 16
+        width: 43
+        height: 18
+      alignment: 9
+      pivot: {x: 0.5, y: 0.019167794}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f8aac8d83a2fb04abd245c9901337e7
+      internalID: -160181853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LootSprites_11
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 16
+        width: 30
+        height: 14
+      alignment: 9
+      pivot: {x: 0.5, y: 0.0054289955}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d060a3334687de44a25a4e043a80eaa
+      internalID: 1804022722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LootSprites_12
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 16
+        width: 38
+        height: 34
+      alignment: 9
+      pivot: {x: 0.5, y: 0.011248477}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1dfe579b6c57d924e9355bcaa1d30c8c
+      internalID: 566897303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LootSprites_13
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 18
+        width: 20
+        height: 28
+      alignment: 9
+      pivot: {x: -0.01929779, y: -0.0069343704}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e883bb3bd0e16094d81c4f95b8af8dd4
+      internalID: -1984071231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LootSprites_14
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 18
+        width: 18
+        height: 36
+      alignment: 9
+      pivot: {x: -0.019297281, y: 0.009551896}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c6ef8eae6c4a144ca7de67a885ede75
+      internalID: -1155638809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LootSprites_15
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 16
+        width: 48
+        height: 18
+      alignment: 9
+      pivot: {x: -0.0048732758, y: -0.019298129}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ed9ebf6fab957c44aa07c7a44d4819c
+      internalID: -1300269522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LootSprites_16
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 16
+        width: 20
+        height: 28
+      alignment: 9
+      pivot: {x: 0.4826935, y: 0.0054302895}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0ab42c734538f248ab9f2f3433f2e49
+      internalID: -669330293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LootSprites_17
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 16
+        width: 30
+        height: 14
+      alignment: 9
+      pivot: {x: 0.48846027, y: 0.0054289955}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f0294c44f93c9d42b824ace777128cd
+      internalID: 591921933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LootSprites_18
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 16
+        width: 30
+        height: 30
+      alignment: 9
+      pivot: {x: 0.5, y: -0.007758713}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ebfb76a11943bc4f97fc762a5006c44
+      internalID: -1562633235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      LootSprites_0: -805968577
+      LootSprites_1: -21556442
+      LootSprites_10: -160181853
+      LootSprites_11: 1804022722
+      LootSprites_12: 566897303
+      LootSprites_13: -1984071231
+      LootSprites_14: -1155638809
+      LootSprites_15: -1300269522
+      LootSprites_16: -669330293
+      LootSprites_17: 591921933
+      LootSprites_18: -1562633235
+      LootSprites_2: -892214754
+      LootSprites_3: 1667117106
+      LootSprites_4: -1899838541
+      LootSprites_5: 253727019
+      LootSprites_6: 528582640
+      LootSprites_7: -1813265213
+      LootSprites_8: 795311754
+      LootSprites_9: -1195126691
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -8,7 +8,7 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts
     public class MetalRoom : Room
     {
         public MetalRoom(Vector2 entryPoint, RoomType roomType, RoomWallsInfo wallsInfo, RoomBiom roomBiom,
-            IRoomStructure structureGenerator, IRoomObjectPlacer roomObjectPlacer)
+            IRoomStructure structureGenerator, RoomObjectPlacer roomObjectPlacer)
             : base(entryPoint, roomType, wallsInfo, roomBiom, structureGenerator, roomObjectPlacer) { }
 
         public override void GenerateRoomStructure()

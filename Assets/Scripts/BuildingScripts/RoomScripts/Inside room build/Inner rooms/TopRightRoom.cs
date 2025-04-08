@@ -38,6 +38,8 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Inner_roo
 
             if (!isHaveStories && rand.Next(0, 101) < 100) SpawnLamps();
             if (!isHaveStories) CollectFloorWalls();
+
+            if (!isHaveStories) SpawnNodes();
         }
 
         private void DetermineRoomSize()

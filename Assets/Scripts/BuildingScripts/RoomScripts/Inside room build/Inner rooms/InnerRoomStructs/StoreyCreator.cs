@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.BuildingScripts.BuildingTypes;
+using Assets.Scripts.NodeScripts;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -70,6 +71,8 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Inner_roo
                     counterToRightWall++;
                 }
                 SetLadders(leftX - 1, rightX + 1, y);
+
+                NodePositionSpawner.SpawnNodes(leftX, rightX, y - storeyHeight + 1);
 
                 if (!isHaveRooms) LampsSpawner.SpawnTwoLamps(leftX, rightX, y - storeyHeight, y - 1, innerRoom.room);
             }

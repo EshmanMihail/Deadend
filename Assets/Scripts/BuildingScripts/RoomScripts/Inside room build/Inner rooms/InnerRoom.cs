@@ -1,5 +1,6 @@
 ﻿using Assets.Scripts.BuildingScripts.BuildingTypes;
 using Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Inner_rooms.InnerRoomStructs;
+using Assets.Scripts.NodeScripts;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -102,6 +103,15 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Inner_roo
                     floorWalls.Add(property);
                 }
             }
+        }
+
+        protected void SpawnNodes()
+        {
+            int leftX = startX - innerWalls.countOfWallsLeft;
+            int rightX = startX + innerWalls.countOfWallsRight;
+            int floorY = startY - innerWalls.countOfWallsDown;
+
+            NodePositionSpawner.SpawnNodes(leftX + 1, rightX - 1, floorY + 1);
         }
 
         public RoomWallsInfo GetInnerRoomWallsInfo()
