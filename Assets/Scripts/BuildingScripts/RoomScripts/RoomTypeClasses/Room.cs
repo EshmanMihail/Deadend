@@ -91,6 +91,11 @@ namespace Assets.Scripts.BuildingScripts
             return positionsToSpawnObjects;
         }
 
+        public List<Vector2> GetOccupiedPlaces()
+        {
+            return structureGenerator.GetOccuiedPlaces();
+        }
+
         public Vector2 GetLeftUpperAngle()
         {
             return new Vector2((int)entryPoint.x - wallsInfo.countOfWallsLeft, (int)entryPoint.y + wallsInfo.countOfWallsUp);

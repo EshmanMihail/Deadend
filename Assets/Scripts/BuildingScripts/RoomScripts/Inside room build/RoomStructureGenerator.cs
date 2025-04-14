@@ -83,5 +83,10 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build
         {
             return placesToSpawnObjects;
         }
+
+        public List<Vector2> GetOccuiedPlaces()
+        {
+            return insideRoomWalls;
+        }
     }
 }

@@ -16,10 +16,10 @@ namespace Assets.Scripts.BuildingScripts
 
         public static int Platforms = 0;
 
-        public static int BackgroundWalls = -2;
+        public static int BackgroundWalls = -3;
 
         public static int FrontObjects = 1;
 
-        public static int BackwardObjects = -1;
+        public static int BackwardObjects = -2;
     }
 }

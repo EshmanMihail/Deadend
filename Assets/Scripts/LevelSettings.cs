@@ -4,5 +4,5 @@ using UnityEngine;
 
 public static class LevelSettings
 {
-    public static int LootObejctsCount = 33;
+    public static int LootObejctsCount = 66;
 }

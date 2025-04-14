@@ -70,7 +70,7 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Platforms
 
             SetTilesOfRightPlatform(startX, y, platformLength, ref isHaveLadderPath);
 
-            int lampsY = y + 2;
+            int lampsY = y + 3;
             if (IsCanSpawnLamps(startX, lampsY, platformLength))
             {
                 if (platformLength > 6) SpawnLamps(startX, y, platformLength, lampsY);

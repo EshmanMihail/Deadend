@@ -62,7 +62,7 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Inner_roo
                         int posStoreyFloorY = y - storeyHeight + 1;
                         int posWidthRight = storeyRoomWidth - counterToRightWall - 1;
                         if (posWidthRight == 0) posWidthRight = 1;
-                        PositionProperty property = PositionPropertyCreator.Create(x, posStoreyFloorY, posWidthRight, y - posStoreyFloorY);
+                        PositionProperty property = PositionPropertyCreator.Create(x, posStoreyFloorY, posWidthRight, storeyHeight/*y - posStoreyFloorY*/);
                         floorPosition.Add(property);
 
                         if (!BuildingData.ladder.Contains(new Vector2(x, y)))

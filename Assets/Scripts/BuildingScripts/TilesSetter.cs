@@ -16,11 +16,12 @@ namespace Assets.Scripts.BuildingScripts
         private Tilemap ladderTilemap;
         private Tilemap platformsTilemap;
         private Tilemap frontTiles;
+        private Tilemap backwardTiles;
 
         private Tile[] metalRoomTiles;
 
         public TilesSetter(BuildingGenerator buildingGenerator, Tilemap wallsTilemap, Tilemap backgroundWalls,
-            Tilemap ladder, Tilemap platformsTilmap, Tilemap frontTiles, Tile[] metalRoomTiles)
+            Tilemap ladder, Tilemap platformsTilmap, Tilemap frontTiles, Tilemap backwardTiles, Tile[] metalRoomTiles)
         {
             this.buildingGenerator = buildingGenerator;
             this.wallsTilemap = wallsTilemap;
@@ -28,6 +29,7 @@ namespace Assets.Scripts.BuildingScripts
             this.platformsTilemap = platformsTilmap;
             this.backgroundWalls = backgroundWalls;
             this.frontTiles = frontTiles;
+            this.backwardTiles = backwardTiles;
             this.metalRoomTiles = metalRoomTiles;
         }
 
@@ -69,7 +71,12 @@ namespace Assets.Scripts.BuildingScripts
             else if (layer == ObjectsLayers.FrontObjects)
             {
                 frontTiles.SetTile(tilePosition, tile);
-                BuildingData.AddTileToTileListData(tilePosition , tile, ObjectsLayers.FrontObjects);
+                BuildingData.AddTileToTileListData(tilePosition, tile, ObjectsLayers.FrontObjects);
+            }
+            else if (layer == ObjectsLayers.BackwardObjects)
+            {
+                backwardTiles.SetTile(tilePosition, tile);
+                BuildingData.AddTileToTileListData(tilePosition, tile, ObjectsLayers.BackwardObjects);
             }
         }
 
