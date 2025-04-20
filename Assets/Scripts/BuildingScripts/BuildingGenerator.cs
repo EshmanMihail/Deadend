@@ -20,8 +20,11 @@ public class BuildingGenerator : NetworkBehaviour
     private TilesSetter tilesSetter;
     private RoomFactoryManager roomFactoryManager;
 
+    #region serializeFields
     private System.Random rand;
     private bool isGenerationEnd;
+    [SerializeField] private Vector2 startPosition;
+
     [SerializeField] private Tilemap wallsTilemap;
     [SerializeField] private Tilemap backgroundWalls;
     [SerializeField] private Tilemap ladder;
@@ -52,6 +55,7 @@ public class BuildingGenerator : NetworkBehaviour
     [SerializeField] private int chanceToCheckToStopGenerate = 80;
     [SerializeField] private int chanceToSpawnNextRoom = 100;
     [SerializeField] private int minusChanceToSpawnNextRoom = 1;
+    #endregion
 
     private int roomCount = 0;
     [SerializeField] private int maxRoomCount = 20;
@@ -69,16 +73,15 @@ public class BuildingGenerator : NetworkBehaviour
 
         if (isServer)
         {
-            Debug.Log("server start generating");
-            Vector2 startPositionOfGeneration = new Vector2(0, 0);
             RoomType firstRoomType = RoomType.Right;
 
             building = DetermineBuildingType();
-            GenerateBuilding(startPositionOfGeneration, firstRoomType);
+            GenerateBuilding(startPosition, firstRoomType);
             isGenerationEnd = true;
-            Debug.Log("RoomCount = " + roomCount.ToString());
-
-            Debug.Log("server end generation");
+        }
+        else
+        {
+            Debug.Log("NotServer");
         }
     }
 

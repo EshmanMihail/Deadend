@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.BuildingScripts.BuildingTypes;
+using Mirror;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,7 +8,7 @@ using UnityEngine.UIElements;
 
 namespace Assets.Scripts.BuildingScripts
 {
-    public class TilesSetter
+    public class TilesSetter : NetworkBehaviour
     {
         private BuildingGenerator buildingGenerator;
 
@@ -94,11 +95,6 @@ namespace Assets.Scripts.BuildingScripts
             Matrix4x4 rotationMatrix = Matrix4x4.TRS(Vector3.zero, Quaternion.Euler(0, 0, angle), Vector3.one);
 
             wallsTilemap.SetTransformMatrix(tilePosition, rotationMatrix);
-        }
-
-        public void SetObject(GameObject gameObject, int x, int y, int layer)
-        {
-
         }
 
         #region First build room
