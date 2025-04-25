@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1057083963839874478}
   - component: {fileID: 183958351119841047}
   - component: {fileID: -6385213295137060094}
+  - component: {fileID: 4873522336455061240}
   m_Layer: 0
   m_Name: Generator3DEC
   m_TagString: Untagged
@@ -100,3 +101,20 @@ MonoBehaviour:
   Width: 1
   Height: 2
   chanceToSpawn: 100
+--- !u!114 &4873522336455061240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1969589361703063595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 0
+  _assetId: 2514662283
+  serverOnly: 0
+  visibility: 0
+  hasSpawned: 0

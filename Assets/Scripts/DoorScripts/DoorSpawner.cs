@@ -1,9 +1,7 @@
 using Assets.Scripts.BuildingScripts;
 using Assets.Scripts.BuildingScripts.BuildingTypes;
-using System.Collections;
-using System.Collections.Generic;
+using Mirror;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class DoorSpawner : MonoBehaviour
 {
@@ -18,13 +16,16 @@ public class DoorSpawner : MonoBehaviour
             switch (door.Item2)
             {
                 case RoomBiom.metal:
-                    UnityEngine.Object.Instantiate(doors[0], positionToSpawn, Quaternion.identity);
+                    GameObject spawnedDoor0 = UnityEngine.Object.Instantiate(doors[0], positionToSpawn, Quaternion.identity);
+                    NetworkServer.Spawn(spawnedDoor0);
                     break;
                 case RoomBiom.grass:
-                    UnityEngine.Object.Instantiate(doors[1], positionToSpawn, Quaternion.identity);
+                    GameObject spawnedDoor1 = UnityEngine.Object.Instantiate(doors[1], positionToSpawn, Quaternion.identity);
+                    NetworkServer.Spawn(spawnedDoor1);
                     break;
                 case RoomBiom.frozen:
-                    UnityEngine.Object.Instantiate(doors[2], positionToSpawn, Quaternion.identity);
+                    GameObject spawnedDoor2 = UnityEngine.Object.Instantiate(doors[2], positionToSpawn, Quaternion.identity);
+                    NetworkServer.Spawn(spawnedDoor2);
                     break;
             }
         }

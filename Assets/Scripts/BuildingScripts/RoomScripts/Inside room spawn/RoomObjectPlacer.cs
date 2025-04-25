@@ -2,10 +2,8 @@
 using Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine;
+using Mirror;
 
 namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_spawn
 {
@@ -47,7 +45,8 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_spawn
                     if (objectWidth <= positions[i].widthRight && objectHeight <= positions[i].height && !BuildingData.ladder.Contains(position))
                     {
                         if (obj.tag == "LootSofa") BuildingData.lootSofas.Add(new Vector2(positions[i].X, positions[i].Y));
-                        UnityEngine.Object.Instantiate(obj, position, Quaternion.identity);
+                        GameObject spawnedObject = UnityEngine.Object.Instantiate(obj, position, Quaternion.identity);
+                        NetworkServer.Spawn(spawnedObject);
                         i += objectWidth - 1;
                     }
                 }

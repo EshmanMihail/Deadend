@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8224675119320770819}
   - component: {fileID: 9132959609883679943}
+  - component: {fileID: 2641061219505593192}
   m_Layer: 0
   m_Name: Microcircuit
   m_TagString: Untagged
@@ -84,3 +85,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2641061219505593192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5555863199982470493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 0
+  _assetId: 2903503547
+  serverOnly: 0
+  visibility: 0
+  hasSpawned: 0

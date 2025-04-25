@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3317681447517156467}
   - component: {fileID: 8462956093872427703}
   - component: {fileID: 2573435858620788730}
+  - component: {fileID: 5746314018148342467}
   m_Layer: 0
   m_Name: BigTableWithComputer
   m_TagString: Untagged
@@ -100,3 +101,20 @@ MonoBehaviour:
   Width: 2
   Height: 1
   chanceToSpawn: 60
+--- !u!114 &5746314018148342467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6232913189707101295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 0
+  _assetId: 1943294898
+  serverOnly: 0
+  visibility: 0
+  hasSpawned: 0

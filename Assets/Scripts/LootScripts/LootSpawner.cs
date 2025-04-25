@@ -1,4 +1,5 @@
 using Assets.Scripts.BuildingScripts.BuildingTypes;
+using Mirror;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -51,7 +52,8 @@ public class LootSpawner : MonoBehaviour
                 int randomLootIndex = rand.Next(loot.Length);
 
                 Vector2 spawnPosition = currentSofaPosition + sofaPositions[j];
-                Instantiate(loot[randomLootIndex], spawnPosition, Quaternion.identity);
+                GameObject spawnedObject = Instantiate(loot[randomLootIndex], spawnPosition, Quaternion.identity);
+                NetworkServer.Spawn(spawnedObject);
 
                 lootForSofas--;
             }
@@ -71,7 +73,8 @@ public class LootSpawner : MonoBehaviour
 
             int randomLootIndex = rand.Next(loot.Length);
 
-            Instantiate(loot[randomLootIndex], currentLootPosition, Quaternion.identity);
+            GameObject spawnedObject = Instantiate(loot[randomLootIndex], currentLootPosition, Quaternion.identity);
+            NetworkServer.Spawn(spawnedObject);
 
             lootPositions.RemoveAt(randomLootPosIndex);
             lootForFloor--;

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2093276974328424937}
   - component: {fileID: 6877380763911865320}
+  - component: {fileID: -466988141155809921}
   m_Layer: 0
   m_Name: RedScrew
   m_TagString: Untagged
@@ -84,3 +85,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-466988141155809921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4221091744945144728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 0
+  _assetId: 1935104875
+  serverOnly: 0
+  visibility: 0
+  hasSpawned: 0

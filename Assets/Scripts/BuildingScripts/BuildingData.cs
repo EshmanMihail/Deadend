@@ -7,8 +7,6 @@ namespace Assets.Scripts.BuildingScripts.BuildingTypes
 {
     public static class BuildingData
     {
-        public static List<TileDataInfo> mapData = new();
-
         public static List<Vector2> node = new();
 
         public static List<Vector2> ladder = new();
@@ -20,29 +18,5 @@ namespace Assets.Scripts.BuildingScripts.BuildingTypes
         public static List<Vector2> loot = new();
 
         public static List<Vector2> lootSofas = new();
-
-
-        public static void AddTileToTileListData(Vector3Int position, Tile tile, int tileLayer)
-        {
-            TileDataInfo tileData = new TileDataInfo
-            {
-                position = position,
-                tile = tile,
-                tileLayer = tileLayer
-            };
-            //mapData.Add(tileData);
-        }
-
-        public static void RemoveTileFromTileListData(Vector3Int positionToRemove)
-        {
-            for (int i = 0; i < mapData.Count; ++i)
-            {
-                if (mapData[i].position == positionToRemove)
-                {
-                    mapData.RemoveAt(i);
-                    break;
-                }
-            }
-        }
     }
 }

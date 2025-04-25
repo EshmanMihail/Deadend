@@ -25,12 +25,16 @@ public class BuildingGenerator : NetworkBehaviour
     private bool isGenerationEnd;
     [SerializeField] private Vector2 startPosition;
 
+    [SerializeField] private GameObject networkTileSetterObject;
+    private NetworkTileSetter networkTileSetter;
     [SerializeField] private Tilemap wallsTilemap;
     [SerializeField] private Tilemap backgroundWalls;
     [SerializeField] private Tilemap ladder;
     [SerializeField] private Tilemap platforms;
     [SerializeField] private Tilemap frontTiles;
     [SerializeField] private Tilemap backwardTiles;
+
+    [SerializeField] private GameObject tileDataBase;
 
     [SerializeField] private GameObject doorSpawner;
     [SerializeField] private GameObject lampSpawner;
@@ -66,7 +70,8 @@ public class BuildingGenerator : NetworkBehaviour
     void Start()
     {
         rand = new System.Random(Guid.NewGuid().GetHashCode());
-        tilesSetter = new TilesSetter(this, wallsTilemap, backgroundWalls, ladder, platforms, frontTiles, backwardTiles, metalRoomTiles);
+        networkTileSetter = networkTileSetterObject.GetComponent<NetworkTileSetter>();
+        tilesSetter = new TilesSetter(this, wallsTilemap, backgroundWalls, ladder, platforms, frontTiles, backwardTiles, networkTileSetter, tileDataBase);
         InitializeRoomFactories();
 
         isGenerationEnd = false;
@@ -78,10 +83,10 @@ public class BuildingGenerator : NetworkBehaviour
             building = DetermineBuildingType();
             GenerateBuilding(startPosition, firstRoomType);
             isGenerationEnd = true;
-        }
-        else
-        {
-            Debug.Log("NotServer");
+
+            networkTileSetter.CmdSendTilesInfo();
+            networkTileSetter.CmdSetPlatformsTiles();
+            networkTileSetter.CmdRotateTile();
         }
     }
 
@@ -113,7 +118,6 @@ public class BuildingGenerator : NetworkBehaviour
     {
         GenerateRoom(roomType, startPosition, chanceToSpawnNextRoom);
 
-        SpawnRoomsBioms();
         CreateRoomStructure();
 
         CreatePassagesBetweenRooms();
@@ -397,31 +401,6 @@ public class BuildingGenerator : NetworkBehaviour
     }
 
     #region Make rooms bioms and structure
-
-    private void SpawnRoomsBioms()
-    {
-        for (int i = 0; i < roomList.Count; i++)
-        {
-            if (roomList[i].roomBiom != RoomBiom.metal)
-            {
-                tilesSetter.MakeRoomHerBiom(roomList[i]);
-            }
-        }
-
-        MakeEntranceForMetalRooms();
-    }
-
-    private void MakeEntranceForMetalRooms()
-    {
-        for (int i = 0; i < roomList.Count; i++)
-        {
-            if (roomList[i].roomBiom == RoomBiom.metal)
-            {
-                tilesSetter.MakeEntrance(roomList[i]);
-            }
-        }
-    }
-
     private void CreateRoomStructure()
     {
         for (int i = 0; i < roomList.Count; i++)

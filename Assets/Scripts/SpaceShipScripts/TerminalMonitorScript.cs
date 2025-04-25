@@ -45,7 +45,7 @@ public class TerminalMonitorScript : NetworkBehaviour
         {
             CmdTryActivateTextObject(2);
         }
-        if (commandText == "Experementation")
+        if (commandText == "Experementation" || commandText == "exp")
         {
             CmdRunTheCommand("Experementation");
         }
