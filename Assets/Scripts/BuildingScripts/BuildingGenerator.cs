@@ -22,7 +22,6 @@ public class BuildingGenerator : NetworkBehaviour
 
     #region serializeFields
     private System.Random rand;
-    private bool isGenerationEnd;
     [SerializeField] private Vector2 startPosition;
 
     [SerializeField] private GameObject networkTileSetterObject;
@@ -35,6 +34,7 @@ public class BuildingGenerator : NetworkBehaviour
     [SerializeField] private Tilemap backwardTiles;
 
     [SerializeField] private GameObject tileDataBase;
+    [SerializeField] private GameObject buildingMainDoor;
 
     [SerializeField] private GameObject doorSpawner;
     [SerializeField] private GameObject lampSpawner;
@@ -73,16 +73,12 @@ public class BuildingGenerator : NetworkBehaviour
         networkTileSetter = networkTileSetterObject.GetComponent<NetworkTileSetter>();
         tilesSetter = new TilesSetter(this, wallsTilemap, backgroundWalls, ladder, platforms, frontTiles, backwardTiles, networkTileSetter, tileDataBase);
         InitializeRoomFactories();
-
-        isGenerationEnd = false;
-
         if (isServer)
         {
             RoomType firstRoomType = RoomType.Right;
 
             building = DetermineBuildingType();
             GenerateBuilding(startPosition, firstRoomType);
-            isGenerationEnd = true;
 
             networkTileSetter.CmdSendTilesInfo();
             networkTileSetter.CmdSetPlatformsTiles();
@@ -136,6 +132,8 @@ public class BuildingGenerator : NetworkBehaviour
         roomBackgroundObjectsPlacer.GetComponent<BackgroundObjectPlacerScript>().Spawn(roomList, rand);
 
         nodeSpawner.GetComponent<NodeSpawner>().SpawnNodes();
+
+        CmdReplaceMainDoor(startPosition + new Vector2(0.5f, 0.5f));
     }
 
     private Room GenerateRoom(RoomType roomType, Vector2 entryPoint, double chanceToSpawnNextRoom)
@@ -411,7 +409,7 @@ public class BuildingGenerator : NetworkBehaviour
     }
     private void AddEntryDoors()
     {
-        for (int i = 0; i < roomList.Count; i++)
+        for (int i = 1; i < roomList.Count; i++)
         {
             if (roomList[i].roomType == RoomType.Right || roomList[i].roomType == RoomType.Left)
             {
@@ -427,6 +425,19 @@ public class BuildingGenerator : NetworkBehaviour
         {
             roomList[i].SetPositionForLoot();
         }
+    }
+
+    [Command(requiresAuthority = false)]
+    private void CmdReplaceMainDoor(Vector2 newDoorPosition)
+    {
+        buildingMainDoor.transform.position = newDoorPosition;
+        RpcReplaceMainDoor(newDoorPosition);
+    }
+
+    [ClientRpc]
+    private void RpcReplaceMainDoor(Vector2 newDoorPosition)
+    {
+        buildingMainDoor.transform.position = newDoorPosition;
     }
     #endregion
 
