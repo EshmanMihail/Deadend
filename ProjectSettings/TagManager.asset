@@ -6,6 +6,9 @@ TagManager:
   tags:
   - LootSofa
   - GeneratorOfSnow
+  - MetalWalls
+  - Sand
+  - OneWayPlatform
   layers:
   - Default
   - TransparentFX
@@ -13,10 +16,10 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
+  - Wall
+  - Platform
+  - Ladder
+  - Door
   - 
   - 
   - 

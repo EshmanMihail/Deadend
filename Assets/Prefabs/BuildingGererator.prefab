@@ -64,6 +64,7 @@ MonoBehaviour:
   frontTiles: {fileID: 0}
   backwardTiles: {fileID: 0}
   tileDataBase: {fileID: 3595060861313144122}
+  buildingMainDoor: {fileID: 0}
   doorSpawner: {fileID: 7435297838922267671}
   lampSpawner: {fileID: 6048125332178574899}
   lootSpawner: {fileID: 3221243870919608121}
@@ -670,9 +671,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7706f8540521c2a418a01f724fec0ad6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  metalRoomLightLamp: {fileID: 487692216243055846, guid: 8ddabd887228b34479a5a07773402598, type: 3}
-  frozenRoomLightLamp: {fileID: 1438345800676128233, guid: 1c9977ed06fdc514db12a38eede5d889, type: 3}
-  grassRoomLightLamp: {fileID: 7500410625038953147, guid: 9f08ffe2905128b4a86af0591fc0db37, type: 3}
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
+  metalLampPrefab: {fileID: 0}
+  frozenLampPrefab: {fileID: 0}
+  grassLampPrefab: {fileID: 0}
 --- !u!1 &7435297838922267671
 GameObject:
   m_ObjectHideFlags: 0
