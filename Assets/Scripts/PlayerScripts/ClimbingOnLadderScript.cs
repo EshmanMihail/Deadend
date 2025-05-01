@@ -1,6 +1,7 @@
+using Mirror;
 using UnityEngine;
 
-public class LadderClimbing : MonoBehaviour
+public class LadderClimbing : NetworkBehaviour
 {
     [SerializeField] private AudioSource audioSource = null;
     [SerializeField] private Animator animator;
@@ -10,27 +11,30 @@ public class LadderClimbing : MonoBehaviour
     public float climbingStepsInterval = 0.5f;
 
     private float move;
-
     private Rigidbody2D rb;
+    private NetworkIdentity networkIdentity;
     private bool isClimbing = false;
     private float defaultGravityScale;
     private float stepTimer = 0f;
+
+    [SyncVar]
     private int currentStepIndex = 0;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        networkIdentity = GetComponent<NetworkIdentity>();
         defaultGravityScale = rb.gravityScale;
     }
 
     private void Update()
     {
-        HandleClimbing();
-    }
+        if (networkIdentity != null && !networkIdentity.isLocalPlayer)
+        {
+            return;
+        }
 
-    private void FixedUpdate()
-    {
-        
+        HandleClimbing();
     }
 
     private void HandleClimbing()
@@ -59,7 +63,7 @@ public class LadderClimbing : MonoBehaviour
             stepTimer -= Time.deltaTime;
             if (stepTimer <= 0)
             {
-                PlayOneStepAudio();
+                CmdPlayStepSound();
                 stepTimer = stepInterval;
             }
         }
@@ -69,6 +73,18 @@ public class LadderClimbing : MonoBehaviour
         }
     }
 
+    [Command]
+    private void CmdPlayStepSound()
+    {
+        RpcPlayStepSound();
+    }
+
+    [ClientRpc]
+    private void RpcPlayStepSound()
+    {
+        PlayOneStepAudio();
+    }
+
     private void PlayOneStepAudio()
     {
         if (stepsOnLadder.Length == 0) return;
@@ -76,7 +92,10 @@ public class LadderClimbing : MonoBehaviour
         audioSource.clip = stepsOnLadder[currentStepIndex];
         audioSource.Play();
 
-        currentStepIndex = (currentStepIndex + 1) % stepsOnLadder.Length;
+        if (isServer)
+        {
+            currentStepIndex = (currentStepIndex + 1) % stepsOnLadder.Length;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -84,7 +103,7 @@ public class LadderClimbing : MonoBehaviour
         if (collision.gameObject.layer == LayerMask.NameToLayer("Ladder"))
         {
             isClimbing = true;
-            SoundManager.Instance.isPlayerOnLadder = true;
+            //SoundManager.Instance.isPlayerOnLadder = true;
             rb.gravityScale = 0f;
         }
     }
@@ -95,7 +114,7 @@ public class LadderClimbing : MonoBehaviour
         {
             isClimbing = false;
             rb.gravityScale = defaultGravityScale;
-            SoundManager.Instance.isPlayerOnLadder = false;
+            //SoundManager.Instance.isPlayerOnLadder = false;
         }
     }
 }

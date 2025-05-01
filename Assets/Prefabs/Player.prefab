@@ -17,14 +17,14 @@ GameObject:
   - component: {fileID: -894806649955630176}
   - component: {fileID: 6361773359422123079}
   - component: {fileID: 8474297776652413692}
-  - component: {fileID: -4632048250162659062}
-  - component: {fileID: 7223887705051177167}
   - component: {fileID: 7857532834812466840}
   - component: {fileID: -2205945193193654651}
-  - component: {fileID: 1482482945347877837}
-  - component: {fileID: 6774229349353502271}
+  - component: {fileID: -4632048250162659062}
+  - component: {fileID: 7223887705051177167}
   - component: {fileID: 8610879891852757197}
-  - component: {fileID: 2348447413531954905}
+  - component: {fileID: -6553009040136252233}
+  - component: {fileID: -1554390914522394927}
+  - component: {fileID: 5108675694227859875}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -296,58 +296,6 @@ MonoBehaviour:
   syncInterval: 0
   clientAuthority: 1
   animator: {fileID: 6361773359422123079}
---- !u!114 &-4632048250162659062
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7042679676187767198}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf2c96ff18ef35745861ee39cc8afbc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  syncDirection: 0
-  syncMode: 0
-  syncInterval: 0
-  targetTransform: {fileID: 6119386476856274021}
-  movingSpeed: 5
---- !u!114 &7223887705051177167
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7042679676187767198}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8141a2c29173d2447becaa4c9fe3932b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  syncDirection: 0
-  syncMode: 0
-  syncInterval: 0
-  animator: {fileID: 6361773359422123079}
-  characterNormaWalkSpeed: 5
-  characterRunningSpeed: 12
-  lmWalls:
-    serializedVersion: 2
-    m_Bits: 64
-  lmPlatform:
-    serializedVersion: 2
-    m_Bits: 128
-  fJumpVelocity: 30
-  fJumpPressedRememberTime: 0.2
-  fGroundedRememberTime: 0.25
-  fCutJumpHeight: 0.5
-  maxDifferenceHeightToTakeDamage: 15
-  doubleTapD: 0
-  doubleTapA: 0
-  doubleTapTimeThreshold: 0.3
-  doubleTapTimer: 0
-  walkInterval: 0.5
-  runInterval: 0.3
 --- !u!82 &7857532834812466840
 AudioSource:
   m_ObjectHideFlags: 0
@@ -540,7 +488,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1482482945347877837
+--- !u!114 &-4632048250162659062
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -549,29 +497,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 7042679676187767198}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44f1520c47c8bda44b0c561ef2a0e2ea, type: 3}
+  m_Script: {fileID: 11500000, guid: bf2c96ff18ef35745861ee39cc8afbc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 7857532834812466840}
-  footStepsAudio: {fileID: -2205945193193654651}
-  stepSounds:
-  - {fileID: 8300000, guid: 83ca3133ad898dc499c099f8ca66a981, type: 3}
-  - {fileID: 8300000, guid: b0bc6b583a9d82c4b83c0757654a15b0, type: 3}
-  - {fileID: 8300000, guid: ed4e1c8c51660ab4b91dd5373287daef, type: 3}
-  - {fileID: 8300000, guid: d74e36a943aa8dd47940744c02cd2c8a, type: 3}
-  stepSoundsOnSand:
-  - {fileID: 8300000, guid: 0eac1e173025b6c479530da7b2b5ce82, type: 3}
-  - {fileID: 8300000, guid: 73ca1916514ca364297855c9bb928ff9, type: 3}
-  - {fileID: 8300000, guid: 430353df403087e48859129f513168e2, type: 3}
-  - {fileID: 8300000, guid: 48f6529d199ff654388fad82cb6d7701, type: 3}
-  - {fileID: 8300000, guid: 0cf6b441b365b974bab273579b3bd8f0, type: 3}
-  - {fileID: 8300000, guid: d7e58f599a047df4cb1b95cec77ecb06, type: 3}
-  jumpHit: {fileID: 8300000, guid: 72ccee048270805458a6217d35117936, type: 3}
-  isPlayerOnLadder: 0
-  minPitch: 0
-  maxPitch: 1
-  maxSpeed: 200
---- !u!114 &6774229349353502271
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
+  targetTransform: {fileID: 6119386476856274021}
+  movingSpeed: 5
+--- !u!114 &7223887705051177167
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -580,20 +514,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 7042679676187767198}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a011aea6d39b5174e91003c88baf4b38, type: 3}
+  m_Script: {fileID: 11500000, guid: 8141a2c29173d2447becaa4c9fe3932b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 7857532834812466840}
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   animator: {fileID: 6361773359422123079}
-  stepsOnLadder:
-  - {fileID: 8300000, guid: 53148816e6494a04dbe723e91f863a44, type: 3}
-  - {fileID: 8300000, guid: 6be32eeb92b250f46b13ffb6c19e328f, type: 3}
-  - {fileID: 8300000, guid: 358210a67c9dcfa4eaf5b752285f0930, type: 3}
-  - {fileID: 8300000, guid: 3aa875eacca243548936f93c8ff55384, type: 3}
-  - {fileID: 8300000, guid: c891617512daff64592ebae187ea05aa, type: 3}
-  - {fileID: 8300000, guid: f4c2c8f5053e6294094a4cbe928370ab, type: 3}
-  climbingSpeed: 6
-  climbingStepsInterval: 0.2
+  characterNormaWalkSpeed: 5
+  characterRunningSpeed: 12
+  fJumpVelocity: 30
+  fJumpPressedRememberTime: 0.2
+  fGroundedRememberTime: 0.25
+  fCutJumpHeight: 0.5
+  maxDifferenceHeightToTakeDamage: 15
+  doubleTapD: 0
+  doubleTapA: 0
+  doubleTapTimeThreshold: 0.3
+  doubleTapTimer: 0
+  walkInterval: 0.5
+  runInterval: 0.3
 --- !u!114 &8610879891852757197
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -607,7 +547,55 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCollider: {fileID: -894806649955630176}
---- !u!114 &2348447413531954905
+--- !u!114 &-6553009040136252233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7042679676187767198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd7d5a4565830524bae0d83739071a75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
+  isPlayerOnGround: 0
+  lmWalls:
+    serializedVersion: 2
+    m_Bits: 64
+  lmPlatform:
+    serializedVersion: 2
+    m_Bits: 128
+--- !u!114 &-1554390914522394927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7042679676187767198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a011aea6d39b5174e91003c88baf4b38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
+  audioSource: {fileID: -2205945193193654651}
+  animator: {fileID: 6361773359422123079}
+  stepsOnLadder:
+  - {fileID: 8300000, guid: 53148816e6494a04dbe723e91f863a44, type: 3}
+  - {fileID: 8300000, guid: 6be32eeb92b250f46b13ffb6c19e328f, type: 3}
+  - {fileID: 8300000, guid: 358210a67c9dcfa4eaf5b752285f0930, type: 3}
+  - {fileID: 8300000, guid: 3aa875eacca243548936f93c8ff55384, type: 3}
+  - {fileID: 8300000, guid: c891617512daff64592ebae187ea05aa, type: 3}
+  - {fileID: 8300000, guid: f4c2c8f5053e6294094a4cbe928370ab, type: 3}
+  climbingSpeed: 6
+  climbingStepsInterval: 0.2
+--- !u!114 &5108675694227859875
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -622,7 +610,7 @@ MonoBehaviour:
   syncDirection: 0
   syncMode: 0
   syncInterval: 0
-  interactionDistance: 3
+  interactionDistance: 2
   doorLayer:
     serializedVersion: 2
     m_Bits: 512

@@ -38,6 +38,8 @@ namespace Assets.Scripts.CharactersStates
         public override void HandleInput()
         {
             base.HandleInput();
+            if (!character.isLocalPlayer) return;
+
             move = Input.GetAxisRaw("Horizontal");
 
             if (Input.GetKeyDown(KeyCode.D))
@@ -103,7 +105,10 @@ namespace Assets.Scripts.CharactersStates
         public override void PhysicsUpdate()
         {
             base.PhysicsUpdate();
-            character.MoveRightAndLeft(move, speedNow, stepInterval);
+            if (character.isLocalPlayer)
+            {
+                character.MoveRightAndLeft(move, speedNow, stepInterval);
+            }
         }
     }
 }

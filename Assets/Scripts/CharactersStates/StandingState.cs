@@ -20,7 +20,7 @@ namespace Assets.Scripts.CharactersStates
 
         public override void HandleInput()
         {
-            base.HandleInput();
+            base.HandleInput();            
             character.Jump(speedyParam);
         }
 

@@ -1,6 +1,5 @@
 using Assets.Scripts.CharactersStates;
 using Mirror;
-using System.Collections;
 using UnityEngine;
 
 public class Character : NetworkBehaviour
@@ -13,10 +12,7 @@ public class Character : NetworkBehaviour
     [SerializeField] public float characterNormaWalkSpeed = 5f;
     [SerializeField] public float characterRunningSpeed = 12f;
 
-    [SerializeField] public LayerMask lmWalls;
-    [SerializeField] public LayerMask lmPlatform;
     [SerializeField] private float fJumpVelocity = 30;
-
     [SerializeField] private float fJumpPressedRememberTime = 0.2f;
     [SerializeField] private float fGroundedRememberTime = 0.25f;
     [SerializeField][Range(0, 1)] private float fCutJumpHeight = 0.5f;
@@ -38,8 +34,8 @@ public class Character : NetworkBehaviour
 
     private bool firstTime = true;
     private bool isFalling = false;
-    private Vector3 previoursPosition;
-    private float hieghestPosition;
+    private Vector3 previousPosition;
+    private float highestPosition;
 
     private bool canMove = true;
     private bool bGrounded = false;
@@ -47,21 +43,27 @@ public class Character : NetworkBehaviour
     [SyncVar(hook = nameof(OnFlipChanged))]
     private bool isFlipped;
 
+    #region Movement methods
+
     public void MoveRightAndLeft(float move, float speedNow, float stepsInterval)
     {
+        if (!isLocalPlayer) return;
+
         FlipSprite(move);
 
-        SoundManager.Instance.PlayStepsAudio(move, stepsInterval);
+        if (PlayerOnGroundChecker.Instance.isPlayerOnGround)
+        {
+            //SoundManager.Instance.PlayStepsAudio(move, stepsInterval);
+        }
 
         rb.velocity = new Vector2(move * speedNow, rb.velocity.y);
     }
 
     public void Jump(int animParam)
     {
-        Vector2 v2GroundedBoxCheckPosition = (Vector2)transform.position + new Vector2(0, -0.01f);
-        Vector2 v2GroundedBoxCheckScale = (Vector2)transform.localScale + new Vector2(-0.02f, 0);
-        bGrounded = Physics2D.OverlapBox(v2GroundedBoxCheckPosition, v2GroundedBoxCheckScale, 0, lmWalls);
-        if (!bGrounded) bGrounded = Physics2D.OverlapBox(v2GroundedBoxCheckPosition, v2GroundedBoxCheckScale, 0, lmPlatform);
+        if (!isLocalPlayer) return;
+
+        bGrounded = PlayerOnGroundChecker.Instance.isPlayerOnGround;
 
         fGroundedRemember -= Time.deltaTime;
         if (bGrounded)
@@ -92,36 +94,48 @@ public class Character : NetworkBehaviour
 
         animator.SetFloat(animParam, rb.velocity.y);
 
-        #region Урон от падения
+        // Урон от падения
+        HandleFallDamage();
+    }
+
+    private void HandleFallDamage()
+    {
         if (!bGrounded)
         {
-            if (transform.position.y < previoursPosition.y && firstTime)
+            if (transform.position.y < previousPosition.y && firstTime)
             {
                 firstTime = false;
                 isFalling = true;
-                hieghestPosition = transform.position.y;
+                highestPosition = transform.position.y;
             }
-            previoursPosition = transform.position;
+            previousPosition = transform.position;
         }
+
         if (bGrounded && isFalling)
         {
-            SoundManager.Instance.PlayJumpHit();
-            if ((int)(Mathf.Abs(hieghestPosition - transform.position.y)) > maxDifferenceHeightToTakeDamage)
+            //SoundManager.Instance.PlayJumpHit();
+            if ((int)(Mathf.Abs(highestPosition - transform.position.y)) > maxDifferenceHeightToTakeDamage)
             {
-                //healthBar.TakeDamage((int)(Mathf.Abs(hieghestPosition - transform.position.y)) * 2);
+                //CmdTakeFallDamage((int)(Mathf.Abs(highestPosition - transform.position.y)) * 2);
             }
             isFalling = false;
             firstTime = true;
         }
-        #endregion
+    }
+
+    [Command]
+    private void CmdTakeFallDamage(int damage)
+    {
+        // Логика получения урона от падения
     }
 
     public void TriggerMoveAnimation(int param, float speed)
     {
         animator.SetFloat(param, speed);
     }
+    #endregion
 
-    #region cmd flip sprite
+    #region Flip Sprite
     public void FlipSprite(float move)
     {
         if (!isLocalPlayer) return;
@@ -144,7 +158,10 @@ public class Character : NetworkBehaviour
 
     private void OnFlipChanged(bool oldValue, bool newValue)
     {
-        rbSprite.flipX = newValue;
+        if (rbSprite != null)
+        {
+            rbSprite.flipX = newValue;
+        }
     }
     #endregion
 
@@ -152,7 +169,7 @@ public class Character : NetworkBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        rbSprite = rb.GetComponent<SpriteRenderer>();
+        rbSprite = GetComponent<SpriteRenderer>();
 
         movementSM = new StateMachine();
         standing = new StandingState(this, movementSM);
@@ -168,7 +185,6 @@ public class Character : NetworkBehaviour
         if (canMove)
         {
             movementSM.CurrentState.HandleInput();
-
             movementSM.CurrentState.LogicUpdate();
         }
     }

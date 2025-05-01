@@ -1,9 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Rendering;
+using Mirror;
 
-public class SoundManager : MonoBehaviour
+public class SoundManager : NetworkBehaviour
 {
     public static SoundManager Instance;
     private float defaultPitch;
@@ -15,7 +15,7 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private AudioClip[] stepSoundsOnSand;
     [SerializeField] public AudioClip jumpHit;
 
-    [HideInInspector]public bool isPlayerOnLadder;
+    [HideInInspector] public bool isPlayerOnLadder;
 
     [SerializeField] private float minPitch = 0f;
     [SerializeField] private float maxPitch = 1f;
@@ -43,22 +43,27 @@ public class SoundManager : MonoBehaviour
 
     public void PlayStepsAudio(float move, float stepInterval)
     {
+        if (!isLocalPlayer) return; // ”бедимс€, что это локальный игрок
+
         if (Mathf.Abs(move) > 0)
         {
             stepTimer -= Time.deltaTime;
             if (stepTimer <= 0)
             {
-                PlayOneStepAudio();
+                CmdPlayOneStepAudio();
                 stepTimer = stepInterval;
             }
         }
-        //else
-        //{
-        //    stepTimer = 0;
-        //}
     }
 
-    private void PlayOneStepAudio()
+    [Command] // Ётот метод вызываетс€ клиентом, но выполн€етс€ на сервере
+    private void CmdPlayOneStepAudio()
+    {
+        RpcPlayOneStepAudio();
+    }
+
+    [ClientRpc] // Ётот метод выполн€етс€ на всех клиентах
+    private void RpcPlayOneStepAudio()
     {
         if (isPlayerOnMetalWall)
         {
@@ -71,37 +76,59 @@ public class SoundManager : MonoBehaviour
         }
         else
         {
-            if (stepSounds.Length == 0) return;
+            if (stepSoundsOnSand.Length == 0) return;
 
             footStepsAudio.clip = stepSoundsOnSand[currentStepIndex];
             footStepsAudio.Play();
 
-            currentStepIndex = (currentStepIndex + 1) % stepSounds.Length;
+            currentStepIndex = (currentStepIndex + 1) % stepSoundsOnSand.Length;
         }
     }
 
     public void PlayJumpHit(bool randomPitch = false)
     {
+        if (!isLocalPlayer) return; // ”бедимс€, что это локальный игрок
+
+        CmdPlayJumpHit(randomPitch);
+    }
+
+    [Command] // Ётот метод вызываетс€ клиентом, но выполн€етс€ на сервере
+    private void CmdPlayJumpHit(bool randomPitch)
+    {
+        RpcPlayJumpHit(randomPitch);
+    }
+
+    [ClientRpc] // Ётот метод выполн€етс€ на всех клиентах
+    private void RpcPlayJumpHit(bool randomPitch)
+    {
         //footStepsAudio.pitch = randomPitch ? Random.Range(minPitch, maxPitch) : defaultPitch;
         footStepsAudio.PlayOneShot(jumpHit);
     }
 
-    public void PlaySound(AudioClip clip, bool randomPitch = false)
-    {
-        audioSource.pitch = randomPitch ? Random.Range(minPitch, maxPitch) : defaultPitch;
-        audioSource.PlayOneShot(clip);
-    }
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        if (!isLocalPlayer) return; // ѕровер€ем, что это локальный игрок
+
         if (collision.gameObject.CompareTag("MetalWalls"))
         {
-            isPlayerOnMetalWall = true;
-
+            CmdSetPlayerOnMetalWall(true);
         }
         else if (collision.gameObject.CompareTag("Sand"))
         {
-            isPlayerOnMetalWall = false;
+            CmdSetPlayerOnMetalWall(false);
         }
+    }
+
+    [Command] // —инхронизаци€ состо€ни€ через сервер
+    private void CmdSetPlayerOnMetalWall(bool isOnMetalWall)
+    {
+        isPlayerOnMetalWall = isOnMetalWall;
+        RpcSetPlayerOnMetalWall(isOnMetalWall);
+    }
+
+    [ClientRpc] // ѕередаем состо€ние всем клиентам
+    private void RpcSetPlayerOnMetalWall(bool isOnMetalWall)
+    {
+        isPlayerOnMetalWall = isOnMetalWall;
     }
 }
