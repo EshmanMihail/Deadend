@@ -27,7 +27,7 @@ public class BuildingDoorController : NetworkBehaviour
             RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, interactionDistance, doorLayer);
 
             Vector2 vec = new Vector2(transform.right.x, transform.right.y);
-            Debug.DrawRay(transform.position, direction * interactionDistance, direction == vec ? Color.red : Color.blue, 0.1f);
+            //Debug.DrawRay(transform.position, direction * interactionDistance, direction == vec ? Color.red : Color.blue, 0.1f);
 
             if (hit.collider != null)
             {

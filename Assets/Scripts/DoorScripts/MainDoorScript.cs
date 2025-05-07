@@ -5,12 +5,15 @@ public class MainDoorScript : NetworkBehaviour
 {
     [SerializeField] private GameObject buildingOutsideDoor;
     [SerializeField] private GameObject buildingInsideDoor;
+    [SerializeField] private AudioClip getInSound;
+    private AudioSource audioSource;
 
     private GameObject player;
 
     void Start()
     {
-        
+        audioSource = GetComponent<AudioSource>();
+        audioSource.clip = getInSound;
     }
 
     void Update()
@@ -69,6 +72,17 @@ public class MainDoorScript : NetworkBehaviour
         if (NetworkClient.spawned.TryGetValue(playerNetId, out NetworkIdentity targetIdentity))
         {
             GameObject targetPlayer = targetIdentity.gameObject;
+
+            audioSource.Play();
+
+            if (buildingOutsideDoor == null && buildingInsideDoor != null)
+            {
+                buildingInsideDoor.GetComponent<AudioSource>().Play();
+            }
+            else if (buildingInsideDoor == null && buildingOutsideDoor != null)
+            {
+                buildingOutsideDoor.GetComponent<AudioSource>().Play();
+            }
 
             if (targetPlayer != null)
             {

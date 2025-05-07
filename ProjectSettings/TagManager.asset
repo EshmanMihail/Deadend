@@ -9,6 +9,7 @@ TagManager:
   - MetalWalls
   - Sand
   - OneWayPlatform
+  - Loot
   layers:
   - Default
   - TransparentFX

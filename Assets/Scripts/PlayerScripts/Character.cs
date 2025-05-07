@@ -9,8 +9,10 @@ public class Character : NetworkBehaviour
     public JumpingState jumping;
 
     [SerializeField] private Animator animator;
-    [SerializeField] public float characterNormaWalkSpeed = 5f;
-    [SerializeField] public float characterRunningSpeed = 12f;
+    [SerializeField] private SoundManager soundManager;
+    [SerializeField] private PlayerOnGroundChecker playerOnGroundChecker;
+    public float characterNormaWalkSpeed = 5f;
+    public float characterRunningSpeed = 12f;
 
     [SerializeField] private float fJumpVelocity = 30;
     [SerializeField] private float fJumpPressedRememberTime = 0.2f;
@@ -43,6 +45,8 @@ public class Character : NetworkBehaviour
     [SyncVar(hook = nameof(OnFlipChanged))]
     private bool isFlipped;
 
+    private int groundSoundIndex = 0;
+
     #region Movement methods
 
     public void MoveRightAndLeft(float move, float speedNow, float stepsInterval)
@@ -51,9 +55,9 @@ public class Character : NetworkBehaviour
 
         FlipSprite(move);
 
-        if (PlayerOnGroundChecker.Instance.isPlayerOnGround)
+        if (playerOnGroundChecker.isPlayerOnGround)
         {
-            //SoundManager.Instance.PlayStepsAudio(move, stepsInterval);
+            soundManager.PlayStepAudio(move, stepsInterval, groundSoundIndex);
         }
 
         rb.velocity = new Vector2(move * speedNow, rb.velocity.y);
@@ -63,7 +67,7 @@ public class Character : NetworkBehaviour
     {
         if (!isLocalPlayer) return;
 
-        bGrounded = PlayerOnGroundChecker.Instance.isPlayerOnGround;
+        bGrounded = playerOnGroundChecker.isPlayerOnGround;
 
         fGroundedRemember -= Time.deltaTime;
         if (bGrounded)
@@ -113,7 +117,12 @@ public class Character : NetworkBehaviour
 
         if (bGrounded && isFalling)
         {
-            //SoundManager.Instance.PlayJumpHit();
+            float fallHeight = Mathf.Abs(highestPosition - transform.position.y);
+            float volume = Mathf.Clamp(fallHeight / 10f, 0.1f, 1f);
+
+            // Вызываем звук с динамическим уровнем громкости
+
+            soundManager.CmdPlayAudioClip(0, volume);
             if ((int)(Mathf.Abs(highestPosition - transform.position.y)) > maxDifferenceHeightToTakeDamage)
             {
                 //CmdTakeFallDamage((int)(Mathf.Abs(highestPosition - transform.position.y)) * 2);
@@ -192,6 +201,18 @@ public class Character : NetworkBehaviour
     private void FixedUpdate()
     {
         movementSM.CurrentState.PhysicsUpdate();
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("MetalWalls") || collision.gameObject.CompareTag("OneWayPlatform"))
+        {
+            groundSoundIndex = 0;
+        }
+        if (collision.gameObject.CompareTag("Sand"))
+        {
+            groundSoundIndex = 1;
+        }
     }
     #endregion
 }

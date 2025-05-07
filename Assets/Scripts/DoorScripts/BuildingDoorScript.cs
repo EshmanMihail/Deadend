@@ -1,17 +1,19 @@
 using Mirror;
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class BuildingDoorScript : NetworkBehaviour
 {
     [SerializeField] private AudioClip openDoorSound;
+    [SerializeField] private AudioClip closeDoorSound;
+    [SerializeField] private AudioClip unlookDoorSound;
     [SerializeField] private Sprite openDoorSprite;
     [SerializeField] private Sprite closeDoorSprite;
 
     private SpriteRenderer spriteRenderer;
     private BoxCollider2D doorCollider;
     private BoxCollider2D triggerDoorCollider;
+    private AudioSource audioSource;
     private bool isOpen = false;
 
     private void Start()
@@ -19,6 +21,7 @@ public class BuildingDoorScript : NetworkBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         doorCollider = GetComponent<BoxCollider2D>();
         triggerDoorCollider = GetComponent<BoxCollider2D>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     public void ChangeDoorState()
@@ -36,6 +39,9 @@ public class BuildingDoorScript : NetworkBehaviour
     [ClientRpc]
     private void RpcUpdateDoorState(bool isOpen)
     {
+        audioSource.clip = isOpen ? openDoorSound : closeDoorSound;
+        audioSource.Play();
+
         spriteRenderer.sprite = isOpen ? openDoorSprite : closeDoorSprite;
 
         if (doorCollider != null)
@@ -46,11 +52,6 @@ public class BuildingDoorScript : NetworkBehaviour
         if (triggerDoorCollider != null)
         {
             triggerDoorCollider.enabled = !isOpen;
-        }
-
-        if (openDoorSound != null)
-        {
-            AudioSource.PlayClipAtPoint(openDoorSound, transform.position);
         }
     }
 }

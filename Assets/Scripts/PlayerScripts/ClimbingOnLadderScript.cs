@@ -51,12 +51,12 @@ public class LadderClimbing : NetworkBehaviour
                     rb.velocity = new Vector2(rb.velocity.x, 0f);
                 }
 
-                PlayStepsAudio(move, climbingStepsInterval);
+                PlayClamingAudio(move, climbingStepsInterval);
             }
         }
     }
 
-    public void PlayStepsAudio(float move, float stepInterval)
+    public void PlayClamingAudio(float move, float stepInterval)
     {
         if (Mathf.Abs(move) > 0)
         {
