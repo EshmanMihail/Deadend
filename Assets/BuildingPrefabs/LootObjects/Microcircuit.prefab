@@ -166,6 +166,7 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0
   dropSound: {fileID: 8300000, guid: b07d52506b5226b49a6ac0e8261a6e9f, type: 3}
+  Id: 10
   name: Microcircuit
   weight: 1
   minCost: 5

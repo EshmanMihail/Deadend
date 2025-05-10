@@ -166,6 +166,7 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0
   dropSound: {fileID: 8300000, guid: 905f274bc8d7a4a458943d55d17ccea8, type: 3}
+  Id: 3
   name: GoodBolt
   weight: 5
   minCost: 5

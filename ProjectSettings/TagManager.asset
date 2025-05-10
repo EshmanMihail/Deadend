@@ -10,6 +10,7 @@ TagManager:
   - Sand
   - OneWayPlatform
   - Loot
+  - StartLever
   layers:
   - Default
   - TransparentFX

@@ -166,6 +166,7 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0
   dropSound: {fileID: 8300000, guid: 7f68260365b7ea447a9400ff2af82a9c, type: 3}
+  Id: 5
   name: GreenEngine
   weight: 10
   minCost: 5

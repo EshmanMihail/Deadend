@@ -166,6 +166,7 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0
   dropSound: {fileID: 8300000, guid: f78608549c698dd4791825a4630a65be, type: 3}
+  Id: 17
   name: Totem
   weight: 3
   minCost: 5

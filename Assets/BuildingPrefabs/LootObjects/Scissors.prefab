@@ -166,6 +166,7 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0
   dropSound: {fileID: 8300000, guid: 946228f5694b1964fa6e012b0d598306, type: 3}
+  Id: 14
   name: Scissors
   weight: 1
   minCost: 5

@@ -1,26 +1,32 @@
 using Mirror;
 using System;
 using UnityEngine;
+using static Org.BouncyCastle.Asn1.Cmp.Challenge;
 
 public class LootProperty : NetworkBehaviour
 {
     [SerializeField] private AudioClip dropSound;
+    public int Id = 0;
     public string name = "";
     public int weight = 10;
 
     public int minCost = 5;
     public int maxCost = 50;
 
-    [HideInInspector] public int currentCost = 0;
+    [SyncVar] public int currentCost = 10;
 
     private AudioSource audioSource;
 
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        SetCostOfItem();
+    }
 
-        System.Random rand = new System.Random(Guid.NewGuid().GetHashCode());
-        currentCost = rand.Next(minCost, maxCost);
+    [Server]
+    private void SetCostOfItem()
+    {
+        currentCost = UnityEngine.Random.Range(minCost, maxCost + 1);
     }
 
     [Command(requiresAuthority = false)]

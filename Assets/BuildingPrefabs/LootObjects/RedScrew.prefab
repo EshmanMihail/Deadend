@@ -166,6 +166,7 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0
   dropSound: {fileID: 8300000, guid: 946228f5694b1964fa6e012b0d598306, type: 3}
+  Id: 13
   name: RedScrew
   weight: 3
   minCost: 5

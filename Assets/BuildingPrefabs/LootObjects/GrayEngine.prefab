@@ -166,6 +166,7 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0
   dropSound: {fileID: 8300000, guid: 5353b567027859f4e8134df81f45e63b, type: 3}
+  Id: 4
   name: GrayEngine
   weight: 15
   minCost: 5

@@ -166,6 +166,7 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0
   dropSound: {fileID: 8300000, guid: d105a2aa68fae144d8d9436878dfaafa, type: 3}
+  Id: 18
   name: Tranzitor
   weight: 1
   minCost: 5

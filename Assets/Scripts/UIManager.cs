@@ -14,6 +14,14 @@ public class UIManager : MonoBehaviour
     public Image[] slotsImages;
     public Sprite emptySlotSprite;
 
+    public GameObject startLeverUI;
+    public Image startLeverFillingBar;
+    public Text startLeverErrorText;
+    public Image fadeImage;
+
+    [SerializeField] private Vector3 hintOffset = new (0, 2, 0);
+    public Text hint;
+
     private void Awake()
     {
         if (Instance == null)
@@ -39,5 +47,17 @@ public class UIManager : MonoBehaviour
     public Image GetFillingBar()
     {
         return healthFillingBar;
+    }
+
+    public void ShowTextHint(Vector3 pos, string text)
+    {
+        hint.text = text;
+        hint.gameObject.transform.position = pos + hintOffset;
+        hint.gameObject.SetActive(true);
+    }
+
+    public void HideTextHint()
+    {
+        hint.gameObject.SetActive(false);
     }
 }

@@ -166,6 +166,7 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0
   dropSound: {fileID: 8300000, guid: 02396010bb3c69e41994c71d1f7f92c0, type: 3}
+  Id: 0
   name: BlueBattary
   weight: 10
   minCost: 5

@@ -18,5 +18,16 @@ namespace Assets.Scripts.BuildingScripts.BuildingTypes
         public static List<Vector2> loot = new();
 
         public static List<Vector2> lootSofas = new();
+
+        public static void ClearBuildingDataMap()
+        {
+            node.Clear();
+            ladder.Clear();
+            door.Clear();
+            loot.Clear();
+            lootSofas.Clear();
+            lamp.Clear();
+        }
+
     }
 }

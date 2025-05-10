@@ -1,4 +1,6 @@
 using Mirror;
+using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,18 +9,31 @@ public class TerminalMonitorScript : NetworkBehaviour
     [SyncVar] private GameObject currentPlayer;
 
     [SerializeField] private InputField inputField;
-
     [SerializeField] private GameObject[] textObjects;
-
     [SerializeField] private Text errorText;
     [SerializeField] private Text acceptedText;
-
     [SerializeField] private string[] namesOfMissions;
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip[] keysSounds;
+    [SerializeField] private GameObject placeInShip;
+    [SerializeField] private Text lootCountInShipText;
+
+    private bool isActivated = false;
+
+    void Start()
+    {
+        inputField.onValueChanged.AddListener(PlayKeySound);
+    }
 
     private void Update()
     {
-        if (currentPlayer != null && Input.GetKeyDown(KeyCode.E))
+        if (!isActivated && currentPlayer != null && Input.GetKeyDown(KeyCode.E))
         {
+            if (currentPlayer.gameObject.GetComponent<NetworkIdentity>().isLocalPlayer)
+            {
+                UIManager.Instance.HideTextHint();
+            }
+            isActivated = true;
             CmdTryActivateTextObject(0);
         }
 
@@ -37,79 +52,95 @@ public class TerminalMonitorScript : NetworkBehaviour
 
     private void RunTheCommand(string commandText)
     {
-        if (commandText == "Commands" || commandText == "commands" || commandText == "Com" || commandText == "com")
+        NetworkIdentity playerIdentity = currentPlayer.GetComponent<NetworkIdentity>();
+
+        if (commandText == "Commands" || commandText == "commands" || commandText == "Com" || commandText == "com" || commandText == "back")
         {
             CmdTryActivateTextObject(1);
         }
-        if (commandText == "Missions" || commandText == "missions" || commandText == "mis" || commandText == "Mis")
+        else if (commandText == "Missions" || commandText == "missions" || commandText == "mis" || commandText == "Mis")
         {
             CmdTryActivateTextObject(2);
         }
-        if (commandText == "Experementation" || commandText == "exp")
+        else if (commandText == "ShipLoot" || commandText == "shiploot")
         {
-            CmdRunTheCommand("Experementation");
+            CmdTryActivateTextObject(4);
+            lootCountInShipText.text = "Предметов в корабле: " + ShipObjectsChecker.Instance.GetLootNumberInShip();
         }
-        if (commandText == "Rend")
+        else if (commandText == "Experementation" || commandText == "exp")
         {
-            CmdRunTheCommand("Rend");
-        }
-        if (commandText == "Titan")
-        {
-            CmdRunTheCommand("Titan");
-        }
-        else
-        {
-
-        }
-    }
-
-    #region Run next scene
-    [Command(requiresAuthority = false)]
-    private void CmdRunTheCommand(string commandText)
-    {
-        if (commandText == "Experementation" || commandText == "Exp")
-        {
-            ServerChangeScene("Experementation");
+            MissionSettings.NameOfScene = "Experementation";
+            MissionSettings.sceneIndex = 2;
+            ShowAcceptedMessage(playerIdentity, "Задание принято!");
         }
         else if (commandText == "Rend")
         {
-            ServerChangeScene("Rend");
+            MissionSettings.NameOfScene = "Rend";
+            MissionSettings.sceneIndex = 3;
+            ShowAcceptedMessage(playerIdentity, "Задание принято!");
         }
         else if (commandText == "Titan")
         {
-            ServerChangeScene("TestScene");
+            MissionSettings.NameOfScene = "Titan";
+            MissionSettings.sceneIndex = 4;
+            ShowAcceptedMessage(playerIdentity, "Задание принято!");
         }
         else
         {
-            if (currentPlayer != null)
+            if (playerIdentity != null && playerIdentity.connectionToClient != null)
             {
-                NetworkIdentity playerIdentity = currentPlayer.GetComponent<NetworkIdentity>();
-                if (playerIdentity != null && playerIdentity.connectionToClient != null)
-                {
-                    TargetShowErrorMessage(playerIdentity.connectionToClient, "Неизвестная команда.");
-                }
+                TargetShowErrorMessage(playerIdentity.connectionToClient, "Неизвестная команда!");
             }
+        }
+
+        inputField.ActivateInputField();
+        inputField.Select();
+    }
+
+    private void PlayKeySound(string text)
+    {
+        if (keysSounds.Length > 0)
+        {
+            AudioClip randomClip = keysSounds[Random.Range(0, keysSounds.Length)];
+            audioSource.PlayOneShot(randomClip);
         }
     }
 
-    [Server]
-    private void ServerChangeScene(string sceneName)
+    #region Show Accent or Error terminal message
+    private void ShowAcceptedMessage(NetworkIdentity playerIdentity, string massage)
     {
-        if (NetworkManager.singleton != null)
+        if (playerIdentity != null && playerIdentity.connectionToClient != null)
         {
-            NetworkManager.singleton.ServerChangeScene(sceneName);
+            TargetShowAccentMessage(playerIdentity.connectionToClient, massage);
         }
-        else
-        {
-            Debug.LogError("NetworkManager не найден!");
-        }
+    }
+
+    [TargetRpc]
+    private void TargetShowAccentMessage(NetworkConnection target, string message)
+    {
+        StartCoroutine(ShowAcceptForTwoSeconds(message));
+    }
+
+    private IEnumerator ShowAcceptForTwoSeconds(string acceptMessage)
+    {
+        acceptedText.text = acceptMessage;
+        acceptedText.gameObject.SetActive(true);
+        yield return new WaitForSeconds(2f);
+        acceptedText.gameObject.SetActive(false);
     }
 
     [TargetRpc]
     private void TargetShowErrorMessage(NetworkConnection target, string message)
     {
-        errorText.text = message;
+        StartCoroutine(ShowErrorForTwoSeconds(message));
+    }
+
+    private IEnumerator ShowErrorForTwoSeconds(string errorMessage)
+    {
+        errorText.text = errorMessage;
         errorText.gameObject.SetActive(true);
+        yield return new WaitForSeconds(2f);
+        errorText.gameObject.SetActive(false);
     }
     #endregion
 
@@ -138,6 +169,11 @@ public class TerminalMonitorScript : NetworkBehaviour
         {
             textObjects[0].SetActive(true);
             textObjects[1].SetActive(true);
+
+            for (int i = 2; i < textObjects.Length; i++)
+            {
+                textObjects[i].SetActive(false);
+            }
         }
         else
         {
@@ -175,6 +211,7 @@ public class TerminalMonitorScript : NetworkBehaviour
     [TargetRpc]
     private void TargetDeactivateTerminal(NetworkConnection target)
     {
+        isActivated = false;
         if (textObjects[0].activeSelf)
         {
             textObjects[0].SetActive(false);
@@ -187,18 +224,26 @@ public class TerminalMonitorScript : NetworkBehaviour
         if (collision.gameObject.CompareTag("Player") && currentPlayer == null)
         {
             currentPlayer = collision.gameObject;
+            if (collision.gameObject.GetComponent<NetworkIdentity>().isLocalPlayer)
+            {
+                UIManager.Instance.ShowTextHint(transform.position, "Нажмите Е");
+            }
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player") && collision.gameObject == currentPlayer)
+        if (collision.gameObject.CompareTag("Player"))
         {
             currentPlayer = null;
             NetworkIdentity playerIdentity = collision.gameObject.GetComponent<NetworkIdentity>();
             if (playerIdentity != null && playerIdentity.connectionToClient != null)
             {
                 TargetDeactivateTerminal(playerIdentity.connectionToClient);
+            }
+            if (collision.gameObject.GetComponent<NetworkIdentity>().isLocalPlayer)
+            {
+                UIManager.Instance.HideTextHint();
             }
         }
     }

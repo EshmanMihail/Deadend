@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 public class MovingBackground : MonoBehaviour
@@ -6,9 +7,12 @@ public class MovingBackground : MonoBehaviour
     [SerializeField] private float speedX; // right -48 left -12
     [SerializeField] private float speedY; // bottom 43 top -12
 
+    [SerializeField] private float maxSpeedX = 6f;
+    [SerializeField] private float speedIncreaseDuration = 5f;
+
     private float directionY = 1;
 
-    private Vector2 startVec = new Vector2(-48, 10);
+    private Vector2 startVec = new Vector2(-28, 10);
     private Vector2 endVec = new Vector2(188, 10);
 
     [SerializeField] private float endx;
@@ -21,7 +25,6 @@ public class MovingBackground : MonoBehaviour
     void Start()
     {
         rand = new System.Random(Guid.NewGuid().GetHashCode());
-        //if (ship == null) ship = GameObject.FindGameObjectWithTag("Ship");
     }
 
     private void FixedUpdate()
@@ -44,5 +47,26 @@ public class MovingBackground : MonoBehaviour
         }
 
         if (transform.localPosition.x >= endx) transform.localPosition = startVec;
+    }
+
+    public void StartSpeedingX()
+    {
+        StartCoroutine(IncreaseSpeedXOverTime());
+    }
+
+    private IEnumerator IncreaseSpeedXOverTime()
+    {
+        float elapsedTime = 0f;
+        float initialSpeedX = speedX;
+
+        while (elapsedTime < speedIncreaseDuration)
+        {
+            speedX = Mathf.Lerp(initialSpeedX, maxSpeedX, elapsedTime / speedIncreaseDuration);
+            elapsedTime += Time.deltaTime;
+
+            yield return null;
+        }
+
+        speedX = maxSpeedX;
     }
 }

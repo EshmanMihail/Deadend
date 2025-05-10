@@ -166,6 +166,7 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0
   dropSound: {fileID: 8300000, guid: 7f7ff775dee3a8b44add505b272f5767, type: 3}
+  Id: 2
   name: GoldenCup
   weight: 2
   minCost: 5

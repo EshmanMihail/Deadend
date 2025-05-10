@@ -735,6 +735,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94ee5ff70db54a644a6b3ab279d36e5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
   groundedChecker: {fileID: -6553009040136252233}
 --- !u!114 &-5710173476118345982
 MonoBehaviour:
