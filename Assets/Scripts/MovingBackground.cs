@@ -12,7 +12,7 @@ public class MovingBackground : MonoBehaviour
 
     private float directionY = 1;
 
-    private Vector2 startVec = new Vector2(-28, 10);
+    private Vector2 startVec = new Vector2(-30, 80);
     private Vector2 endVec = new Vector2(188, 10);
 
     [SerializeField] private float endx;
@@ -30,11 +30,11 @@ public class MovingBackground : MonoBehaviour
     private void FixedUpdate()
     {
         transform.localPosition += new Vector3(speedX, speedY * directionY, 0);
-        if (transform.localPosition.y >= 41)
+        if (transform.localPosition.y >= transform.localPosition.y + 41)
         {
             directionY *= -1;
         }
-        else if (transform.localPosition.y <= -12)
+        else if (transform.localPosition.y <= transform.localPosition.y - 12)
         {
             directionY *= -1;
         }

@@ -13,7 +13,7 @@ public class LootProperty : NetworkBehaviour
     public int minCost = 5;
     public int maxCost = 50;
 
-    [SyncVar] public int currentCost = 10;
+    [SyncVar] public int currentCost = -1;
 
     private AudioSource audioSource;
 
@@ -26,7 +26,14 @@ public class LootProperty : NetworkBehaviour
     [Server]
     private void SetCostOfItem()
     {
-        currentCost = UnityEngine.Random.Range(minCost, maxCost + 1);
+        if (currentCost == -1) currentCost = UnityEngine.Random.Range(minCost, maxCost + 1);
+    }
+
+    [Server]
+
+   public void ChangeCost(int newCost)
+    {
+        currentCost = newCost;
     }
 
     [Command(requiresAuthority = false)]

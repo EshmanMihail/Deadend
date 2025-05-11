@@ -171,7 +171,7 @@ MonoBehaviour:
   weight: 1
   minCost: 5
   maxCost: 50
-  currentCost: 0
+  currentCost: 12
 --- !u!82 &3243920616917321707
 AudioSource:
   m_ObjectHideFlags: 0

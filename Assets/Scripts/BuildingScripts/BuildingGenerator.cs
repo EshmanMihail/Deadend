@@ -62,17 +62,24 @@ public class BuildingGenerator : NetworkBehaviour
     #endregion
 
     private int roomCount = 0;
-    [SerializeField] private int maxRoomCount = 20;
+    private int maxRoomCount = LevelSettings.roomCount;
+    private bool isFullGrassed = false;
+
     private List<Room> roomList = new List<Room>();
 
     private List<Vector2> occupiedPlaces = new List<Vector2>();
-
     void Start()
     {
         rand = new System.Random(Guid.NewGuid().GetHashCode());
         networkTileSetter = networkTileSetterObject.GetComponent<NetworkTileSetter>();
         tilesSetter = new TilesSetter(this, wallsTilemap, backgroundWalls, ladder, platforms, frontTiles, backwardTiles, networkTileSetter, tileDataBase);
         InitializeRoomFactories();
+
+        if (rand.Next(0, 100) < LevelSettings.chanceToMakeGrassedBuilding)
+        {
+            isFullGrassed = true;
+        }
+
         if (isServer)
         {
             RoomType firstRoomType = RoomType.Right;
@@ -335,6 +342,7 @@ public class BuildingGenerator : NetworkBehaviour
         RoomBiom randomBiom = (RoomBiom)values.GetValue(randomIndex);
 
         //randomBiom = RoomBiom.metal;
+        if (isFullGrassed) randomBiom = RoomBiom.grass;
 
         return roomFactoryManager.CreateRoom(entryPoint, roomType, wallsInfo, randomBiom);
     }

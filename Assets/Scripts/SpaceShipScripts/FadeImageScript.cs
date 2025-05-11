@@ -57,6 +57,7 @@ public class FadeImageScript : NetworkBehaviour
             yield return null;
         }
 
+        ShipObjectsChecker.Instance.SetLootIdInList();
         StartCoroutine(FadeOutAndLoadScene());
     }
 
@@ -70,8 +71,6 @@ public class FadeImageScript : NetworkBehaviour
             fadeImage.color = new Color(0f, 0f, 0f, alpha);
             yield return null;
         }
-
-        ShipObjectsChecker.Instance.SetLootIdInList();
 
         StartFlight();
     }

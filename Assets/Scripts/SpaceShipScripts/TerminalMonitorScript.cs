@@ -2,6 +2,7 @@ using Mirror;
 using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class TerminalMonitorScript : NetworkBehaviour
@@ -17,36 +18,42 @@ public class TerminalMonitorScript : NetworkBehaviour
     [SerializeField] private AudioClip[] keysSounds;
     [SerializeField] private GameObject placeInShip;
     [SerializeField] private Text lootCountInShipText;
+    [SerializeField] private Text lootCommonCostInShipText;
 
     private bool isActivated = false;
+    private int currentSceneIndex = 1;
 
     void Start()
     {
         inputField.onValueChanged.AddListener(PlayKeySound);
+        currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
     }
 
     private void Update()
     {
-        if (!isActivated && currentPlayer != null && Input.GetKeyDown(KeyCode.E))
+        if (currentPlayer != null)
         {
-            if (currentPlayer.gameObject.GetComponent<NetworkIdentity>().isLocalPlayer)
+            if (!isActivated && Input.GetKeyDown(KeyCode.E))
             {
-                UIManager.Instance.HideTextHint();
+                if (currentPlayer.gameObject.GetComponent<NetworkIdentity>().isLocalPlayer)
+                {
+                    UIManager.Instance.HideTextHint();
+                }
+                isActivated = true;
+                CmdTryActivateTextObject(0);
             }
-            isActivated = true;
-            CmdTryActivateTextObject(0);
-        }
 
-        if (currentPlayer != null && textObjects[0] != null && Input.GetKeyDown(KeyCode.Return))
-        {
-            string enteredText = inputField.text.Trim();
-            RunTheCommand(enteredText);
-            inputField.text = "";
-        }
+            if (textObjects[0] != null && Input.GetKeyDown(KeyCode.Return))
+            {
+                string enteredText = inputField.text.Trim();
+                RunTheCommand(enteredText);
+                inputField.text = "";
+            }
 
-        if (currentPlayer != null && Input.GetKeyDown(KeyCode.Escape))
-        {
-            CmdDeactivateTerminal();
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                CmdDeactivateTerminal();
+            }
         }
     }
 
@@ -60,30 +67,67 @@ public class TerminalMonitorScript : NetworkBehaviour
         }
         else if (commandText == "Missions" || commandText == "missions" || commandText == "mis" || commandText == "Mis")
         {
-            CmdTryActivateTextObject(2);
+            if (currentSceneIndex == 1)
+            {
+                CmdTryActivateTextObject(2);
+            }
         }
         else if (commandText == "ShipLoot" || commandText == "shiploot")
         {
             CmdTryActivateTextObject(4);
             lootCountInShipText.text = "Предметов в корабле: " + ShipObjectsChecker.Instance.GetLootNumberInShip();
+            lootCommonCostInShipText.text = "Общая стоимость: " + ShipObjectsChecker.Instance.GetLootCommonCostInShip();
         }
         else if (commandText == "Experementation" || commandText == "exp")
         {
-            MissionSettings.NameOfScene = "Experementation";
-            MissionSettings.sceneIndex = 2;
-            ShowAcceptedMessage(playerIdentity, "Задание принято!");
+            if (currentSceneIndex == 1)
+            {
+                LevelSettings.SetLevelSettings("Experementation");
+                MissionSettings.NameOfScene = "Experementation";
+                MissionSettings.sceneIndex = 2;
+                ShowAcceptedMessage(playerIdentity, "Задание принято!");
+            }
+            else
+            {
+                if (playerIdentity != null && playerIdentity.connectionToClient != null)
+                {
+                    TargetShowErrorMessage(playerIdentity.connectionToClient, "Вы уже на задании!");
+                }
+            }
         }
         else if (commandText == "Rend")
         {
-            MissionSettings.NameOfScene = "Rend";
-            MissionSettings.sceneIndex = 3;
-            ShowAcceptedMessage(playerIdentity, "Задание принято!");
+            if (currentSceneIndex == 1)
+            {
+                LevelSettings.SetLevelSettings("Rend");
+                MissionSettings.NameOfScene = "Rend";
+                MissionSettings.sceneIndex = 3;
+                ShowAcceptedMessage(playerIdentity, "Задание принято!");
+            }
+            else
+            {
+                if (playerIdentity != null && playerIdentity.connectionToClient != null)
+                {
+                    TargetShowErrorMessage(playerIdentity.connectionToClient, "Вы уже на задании!");
+                }
+            }
         }
         else if (commandText == "Titan")
         {
-            MissionSettings.NameOfScene = "Titan";
-            MissionSettings.sceneIndex = 4;
-            ShowAcceptedMessage(playerIdentity, "Задание принято!");
+            if (currentSceneIndex == 1)
+            {
+                LevelSettings.SetLevelSettings("Titan");
+                MissionSettings.NameOfScene = "Titan";
+                MissionSettings.sceneIndex = 4;
+                ShowAcceptedMessage(playerIdentity, "Задание принято!");
+            }
+            else
+            {
+                if (playerIdentity != null && playerIdentity.connectionToClient != null)
+                {
+                    TargetShowErrorMessage(playerIdentity.connectionToClient, "Вы уже на задании!");
+                }
+            }
         }
         else
         {

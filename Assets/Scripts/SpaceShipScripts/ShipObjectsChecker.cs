@@ -35,6 +35,26 @@ public class ShipObjectsChecker : MonoBehaviour
         return lootCountInShip;
     }
 
+    public int GetLootCommonCostInShip()
+    {
+        Collider2D[] colliders = Physics2D.OverlapAreaAll(gameObject.GetComponent<BoxCollider2D>().bounds.min,
+            gameObject.GetComponent<BoxCollider2D>().bounds.max);
+
+        int lootCommonCost = 0;
+
+        for (int i = 0; i < colliders.Length; i++)
+        {
+            if (colliders[i].CompareTag("Loot"))
+            {
+                if (colliders[i].GetComponent<LootProperty>() != null)
+                {
+                    lootCommonCost += colliders[i].GetComponent<LootProperty>().currentCost;
+                }
+            }
+        }
+        return lootCommonCost;
+    }
+
     public void SetLootIdInList()
     {
         MissionSettings.lootInShip.Clear();
@@ -49,7 +69,8 @@ public class ShipObjectsChecker : MonoBehaviour
                 if (colliders[i].GetComponent<LootProperty>() != null)
                 {
                     int lootId = colliders[i].GetComponent<LootProperty>().Id;
-                    MissionSettings.lootInShip.Add((lootId, colliders[i].transform.position));
+                    int lootCost = colliders[i].GetComponent<LootProperty>().currentCost;
+                    MissionSettings.lootInShip.Add((lootId, colliders[i].transform.position, lootCost));
                 }
             }
         }

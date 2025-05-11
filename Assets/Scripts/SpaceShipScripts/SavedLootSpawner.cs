@@ -34,6 +34,8 @@ public class SavedLootSpawner : NetworkBehaviour
 
     private void SpawnSavedLoot()
     {
+        List<GameObject> spawnedLoot = new();
+
         for (int i = 0; i < MissionSettings.lootInShip.Count; i++)
         {
             int lootId = MissionSettings.lootInShip[i].Item1;
@@ -41,12 +43,17 @@ public class SavedLootSpawner : NetworkBehaviour
             if (lootDb.TryGetValue(lootId, out GameObject prefab))
             {
                 GameObject loot = Instantiate(prefab, MissionSettings.lootInShip[i].Item2, Quaternion.identity);
+                spawnedLoot.Add(loot);
                 NetworkServer.Spawn(loot);
             }
             else
             {
                 Debug.LogWarning($"Лут с ID {lootId} отсутствует в базе lootDb.");
             }
+        }
+        for (int i = 0; i < spawnedLoot.Count; i++)
+        {
+            spawnedLoot[i].GetComponent<LootProperty>().ChangeCost(MissionSettings.lootInShip[i].Item3);
         }
     }
 }
