@@ -9,8 +9,9 @@ public class FlashLightBarController : NetworkBehaviour
     [SerializeField] private AudioClip flashlightClip;
     [SerializeField] private GameObject flashlighObject;
     [SerializeField] private float maxEnergy;
+
+    private SoundManager soundManager;
     private Light2D flashlight;
-    private float energy;
 
     private bool isWorking = false;
     private bool isOnTerminal = false;
@@ -20,8 +21,8 @@ public class FlashLightBarController : NetworkBehaviour
     void Start()
     {
         flashlight = flashlighObject.GetComponent<Light2D>();
+        soundManager = GetComponent<SoundManager>();
         flashlightBar = UIManager.Instance.GetFlashlightFillingBar();
-        energy = maxEnergy;
         flashlight.intensity = 0;
     }
 
@@ -71,16 +72,9 @@ public class FlashLightBarController : NetworkBehaviour
         }
     }
 
-    [Command]
-    public void CmdRestoreEnergy()
+    public void RestoreEnergy()
     {
-        energy = maxEnergy;
-        RpcRestoreEnergy();
-    }
-
-    [ClientRpc]
-    private void RpcRestoreEnergy()
-    {
+        if (flashlightBar.fillAmount < 1) soundManager.CmdPlayAudioClip(1, 1);
         flashlightBar.fillAmount = 1;
     }
 

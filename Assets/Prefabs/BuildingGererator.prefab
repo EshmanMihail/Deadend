@@ -185,7 +185,6 @@ MonoBehaviour:
   chanceToCheckToStopGenerate: 80
   chanceToSpawnNextRoom: 100
   minusChanceToSpawnNextRoom: 5
-  maxRoomCount: 40
 --- !u!114 &5789674940414866324
 MonoBehaviour:
   m_ObjectHideFlags: 0

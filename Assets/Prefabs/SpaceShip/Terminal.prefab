@@ -181,6 +181,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 953c1bd1daf79cf41af70705cbd1ab71, type: 3}
   - {fileID: 8300000, guid: ddf3879c37193fb42a7247e560d86c85, type: 3}
   - {fileID: 8300000, guid: c46f6658da25d7b46bbb6e2512829bbf, type: 3}
+  placeInShip: {fileID: 0}
+  lootCountInShipText: {fileID: 0}
+  lootCommonCostInShipText: {fileID: 0}
 --- !u!82 &4343541525277840831
 AudioSource:
   m_ObjectHideFlags: 0

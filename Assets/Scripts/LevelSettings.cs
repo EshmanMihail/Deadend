@@ -14,6 +14,7 @@ public static class LevelSettings
             case "Experementation":
                 roomCount = Random.Range(25, 41);
                 LootObejctsCount = Random.Range(40, 60);
+                chanceToMakeGrassedBuilding = 1;
                 break;
 
             case "Rend":

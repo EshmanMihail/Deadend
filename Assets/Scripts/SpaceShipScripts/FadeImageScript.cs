@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using System.Collections;
 using Mirror;
 using Assets.Scripts.BuildingScripts.BuildingTypes;
+using UnityEngine.SceneManagement;
 
 public class FadeImageScript : NetworkBehaviour
 {
@@ -44,8 +45,11 @@ public class FadeImageScript : NetworkBehaviour
 
     private IEnumerator CountdownAndFadeOut()
     {
-        audioSource.clip = startShipSound;
-        audioSource.Play();
+        if (SceneManager.GetActiveScene().buildIndex == 1)
+        {
+            audioSource.clip = startShipSound;
+            audioSource.Play();
+        }
 
         shipleftText.gameObject.SetActive(true);
 

@@ -138,6 +138,12 @@ public class Character : NetworkBehaviour
         // Логика получения урона от падения
     }
 
+    public void IsPlayerCanMove(bool isCanMove)
+    {
+        if (!isLocalPlayer) return;
+        canMove = isCanMove;
+    }
+
     public void TriggerMoveAnimation(int param, float speed)
     {
         animator.SetFloat(param, speed);

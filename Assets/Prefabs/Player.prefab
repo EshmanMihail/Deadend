@@ -32,6 +32,7 @@ GameObject:
   - component: {fileID: 667160642827049576}
   - component: {fileID: -3687849137293779651}
   - component: {fileID: -5710173476118345982}
+  - component: {fileID: -6428989561975804523}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -668,6 +669,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 48f6529d199ff654388fad82cb6d7701, type: 3}
   audioClips:
   - {fileID: 8300000, guid: 72ccee048270805458a6217d35117936, type: 3}
+  - {fileID: 8300000, guid: f2551caac9fe33148b45e347f97f2932, type: 3}
 --- !u!114 &-8209480597885260348
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -751,6 +753,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cbe207502e81124ba0a5f0de3a06da1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-6428989561975804523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7042679676187767198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1972fd41b7eeaf4980a4d0c63c01f29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
 --- !u!1001 &4175773651095876935
 PrefabInstance:
   m_ObjectHideFlags: 0
