@@ -1,0 +1,7607 @@
+fileFormatVersion: 2
+guid: 5372e8f7c4bc4084c9edd3b528dd505b
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: CompanyGround_0
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 308
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19daa0e7f9f5d7e4fbd1ba6f75ecfbf6
+      internalID: 434161270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 308
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09fad953c7768e44d86538a5a3d9e97a
+      internalID: -1740344249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_2
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 308
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab4836d7465a7454aac2269401a632a1
+      internalID: 1627653172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_3
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 308
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfc85cf5555840345a0f08752ab3d48c
+      internalID: 1609574594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_4
+      rect:
+        serializedVersion: 2
+        x: 752
+        y: 308
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df57448f7e59afa479bfe222af0018c6
+      internalID: -1154920441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_5
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 308
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9893b26a2be3d74a84e2ea1520a4edf
+      internalID: 896089370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_6
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 292
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0f90e808aef50347b37db5bd2ff1c95
+      internalID: 256643644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_7
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 292
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f065ed78809404e46b8426c591141c8a
+      internalID: -240325828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_8
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 292
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20689a7133cbd8a4f8cdeef04888f090
+      internalID: 1614423254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_9
+      rect:
+        serializedVersion: 2
+        x: 688
+        y: 292
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8356b2441b0544941833dbf2cadbccb4
+      internalID: -394140184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_10
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 292
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab7da0d8ad82ff248a74ccb8888d8322
+      internalID: -835873496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_11
+      rect:
+        serializedVersion: 2
+        x: 752
+        y: 292
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6dd351a72d91ea047a758ca51ae4e5a2
+      internalID: 1635068382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_12
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 292
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 340cfebbaa3744648872682f59b6df0b
+      internalID: 46998392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_13
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 276
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eafc1271678ecb04d8dfaddc10ac80b6
+      internalID: -575873208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_14
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 276
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 685c63f55bedf444493e4fcf8038f6b1
+      internalID: -99783001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_15
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 276
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af4d02b36cca6fe46b0c9d517ca0ed7b
+      internalID: -1266617363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_16
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 276
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 968f40cede3017b4793e10e27315564d
+      internalID: 563389364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_17
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 276
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44b1bf2fefb3eb4439751ce100c401be
+      internalID: 713121501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_18
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 276
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c72240c56db5ad488e0ec1cfca41391
+      internalID: 422662563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_19
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 276
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 433631b2ea7ee8046a8df2053ccca3d2
+      internalID: 382533143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_20
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 276
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b84c9d8ce7e68d34ebfaa78f9e9e5c7f
+      internalID: 888651854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_21
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 276
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36facfa1b7edb0e4fad61d38951e15f5
+      internalID: 1721795550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_22
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 276
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0174b9671af08d6408201e0a4cdbeb3e
+      internalID: 1675474909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_23
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 276
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8f04804b08f2804389b05c427e64d67
+      internalID: 707041914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_24
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 276
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 964eccd26c234f04bb3a677138ac626f
+      internalID: 624446687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_25
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 276
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22a3005f76f6e27468491bf228e2c3ca
+      internalID: -1286120911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_26
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 276
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aef14b31c21d650438fe305b56f356ef
+      internalID: 1995980948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_27
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 276
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 521b7eddfa199924fb9e87a0374787ee
+      internalID: 526293702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_28
+      rect:
+        serializedVersion: 2
+        x: 688
+        y: 276
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 503deb9938b89be459f3918de2db01ba
+      internalID: 564393005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_29
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 276
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3e6d66820ada5f4bbdf2cc36a9f6c15
+      internalID: 741193257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_30
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 276
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc4ca2f11f420ad45a020581109393a4
+      internalID: -380462042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_31
+      rect:
+        serializedVersion: 2
+        x: 752
+        y: 276
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aee888a7f42e67c4fbda1403abd23fb0
+      internalID: 1352425924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_32
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 276
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43f3181e27925e0459a966e5413bae2d
+      internalID: -1445737381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_33
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 260
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eabe773926aed854ead46ae3b24fe976
+      internalID: -1428973015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_34
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 260
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 580a7038d3d4dd44c9851e45427e244f
+      internalID: 885519028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_35
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 260
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4314f4c89ccf55c42847c768b1a9da9c
+      internalID: 2135739284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_36
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 260
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 696372f303236114eaca3cc5ccd420cf
+      internalID: 1071980244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_37
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 260
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c92a8857914d4540a319b6e9e75fb62
+      internalID: 1822367518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_38
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 260
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0eb54569b61ba14692675fb301bf304
+      internalID: -138659576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_39
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 260
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec561069622dadf409ed5d1dc94c77e3
+      internalID: 638155292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_40
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 260
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3a53f5944585394db0dde0de8bf5bb2
+      internalID: -1337308486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_41
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 260
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30fe071eeb03c94418079fd14bc55764
+      internalID: -75642176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_42
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 260
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08cc7058e135df2488af62ae7413a838
+      internalID: -540527247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_43
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 260
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 223e1adb40a3f84448af287d19617d36
+      internalID: -2027913429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_44
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 260
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5423cbf4a4ea8f489955a8cd7acb3ac
+      internalID: 857709706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_45
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 260
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7520fff7cf20d34691fa8ba06d2d04e
+      internalID: 4766186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_46
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 260
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 752e5728ddbb6424798399718033ecb3
+      internalID: 1164415645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_47
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 260
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f4b8fe193804244abda9e79b6ed6105
+      internalID: 1615168960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_48
+      rect:
+        serializedVersion: 2
+        x: 688
+        y: 260
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc8e68ac80f055b40baf4b039e14f7ce
+      internalID: 715204048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_49
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 260
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81dcde5c77ffc224b94252a063602eda
+      internalID: 1916770830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_50
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 260
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c52a74160a48ffd4bbba2a6eaf7facf8
+      internalID: 1316604545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_51
+      rect:
+        serializedVersion: 2
+        x: 752
+        y: 260
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 762703240e794d342a0bbfce230b8189
+      internalID: -88654805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_52
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 260
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f2ebfab264d1c74987b649ea9264028
+      internalID: -1635470697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_53
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 244
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13ed7cda4f0b66940b7d4da58c6830c3
+      internalID: 347894473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_54
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 244
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36b770500b360994d89dfa3f0fe76f5d
+      internalID: -1574362370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_55
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 244
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3c4b5ec3c587c245a47533887b6d8c9
+      internalID: -1971717069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_56
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 244
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ed53f96663c7744f8567a6f8a4a9ed3
+      internalID: -155622446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_57
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 244
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd5b88b5312564e42b9c324549ee2a36
+      internalID: 1403854146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_58
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 244
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c78d24cdd95801b4191c1b4f18aadafc
+      internalID: 1286664093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_59
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 244
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b2dfa891f9ced84ab83bc5147fe7a1c
+      internalID: -1362581615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_60
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 244
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42b4c926ab186684b8171d7a60a6810d
+      internalID: 1450900223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_61
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 244
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51292a160d8f5c3409580302f10980d9
+      internalID: 1549741862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_62
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 244
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77dc724125caa0c4c825d7bf963504cf
+      internalID: 958394268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_63
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 244
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6033bae04e4ff0944bf343ec0cccbedb
+      internalID: -932230434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_64
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 244
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 472b63388ccaed04d9a85faa204d10f4
+      internalID: -1473545041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_65
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 244
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9eb9c774fcd6c44e8e7fc6fa1a7b36f
+      internalID: -653228757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_66
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 244
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3e5c1007c4368549ac14dca7528ba56
+      internalID: -866425105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_67
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 244
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cd7412fc88970d499476f00932787b1
+      internalID: 1252017314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_68
+      rect:
+        serializedVersion: 2
+        x: 688
+        y: 244
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad98247c7034c3c4d8ca74c5c7d60bb6
+      internalID: -983683568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_69
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 244
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 711c82b3d9d9cd94799e6f11f83baff3
+      internalID: -937639142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_70
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 244
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c6a5c9ca8236494080abc6ddb8bdfb9
+      internalID: 566658535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_71
+      rect:
+        serializedVersion: 2
+        x: 752
+        y: 244
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 927c64c183595774394fcc049f2ec06c
+      internalID: 382661611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_72
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 244
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccd3f2915997a8d46bfce72e844facb8
+      internalID: -938679057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_73
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 228
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 118e3191618c23947b56f3788c1cdd38
+      internalID: -1404463536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_74
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 228
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9823fe85291e0a94cae043261412a0db
+      internalID: 1312765034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_75
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 228
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8bc3f01972b9754cbdfc5e1113d5f9b
+      internalID: 1067277238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_76
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 228
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc0f24151f90d6f4588ae6c182850726
+      internalID: 753722411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_77
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 228
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd159b46e358e384caad3131b7933016
+      internalID: 1390397686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_78
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 228
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60a9909253d5151419d050acdbbefcd4
+      internalID: -2091597845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_79
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 228
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e42c583968d8ceb41bf9d5e2cf98d283
+      internalID: 124296561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_80
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 228
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2628d4220c959834bbb1c1d0471fa184
+      internalID: -2022108607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_81
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 228
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb52e32504f429a4d9b303a1c0e89c3f
+      internalID: 658511169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_82
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 228
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d4c99ca90e2d794d8b5516fd2a8e8ae
+      internalID: -1561717243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_83
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 228
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 855d093d5e99aa4499782dcf4b1e1c9b
+      internalID: -626549036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_84
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 228
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc1e897b83f2ace46b6db445c08e998f
+      internalID: -415782877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_85
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 228
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1be68eacd61069f4193b7a58d01e87a3
+      internalID: -49443904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_86
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 228
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c214955170360d4cbf92af6ead560da
+      internalID: -2077935315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_87
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 228
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f6bc0872838a164ebf79b8dfd0c2112
+      internalID: 329018875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_88
+      rect:
+        serializedVersion: 2
+        x: 688
+        y: 228
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a98e7551b7c82d14eb7330b76c84b7db
+      internalID: -1506982679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_89
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 228
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc492c0c0a57c3849b512e6bb4c89378
+      internalID: -814885545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_90
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 228
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eadb68a495057aa439752ae031549dc0
+      internalID: -991109885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_91
+      rect:
+        serializedVersion: 2
+        x: 752
+        y: 228
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40dd67d0c0c4d5944a896b9eec6a1a30
+      internalID: -1246701694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_92
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 228
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 567e5e054cddea942b247c1168269843
+      internalID: 2030152689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_93
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 212
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a464ed2c0e4d1a745ad4cd6195eb1aa5
+      internalID: 1888444234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_94
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 212
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c7cb9e2d5cb7de42811135f9c06b609
+      internalID: 375262731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_95
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 212
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a53153fe8841b24d892393ecbfef73d
+      internalID: -1142020817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_96
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 212
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d24c4ef08d9cdf24cae0ff9c53d119a9
+      internalID: -288754552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_97
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 212
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abd819bf03664f04191e82c471106fb5
+      internalID: -615496744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_98
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 212
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 188a9f411592392448b2801276b0be17
+      internalID: 1657896303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_99
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 212
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 500614711721fa746a4d806852d61b67
+      internalID: -1187464325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_100
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 212
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c02f7221af734f498aff6c6a2422a12
+      internalID: 681426111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_101
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 212
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0db76eaa417b5624fba7a3a483cb8f78
+      internalID: -1719304905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_102
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 212
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69c1bbe3dae78814381bef1dbf2409a0
+      internalID: -818354305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_103
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 212
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cbcca3be5901b04496a5b1a3b723afe
+      internalID: -1535692847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_104
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 212
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33e2b6a8799682f48be1e046ad97e7db
+      internalID: 1228413698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_105
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 212
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d89c0b0756a965445bd7bad953b867a9
+      internalID: 2067321440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_106
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 212
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d37b563e74097a14a9ca3b400e0571dd
+      internalID: -13081908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_107
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 212
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e6f2f74e7e57504b93347ccbc2af399
+      internalID: 873657967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_108
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 212
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 366a0f61848b851468bc4ba2790ab627
+      internalID: 1907859926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_109
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 212
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 135b5261d804c504eb4f7316fd603933
+      internalID: -1076561815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_110
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 212
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44482a3cf198e864ebd3fc2113ec87bc
+      internalID: 1926975404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_111
+      rect:
+        serializedVersion: 2
+        x: 688
+        y: 212
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a7d6dd1ec40f114bb8d2827f944fad9
+      internalID: 1113559783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_112
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 212
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 840527a4f4095ff4fa40ffd989b8c7bd
+      internalID: -83524324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_113
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 212
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 857d34310318bc7438f21878b32666fc
+      internalID: -815463788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_114
+      rect:
+        serializedVersion: 2
+        x: 752
+        y: 212
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10ab9876f835333498b33ece8dab1ba3
+      internalID: -1081532113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_115
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 212
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d71066b5fcb967a49bd0d160286b6dec
+      internalID: 1452531321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_116
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 196
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c272a0343fb6bae4e80a35a454e96d2a
+      internalID: 1212032492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_117
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 196
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b802aca3f1391e548a1081bb457d3057
+      internalID: 1386388940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_118
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 196
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e01933a793528d745b84ce7a1174bb21
+      internalID: -620563985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_119
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 196
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db28f2e6fe6e18f4b8ccc3c99f11b600
+      internalID: -304979960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_120
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 196
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3cc0b6c7d02add43a7077f84ecf8298
+      internalID: -419992017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_121
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 196
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc226331da7bb5347903aa1df646dcd3
+      internalID: 700906342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_122
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 196
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46838b050cafece45b2a1344ae596f79
+      internalID: -747546665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_123
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 196
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81af227e05b35bb428d6104ccbb5719d
+      internalID: 2071409406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_124
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 196
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f82c2c7a38568b4fa5ce9c3519d9a9c
+      internalID: -845615207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_125
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 196
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b950386111d15e94da73cc20db6e2e49
+      internalID: -722414942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_126
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 196
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 870a286b90e741c42a6f56f73bdf981b
+      internalID: 931905216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_127
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 196
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82c801f96e9acfb4c9868b4f9546c252
+      internalID: 941953627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_128
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 196
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0ad4e465548dbf479eb08d9f76e566d
+      internalID: 1499803827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_129
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 196
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1e95b46b309c0448921ed2d24886ded
+      internalID: -1176403669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_130
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 196
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f6f8b11bb052ef4e8f162ae26105d63
+      internalID: 163849610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_131
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 196
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a9c180f42f456142a47f34ee268eedb
+      internalID: -272992749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_132
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 196
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa450b73e43cb5d45bc2c14b593d8e70
+      internalID: 1857451737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_133
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 196
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb464fe4897e0f54ea0c263a35d8521a
+      internalID: 1987419486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_134
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 196
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c45468dceaecd964e8980bdf1c9375af
+      internalID: 183848885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_135
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 196
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3acc48d4c0542974e97f883881935227
+      internalID: 1122781317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_136
+      rect:
+        serializedVersion: 2
+        x: 688
+        y: 196
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d8e6ca6f9a3b2c4ca5e694a94783080
+      internalID: -485891153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_137
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 196
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51a11a85cdece3744b31edbd369e4c5e
+      internalID: 1112002522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_138
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 196
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1e02253b801f6b48be3ad48ca829d68
+      internalID: 1982586421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_139
+      rect:
+        serializedVersion: 2
+        x: 752
+        y: 196
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5b5d4ba70f53bd4b8d57e9b9dfd7097
+      internalID: -1868107765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_140
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 196
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec8ee6c2c7c551c45b815912b7441258
+      internalID: 103241520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_141
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 180
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39036b794e686c9419399d8adcaa4557
+      internalID: 651761507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_142
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 180
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51c6de8167bb5254195d1880b0b0e4c1
+      internalID: 999989417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_143
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 180
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6adeb8bceebd53241a902df24e931433
+      internalID: -1093686071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_144
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 180
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f274ecffe7025334c91dd55d221bde47
+      internalID: 1743241987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_145
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 180
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da5ae9f6657f6e84aa3e2f3c0cebfd23
+      internalID: 236336421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_146
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 180
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1641af431d95b4428589f75f0237bf9
+      internalID: 1193428719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_147
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 180
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 261048988dffba143b2a19aaccda9d6e
+      internalID: -307108039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_148
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 180
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71b144843cfc91e4298ff4796e95928d
+      internalID: -1900460556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_149
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 180
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c581fa03a678f1842ac72a09407d0da8
+      internalID: -1173847624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_150
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 180
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b91d28d4e032803449476ff17d92f4c3
+      internalID: -667410142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_151
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 180
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 582a3a3ed1ed6eb42ad1fd915533a5f0
+      internalID: 170090979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_152
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 180
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7f7c553145e9ef41957b4a8d7b58931
+      internalID: 939115496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_153
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 180
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7037e653c4d5d1b448d255ead553edfe
+      internalID: -1563583682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_154
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 180
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d24af62c1dd66a447952c218438be684
+      internalID: -1822526633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_155
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 180
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad7b6a7a6a60f9b4a97012aa8886c2d6
+      internalID: 1318423342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_156
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 180
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eed7e5a6b4d953f4e851f09ae5ef3828
+      internalID: -841756779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_157
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 180
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 595573cf05e8cf643b2d560e700b2d49
+      internalID: 1844986721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_158
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 180
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d7b446d511cd8b45a6523996e73fbca
+      internalID: 570058872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_159
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 180
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86bd8aa0b6263b24ea645e5f190823c0
+      internalID: 18294724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_160
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 180
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3441e781c82d7ed408e186fc7a6f4031
+      internalID: -81279356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_161
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 180
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecff68b29d84f53489d810ac3641a858
+      internalID: 1583445340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_162
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 180
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ba19a2c75de1e74f9c4faa377da8795
+      internalID: 1771338350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_163
+      rect:
+        serializedVersion: 2
+        x: 688
+        y: 180
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b705b5f04277124bb3aaba0022bdcd0
+      internalID: -778901838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_164
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 180
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4efec1cdcc55da34da832f35729b3a66
+      internalID: -2028144010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_165
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 180
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46d01c9f5174af645b8e57bccdaa3177
+      internalID: -9520124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_166
+      rect:
+        serializedVersion: 2
+        x: 752
+        y: 180
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b9be466f527a4f4b8efa8d0eb8e057b
+      internalID: 1855994394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_167
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 180
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 292ffd8e716b8224d94b54ef33ce06ce
+      internalID: -1741486009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_168
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 164
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1509e11d8a041944187becb027206f4d
+      internalID: -397349246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_169
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 164
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9faecfcf1adc324eb6bec38362ec683
+      internalID: 2110021340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_170
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 164
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2904de3c463b5b46a46a713b3409980
+      internalID: 1142670411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_171
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 164
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2726a434f7f301c4c93108c448fa0f23
+      internalID: -930310067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_172
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 164
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b93ddfedbffcfa248a1bc0c56c70bf3a
+      internalID: -1419831798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_173
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 164
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bba02247fbcf34649a380fc36a810167
+      internalID: 234586867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_174
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 164
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb617ca99b3ac6d46ac5bb2cb582af48
+      internalID: -609090289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_175
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 164
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22cca13b910548b4d856cdec9f0fee80
+      internalID: 1156450107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_176
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 164
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 254e10fdee530f443a5e8810cef9a80c
+      internalID: 311853319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_177
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 164
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46c569538c2df58458ffe1abf2acd8a0
+      internalID: 1915191610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_178
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 164
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86dbb348d79686d47b3abc24ffe8c9e7
+      internalID: 991264561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_179
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 164
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f10014da4d1b9714fae54148d4a9755c
+      internalID: 1745025513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_180
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 164
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f20f2d00b9f0bdb47a28445796ccebf8
+      internalID: 1277497178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_181
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 164
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a351c4df22080e74aaea582782061391
+      internalID: 94551002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_182
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 164
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d66bac236a90ff4f9cb21a67edf1c08
+      internalID: -1138433969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_183
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 164
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eba3cdc9ff8b0324c90171ca8914c942
+      internalID: 1215897309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_184
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 164
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80ea844e48e81434a9a090ae2789eefd
+      internalID: -1966129828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_185
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 164
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a5436dd25e00c54cbc6e7a6015ba5c0
+      internalID: -611740448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_186
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 164
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96493a441023471499700c784e6542b9
+      internalID: 590449117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_187
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 164
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0f93222f72638d43a1e887e73250560
+      internalID: -1028652445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_188
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 164
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6812906aff922c14f9f75da33489360e
+      internalID: -689568071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_189
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 164
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b8c8af0166cf4c4fb919ff0a4926bfc
+      internalID: 554701993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_190
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 164
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fec2469119d065a49aaa99fab4bcee01
+      internalID: 1917130508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_191
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 164
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c1c9d29d2fff7941b2088294135ab72
+      internalID: 2041038561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_192
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 164
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 236ee2a22279d1c41a8754552a68a9dc
+      internalID: 2008305975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_193
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 164
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf1808da9e7fba7448113b051fb6f6ba
+      internalID: -124689200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_194
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 164
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9801904cb7de8b14b9b27348ce7da051
+      internalID: 944006437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_195
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 164
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c556c535521f9ad4cbb57966f130743b
+      internalID: -1006958678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_196
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 164
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6771bc9b1bd1fa346b980ef8de00924f
+      internalID: 163567068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_197
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 164
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bea878ed66ec83248adf3b003340b1ad
+      internalID: -1461509110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_198
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 164
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bbc1dbf02407e4469a4ba12536f2ccb
+      internalID: -1070036578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_199
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 164
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d1bb16d9078f194ab644e1c4bfb93cc
+      internalID: -1434657426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_200
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 164
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: feadd9ba0a02df140b17984cb6f0d852
+      internalID: 1854191552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_201
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 164
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 539dccf422e566141a6d5a0629127126
+      internalID: -216621492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_202
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 164
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5807136436bfab44991c308244ec4669
+      internalID: -1568959485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_203
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 164
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3dc085f70e05984991cc9d04e08c071
+      internalID: 971463360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_204
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 164
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c07cae9d20b952c4298e2cb628fbe7e1
+      internalID: -1277314298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_205
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 164
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d81ac36458f82be4083ce38131b1cd1b
+      internalID: -88121953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_206
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 164
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8dcc66bd9f01f264fa8eff1fb561b91d
+      internalID: 742688225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_207
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 164
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c930f0e349a75740b0802c6ad4f44ad
+      internalID: -1069612104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_208
+      rect:
+        serializedVersion: 2
+        x: 688
+        y: 164
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85af03c791343c544921e569ca55fcdf
+      internalID: -712424823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_209
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 164
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d54b0216b869bee4e8b13dc57e79afe7
+      internalID: 657427027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_210
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 164
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e278c493ef9e8b247b7140416b030363
+      internalID: -72096507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_211
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 164
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb59dab120d773541b0edd5148f74ddf
+      internalID: 1310832472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_212
+      rect:
+        serializedVersion: 2
+        x: 752
+        y: 164
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de8f082224c4f554cbce194cf2e0134d
+      internalID: -782148232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_213
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 164
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab1629837b8c5a24ebbc135895c2cb9e
+      internalID: 209955562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_214
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 148
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ccceb4e1d4ba2346aa14f7fdebc2727
+      internalID: -1926853383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_215
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 148
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47b8825959b889e4991c4919ae13f5dd
+      internalID: 1756098238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_216
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 148
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5277a602d3f671b4086523828de07e9d
+      internalID: -779371036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_217
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 148
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7f8768615675ae4da9705445b5c8ad5
+      internalID: 1825163700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_218
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 148
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c91f3d6ab33676b4ea14677d9a5c13e8
+      internalID: 2113239336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_219
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 148
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c528a56e4efd4574b86b6f344c718c8a
+      internalID: 1414628739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_220
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 148
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f29db6b732092c49a4c58ac0d3c92e6
+      internalID: -1273521153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_221
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 148
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 339f1b35a210b414a915be19059e86a1
+      internalID: -2095586313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_222
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 148
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbefdb3b6251db244b8e1e0ba87dc90d
+      internalID: 2096772075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_223
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 148
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60cbc189b1b30e249af418e042b20a75
+      internalID: -172821700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_224
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 148
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd9655a929b01654098b3471bfeb7640
+      internalID: -832464098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_225
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 148
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d2a75d84d04751429c8f3ba13d602f7
+      internalID: -1275448246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_226
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 148
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a33e499c9113221499c61bc69066ee66
+      internalID: -1807452041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_227
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 148
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82ce6a0530154314db93c94e0081a62a
+      internalID: 348741898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_228
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 148
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 639e768927ace544fb7e48f8795d1123
+      internalID: -757487472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_229
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 148
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3fccfedd0611a54d8fb26aa94cc518f
+      internalID: 1828314300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_230
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 148
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0484806a2202c0468c45093cff23a5d
+      internalID: 1257664587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_231
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 148
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e7c7a9ae15c7da4aa506aa5c641074d
+      internalID: -1959294795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_232
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 148
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2c7feb2a932a3944b31c5838e7c585e
+      internalID: 762717946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_233
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 148
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d8cf7f72bccb7842a017161b79c38e3
+      internalID: -1694799748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_234
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 148
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5226ac0a451c1f149916d611eeb99444
+      internalID: 982632038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_235
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 148
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b45fb3ff0e663343b183d712e145719
+      internalID: -74354278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_236
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 148
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1994c4dcea7a4024e924bb72ecd5e283
+      internalID: -1044758405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_237
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 148
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e89690c4567fe541906e0be8a58889d
+      internalID: -1763521997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_238
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 148
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66cac466c016b3b49b7b80419d3f49b9
+      internalID: 1113443198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_239
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 148
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 518ce7a8a92f4e34bb9db11c19fafee4
+      internalID: -2126772555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_240
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 148
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2a0b6db2016cf54abdd2ac677b76f97
+      internalID: -2045567707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_241
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 148
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9fc1a9ee87e8a042ab62fa331ce62a7
+      internalID: -440040672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_242
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 148
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4661332a96e21045b12cda7a7153488
+      internalID: -929125248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_243
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 148
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c78c1bd08433b234bad73d10e9feba0e
+      internalID: -571735795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_244
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 148
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8d435f62c532fc4086af79ceee1b360
+      internalID: -189912352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_245
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 148
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 678766dae83b7c74c85d055869484235
+      internalID: 727093402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_246
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 148
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1866bf972ea079e46b4bdf93412f7c38
+      internalID: 442945669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_247
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 148
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 313bf7bfe19bcc14eb2aa4edd7a328b5
+      internalID: -1015070574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_248
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 148
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 603ca1696dc32134190c273434d7b12b
+      internalID: -2123470890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_249
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 148
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e18cc4f9fdcdf649972e7339ade4a68
+      internalID: 1994919011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_250
+      rect:
+        serializedVersion: 2
+        x: 688
+        y: 148
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77ac54fa2f156414b8cb5d84825a6319
+      internalID: 1798504574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_251
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 148
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2a319e11cd7ef243a48fe1c5ddd6583
+      internalID: -1839863961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_252
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 148
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fba5ad1e0e62c34795552576eb83a3d
+      internalID: 117841214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_253
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 148
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e9160274c79ec84f9434ecb3d3b9ccf
+      internalID: -828075895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_254
+      rect:
+        serializedVersion: 2
+        x: 752
+        y: 148
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 896c620566214624e90f096b9f7a826e
+      internalID: -401326591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_255
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 148
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98fb8fa343f021845856babc6a3f95ca
+      internalID: 1033336590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_256
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 132
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b3f63c2df9d3ab4883300bba604767c
+      internalID: -395191229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_257
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 132
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5c1a4a48fd3c194cb170e129b918c2d
+      internalID: 1938920043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_258
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 132
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68e16465ed7d46846b7b241726a33095
+      internalID: -1113103028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_259
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 132
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f38b1b8015517e45958b065cf1a919b
+      internalID: -1772678594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_260
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 132
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 404807fc02d2f33429b20aa29fdb6cd9
+      internalID: -99424153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_261
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 132
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85acf0b5a66ece24eb4e2ec15cac6d59
+      internalID: 29545345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_262
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 132
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 026408c1060639c4d8b85208e5e7a02a
+      internalID: -66356169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_263
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 132
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6a4efb386a5a5140b5c10e8cf8d74eb
+      internalID: -295810186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_264
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 132
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef3449b6ec7445c488c6407d93b37e6f
+      internalID: -1754342215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_265
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 132
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d40be7b2cf530e4fa7af22008b7b72f
+      internalID: -1323493957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_266
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 132
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bf757d03eb7e584896edd5db25a6194
+      internalID: 9218861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_267
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 132
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd46b83dcf88628488ea43874bf18787
+      internalID: -1091215525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_268
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 132
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e2879ffc4122604d8f1ca4d55e416f9
+      internalID: 706167009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_269
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 132
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47e0cfe198ce44e4e9ccf2b9f11ac6ae
+      internalID: 1390311732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_270
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 132
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a65af2b72b33edb478c3847061cd66ac
+      internalID: -1635159107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_271
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 132
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6195918b7fee46f47a59b9f7e52d16bc
+      internalID: -1001270252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_272
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 132
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d1411aa4567d154fb50d6742bff3864
+      internalID: -1950349807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_273
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 132
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59ea7cabdb47d5647b9c7bc609bbbff4
+      internalID: 949859487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_274
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 132
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77d61e665c870dd43be40d4123abe7a2
+      internalID: -829925325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_275
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 132
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d487b4928689c104abd804485e69263d
+      internalID: 2079659182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_276
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 132
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e64c4c0a2934f2e45b940ee3406d9fc5
+      internalID: -230256631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_277
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 132
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9023b55294ef0794b934d6596a1cf73a
+      internalID: 6546189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_278
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 132
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9298da7bba28684a9ae8ae619d890b8
+      internalID: -661464793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_279
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 132
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d46308c4f6dc054ea3c12dd54660041
+      internalID: -10659974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_280
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 132
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf75fc4be6be8b349843f2f26cb4d8c9
+      internalID: 14855362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_281
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 132
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b142de99a94b57946853e8107a2ca24e
+      internalID: -2037833476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_282
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 132
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35b5359113f154f40b2c4150bdf440c5
+      internalID: -232840259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_283
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 132
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad6a8dfa00cf2f94598975bffd782666
+      internalID: -1242533844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_284
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 132
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 908e0addcf7343b448c7d7f717c49d76
+      internalID: 800367180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_285
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 132
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 363e5f8807795e44f8f3280372927cbe
+      internalID: -1915513709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_286
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 132
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27c0748071f78934bb0eafd8b8a026e9
+      internalID: -1126390127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_287
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 132
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 797eb8f0caba7e849a96e53a9b603986
+      internalID: -1336734733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_288
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 132
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 940e7ecbb1b00df46b17dd984eac0e82
+      internalID: 641247620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_289
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 132
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6311210f201e2749b0d75e247876058
+      internalID: 1690483650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_290
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 132
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b81c8f50433a7243b01f89b96b40cc2
+      internalID: 1281387348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_291
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 132
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 421696977d2e03843a86c92bb9413967
+      internalID: -1363301201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_292
+      rect:
+        serializedVersion: 2
+        x: 688
+        y: 132
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70aaa91674a70564aa97aa041846fed7
+      internalID: 535219727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_293
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 132
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ce64f17a00998b40b07b2daf03c6770
+      internalID: -691457979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_294
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 132
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b78fd2f8decb79e47bc34b67b685a617
+      internalID: 546010130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_295
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 132
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 897483ef29bb5a647a886700bd6cbadb
+      internalID: 1295040154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_296
+      rect:
+        serializedVersion: 2
+        x: 752
+        y: 132
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70f2c195a6c31e7468f659fe89721d4e
+      internalID: -631577945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_297
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 132
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73a48cf92d0ee114dadb47130314061c
+      internalID: 619719160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_298
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 116
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03cb1d115ea93054aa61aa6f21c94653
+      internalID: 1681059565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_299
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 116
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43bcfd2468a82c14b9cfd5eb3c2e8562
+      internalID: 1694366446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_300
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 116
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a9e20959f527b84d9d68145a0ab63bd
+      internalID: 758823374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_301
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 116
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cbc0e2837a9fbb43880fa593173dedd
+      internalID: -1388445860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_302
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 116
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee59f75fef0b30f4b8953b56f302e2c4
+      internalID: -1780756520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_303
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 116
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 575202bf136826f40b1241b8e9d96ffe
+      internalID: 651969454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_304
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 116
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7829717efd1c2c348b6f89089dfb6330
+      internalID: 190596421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_305
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 116
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1621423a18d242f4cbe443632c553922
+      internalID: -1238192510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_306
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 116
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d12fc93e573c254ba2d2ce358655e15
+      internalID: 1962196257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_307
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 116
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b445242893db524498c4b16564f08bd
+      internalID: -1962334115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_308
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 116
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3aa55fb53828e54cb79487c945204b8
+      internalID: 162050508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_309
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 116
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cc0ceb71ee366e42ba987fedb34489c
+      internalID: -35092742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_310
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 116
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5959e8b6992e9e4196a79cb90eba439
+      internalID: -1344454951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_311
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 116
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef4e976455dd2674ea3cfbca55c90b0f
+      internalID: 680127024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_312
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 116
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 678525c36e7f13a4a95a6ee7a804bb85
+      internalID: -1089503568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_313
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 116
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d09341a07fd27af43a4eaa8f58069328
+      internalID: -1422255196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_314
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 116
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30ac13e8281416d44934fb178faa8c9b
+      internalID: -1552561143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_315
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 116
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 684f4e62f2e99f448826584b39cb8314
+      internalID: 1423149874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_316
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 116
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac705ca0a651d34469a86e72571ee1e2
+      internalID: 504243059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_317
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 116
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b3018f78de032645862cd91903f05f2
+      internalID: -1176159933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_318
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 116
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a8e195ea8c4b484983ccc1a6e3a2715
+      internalID: 1411809297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_319
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 116
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d2843042f4ea4b4680c997c3a224216
+      internalID: -119058236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_320
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 116
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 235b4dd9b1363604da65c505b40c0e13
+      internalID: -2076823301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_321
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 116
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ccbab62230d4ac41a65b4c4efcb40f6
+      internalID: 1420404948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_322
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 116
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64b0ea64da221144e874e7623fcbc2f0
+      internalID: 1301495622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_323
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 116
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfeb33f727f79c743908b7113c4c547a
+      internalID: 559531633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_324
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 116
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01e3a0180afa03340acf1fdc9e12b803
+      internalID: 828520249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_325
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 116
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18fb7ecbf1dfdbd4ca018e1d9b39034e
+      internalID: 42435127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_326
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 116
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54c0ad7161bdda34dbc94ec658346db9
+      internalID: -199615845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_327
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 116
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3048df756d7a0174597ac9ff45927267
+      internalID: 1355910364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_328
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 116
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2ccc66d7fd7f4d49bde176b40b9eb41
+      internalID: 1915404573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_329
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 116
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e578e7bff142d4749a77c21d90b7d8fc
+      internalID: -1114244043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_330
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 116
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 491bf8706d8e1fb47a08f09d485bf67b
+      internalID: -525872595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_331
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 116
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2539ae90dca31e849b80576d53f2d82e
+      internalID: -649878353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_332
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 116
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a36d82cd9ff5b6e43b298576aad94e3e
+      internalID: -2077003994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_333
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 116
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49eaff62dfb60424088c97622ef1cbdb
+      internalID: -1717796989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_334
+      rect:
+        serializedVersion: 2
+        x: 688
+        y: 116
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86ef9ffcf247f934782e5d4bff86b1d2
+      internalID: 1491765747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_335
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 116
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ba28a06667c3154d9971d9a9d8999ac
+      internalID: 1912335275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_336
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 116
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a8d575b1d8ea0d4e88579906d978b46
+      internalID: -915887557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_337
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 116
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10bc04c99c203d543bb3cfb820e18fc6
+      internalID: 381821593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_338
+      rect:
+        serializedVersion: 2
+        x: 752
+        y: 116
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a3c770593292044f8d26c2945496dc3
+      internalID: -898398843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CompanyGround_339
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 116
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 077ede2969108ce4991ac837f68eeedf
+      internalID: 1451157220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      CompanyGround_0: 434161270
+      CompanyGround_1: -1740344249
+      CompanyGround_10: -835873496
+      CompanyGround_100: 681426111
+      CompanyGround_101: -1719304905
+      CompanyGround_102: -818354305
+      CompanyGround_103: -1535692847
+      CompanyGround_104: 1228413698
+      CompanyGround_105: 2067321440
+      CompanyGround_106: -13081908
+      CompanyGround_107: 873657967
+      CompanyGround_108: 1907859926
+      CompanyGround_109: -1076561815
+      CompanyGround_11: 1635068382
+      CompanyGround_110: 1926975404
+      CompanyGround_111: 1113559783
+      CompanyGround_112: -83524324
+      CompanyGround_113: -815463788
+      CompanyGround_114: -1081532113
+      CompanyGround_115: 1452531321
+      CompanyGround_116: 1212032492
+      CompanyGround_117: 1386388940
+      CompanyGround_118: -620563985
+      CompanyGround_119: -304979960
+      CompanyGround_12: 46998392
+      CompanyGround_120: -419992017
+      CompanyGround_121: 700906342
+      CompanyGround_122: -747546665
+      CompanyGround_123: 2071409406
+      CompanyGround_124: -845615207
+      CompanyGround_125: -722414942
+      CompanyGround_126: 931905216
+      CompanyGround_127: 941953627
+      CompanyGround_128: 1499803827
+      CompanyGround_129: -1176403669
+      CompanyGround_13: -575873208
+      CompanyGround_130: 163849610
+      CompanyGround_131: -272992749
+      CompanyGround_132: 1857451737
+      CompanyGround_133: 1987419486
+      CompanyGround_134: 183848885
+      CompanyGround_135: 1122781317
+      CompanyGround_136: -485891153
+      CompanyGround_137: 1112002522
+      CompanyGround_138: 1982586421
+      CompanyGround_139: -1868107765
+      CompanyGround_14: -99783001
+      CompanyGround_140: 103241520
+      CompanyGround_141: 651761507
+      CompanyGround_142: 999989417
+      CompanyGround_143: -1093686071
+      CompanyGround_144: 1743241987
+      CompanyGround_145: 236336421
+      CompanyGround_146: 1193428719
+      CompanyGround_147: -307108039
+      CompanyGround_148: -1900460556
+      CompanyGround_149: -1173847624
+      CompanyGround_15: -1266617363
+      CompanyGround_150: -667410142
+      CompanyGround_151: 170090979
+      CompanyGround_152: 939115496
+      CompanyGround_153: -1563583682
+      CompanyGround_154: -1822526633
+      CompanyGround_155: 1318423342
+      CompanyGround_156: -841756779
+      CompanyGround_157: 1844986721
+      CompanyGround_158: 570058872
+      CompanyGround_159: 18294724
+      CompanyGround_16: 563389364
+      CompanyGround_160: -81279356
+      CompanyGround_161: 1583445340
+      CompanyGround_162: 1771338350
+      CompanyGround_163: -778901838
+      CompanyGround_164: -2028144010
+      CompanyGround_165: -9520124
+      CompanyGround_166: 1855994394
+      CompanyGround_167: -1741486009
+      CompanyGround_168: -397349246
+      CompanyGround_169: 2110021340
+      CompanyGround_17: 713121501
+      CompanyGround_170: 1142670411
+      CompanyGround_171: -930310067
+      CompanyGround_172: -1419831798
+      CompanyGround_173: 234586867
+      CompanyGround_174: -609090289
+      CompanyGround_175: 1156450107
+      CompanyGround_176: 311853319
+      CompanyGround_177: 1915191610
+      CompanyGround_178: 991264561
+      CompanyGround_179: 1745025513
+      CompanyGround_18: 422662563
+      CompanyGround_180: 1277497178
+      CompanyGround_181: 94551002
+      CompanyGround_182: -1138433969
+      CompanyGround_183: 1215897309
+      CompanyGround_184: -1966129828
+      CompanyGround_185: -611740448
+      CompanyGround_186: 590449117
+      CompanyGround_187: -1028652445
+      CompanyGround_188: -689568071
+      CompanyGround_189: 554701993
+      CompanyGround_19: 382533143
+      CompanyGround_190: 1917130508
+      CompanyGround_191: 2041038561
+      CompanyGround_192: 2008305975
+      CompanyGround_193: -124689200
+      CompanyGround_194: 944006437
+      CompanyGround_195: -1006958678
+      CompanyGround_196: 163567068
+      CompanyGround_197: -1461509110
+      CompanyGround_198: -1070036578
+      CompanyGround_199: -1434657426
+      CompanyGround_2: 1627653172
+      CompanyGround_20: 888651854
+      CompanyGround_200: 1854191552
+      CompanyGround_201: -216621492
+      CompanyGround_202: -1568959485
+      CompanyGround_203: 971463360
+      CompanyGround_204: -1277314298
+      CompanyGround_205: -88121953
+      CompanyGround_206: 742688225
+      CompanyGround_207: -1069612104
+      CompanyGround_208: -712424823
+      CompanyGround_209: 657427027
+      CompanyGround_21: 1721795550
+      CompanyGround_210: -72096507
+      CompanyGround_211: 1310832472
+      CompanyGround_212: -782148232
+      CompanyGround_213: 209955562
+      CompanyGround_214: -1926853383
+      CompanyGround_215: 1756098238
+      CompanyGround_216: -779371036
+      CompanyGround_217: 1825163700
+      CompanyGround_218: 2113239336
+      CompanyGround_219: 1414628739
+      CompanyGround_22: 1675474909
+      CompanyGround_220: -1273521153
+      CompanyGround_221: -2095586313
+      CompanyGround_222: 2096772075
+      CompanyGround_223: -172821700
+      CompanyGround_224: -832464098
+      CompanyGround_225: -1275448246
+      CompanyGround_226: -1807452041
+      CompanyGround_227: 348741898
+      CompanyGround_228: -757487472
+      CompanyGround_229: 1828314300
+      CompanyGround_23: 707041914
+      CompanyGround_230: 1257664587
+      CompanyGround_231: -1959294795
+      CompanyGround_232: 762717946
+      CompanyGround_233: -1694799748
+      CompanyGround_234: 982632038
+      CompanyGround_235: -74354278
+      CompanyGround_236: -1044758405
+      CompanyGround_237: -1763521997
+      CompanyGround_238: 1113443198
+      CompanyGround_239: -2126772555
+      CompanyGround_24: 624446687
+      CompanyGround_240: -2045567707
+      CompanyGround_241: -440040672
+      CompanyGround_242: -929125248
+      CompanyGround_243: -571735795
+      CompanyGround_244: -189912352
+      CompanyGround_245: 727093402
+      CompanyGround_246: 442945669
+      CompanyGround_247: -1015070574
+      CompanyGround_248: -2123470890
+      CompanyGround_249: 1994919011
+      CompanyGround_25: -1286120911
+      CompanyGround_250: 1798504574
+      CompanyGround_251: -1839863961
+      CompanyGround_252: 117841214
+      CompanyGround_253: -828075895
+      CompanyGround_254: -401326591
+      CompanyGround_255: 1033336590
+      CompanyGround_256: -395191229
+      CompanyGround_257: 1938920043
+      CompanyGround_258: -1113103028
+      CompanyGround_259: -1772678594
+      CompanyGround_26: 1995980948
+      CompanyGround_260: -99424153
+      CompanyGround_261: 29545345
+      CompanyGround_262: -66356169
+      CompanyGround_263: -295810186
+      CompanyGround_264: -1754342215
+      CompanyGround_265: -1323493957
+      CompanyGround_266: 9218861
+      CompanyGround_267: -1091215525
+      CompanyGround_268: 706167009
+      CompanyGround_269: 1390311732
+      CompanyGround_27: 526293702
+      CompanyGround_270: -1635159107
+      CompanyGround_271: -1001270252
+      CompanyGround_272: -1950349807
+      CompanyGround_273: 949859487
+      CompanyGround_274: -829925325
+      CompanyGround_275: 2079659182
+      CompanyGround_276: -230256631
+      CompanyGround_277: 6546189
+      CompanyGround_278: -661464793
+      CompanyGround_279: -10659974
+      CompanyGround_28: 564393005
+      CompanyGround_280: 14855362
+      CompanyGround_281: -2037833476
+      CompanyGround_282: -232840259
+      CompanyGround_283: -1242533844
+      CompanyGround_284: 800367180
+      CompanyGround_285: -1915513709
+      CompanyGround_286: -1126390127
+      CompanyGround_287: -1336734733
+      CompanyGround_288: 641247620
+      CompanyGround_289: 1690483650
+      CompanyGround_29: 741193257
+      CompanyGround_290: 1281387348
+      CompanyGround_291: -1363301201
+      CompanyGround_292: 535219727
+      CompanyGround_293: -691457979
+      CompanyGround_294: 546010130
+      CompanyGround_295: 1295040154
+      CompanyGround_296: -631577945
+      CompanyGround_297: 619719160
+      CompanyGround_298: 1681059565
+      CompanyGround_299: 1694366446
+      CompanyGround_3: 1609574594
+      CompanyGround_30: -380462042
+      CompanyGround_300: 758823374
+      CompanyGround_301: -1388445860
+      CompanyGround_302: -1780756520
+      CompanyGround_303: 651969454
+      CompanyGround_304: 190596421
+      CompanyGround_305: -1238192510
+      CompanyGround_306: 1962196257
+      CompanyGround_307: -1962334115
+      CompanyGround_308: 162050508
+      CompanyGround_309: -35092742
+      CompanyGround_31: 1352425924
+      CompanyGround_310: -1344454951
+      CompanyGround_311: 680127024
+      CompanyGround_312: -1089503568
+      CompanyGround_313: -1422255196
+      CompanyGround_314: -1552561143
+      CompanyGround_315: 1423149874
+      CompanyGround_316: 504243059
+      CompanyGround_317: -1176159933
+      CompanyGround_318: 1411809297
+      CompanyGround_319: -119058236
+      CompanyGround_32: -1445737381
+      CompanyGround_320: -2076823301
+      CompanyGround_321: 1420404948
+      CompanyGround_322: 1301495622
+      CompanyGround_323: 559531633
+      CompanyGround_324: 828520249
+      CompanyGround_325: 42435127
+      CompanyGround_326: -199615845
+      CompanyGround_327: 1355910364
+      CompanyGround_328: 1915404573
+      CompanyGround_329: -1114244043
+      CompanyGround_33: -1428973015
+      CompanyGround_330: -525872595
+      CompanyGround_331: -649878353
+      CompanyGround_332: -2077003994
+      CompanyGround_333: -1717796989
+      CompanyGround_334: 1491765747
+      CompanyGround_335: 1912335275
+      CompanyGround_336: -915887557
+      CompanyGround_337: 381821593
+      CompanyGround_338: -898398843
+      CompanyGround_339: 1451157220
+      CompanyGround_34: 885519028
+      CompanyGround_35: 2135739284
+      CompanyGround_36: 1071980244
+      CompanyGround_37: 1822367518
+      CompanyGround_38: -138659576
+      CompanyGround_39: 638155292
+      CompanyGround_4: -1154920441
+      CompanyGround_40: -1337308486
+      CompanyGround_41: -75642176
+      CompanyGround_42: -540527247
+      CompanyGround_43: -2027913429
+      CompanyGround_44: 857709706
+      CompanyGround_45: 4766186
+      CompanyGround_46: 1164415645
+      CompanyGround_47: 1615168960
+      CompanyGround_48: 715204048
+      CompanyGround_49: 1916770830
+      CompanyGround_5: 896089370
+      CompanyGround_50: 1316604545
+      CompanyGround_51: -88654805
+      CompanyGround_52: -1635470697
+      CompanyGround_53: 347894473
+      CompanyGround_54: -1574362370
+      CompanyGround_55: -1971717069
+      CompanyGround_56: -155622446
+      CompanyGround_57: 1403854146
+      CompanyGround_58: 1286664093
+      CompanyGround_59: -1362581615
+      CompanyGround_6: 256643644
+      CompanyGround_60: 1450900223
+      CompanyGround_61: 1549741862
+      CompanyGround_62: 958394268
+      CompanyGround_63: -932230434
+      CompanyGround_64: -1473545041
+      CompanyGround_65: -653228757
+      CompanyGround_66: -866425105
+      CompanyGround_67: 1252017314
+      CompanyGround_68: -983683568
+      CompanyGround_69: -937639142
+      CompanyGround_7: -240325828
+      CompanyGround_70: 566658535
+      CompanyGround_71: 382661611
+      CompanyGround_72: -938679057
+      CompanyGround_73: -1404463536
+      CompanyGround_74: 1312765034
+      CompanyGround_75: 1067277238
+      CompanyGround_76: 753722411
+      CompanyGround_77: 1390397686
+      CompanyGround_78: -2091597845
+      CompanyGround_79: 124296561
+      CompanyGround_8: 1614423254
+      CompanyGround_80: -2022108607
+      CompanyGround_81: 658511169
+      CompanyGround_82: -1561717243
+      CompanyGround_83: -626549036
+      CompanyGround_84: -415782877
+      CompanyGround_85: -49443904
+      CompanyGround_86: -2077935315
+      CompanyGround_87: 329018875
+      CompanyGround_88: -1506982679
+      CompanyGround_89: -814885545
+      CompanyGround_9: -394140184
+      CompanyGround_90: -991109885
+      CompanyGround_91: -1246701694
+      CompanyGround_92: 2030152689
+      CompanyGround_93: 1888444234
+      CompanyGround_94: 375262731
+      CompanyGround_95: -1142020817
+      CompanyGround_96: -288754552
+      CompanyGround_97: -615496744
+      CompanyGround_98: 1657896303
+      CompanyGround_99: -1187464325
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

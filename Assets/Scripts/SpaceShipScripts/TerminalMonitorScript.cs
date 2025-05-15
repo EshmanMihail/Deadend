@@ -21,6 +21,9 @@ public class TerminalMonitorScript : NetworkBehaviour
     [SerializeField] private Text lootCountInShipText;
     [SerializeField] private Text lootCommonCostInShipText;
 
+    [SerializeField] private AudioClip enterInComputer;
+    [SerializeField] private AudioClip exitFromComputer;
+
     private int currentSceneIndex = 1;
 
     void Start()
@@ -240,6 +243,7 @@ public class TerminalMonitorScript : NetworkBehaviour
     {
         if (objectIndex == 0)
         {
+            audioSource.PlayOneShot(enterInComputer);
             textObjects[0].SetActive(true);
             textObjects[1].SetActive(true);
 
@@ -283,6 +287,7 @@ public class TerminalMonitorScript : NetworkBehaviour
     [TargetRpc]
     private void TargetDeactivateTerminal(NetworkConnection target)
     {
+        audioSource.PlayOneShot(exitFromComputer);
         isActivated = false;
         if (textObjects[0].activeSelf)
         {

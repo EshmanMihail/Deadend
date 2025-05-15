@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -8798492883815725187}
   - component: {fileID: 8446553050484412030}
   - component: {fileID: 5611806619158208153}
+  - component: {fileID: -8242055804466843271}
   m_Layer: 0
   m_Name: GreenEngine
   m_TagString: Loot
@@ -268,3 +269,16 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-8242055804466843271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 774781450913746435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 657a3f69331d34a4ebeb09e136710e2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mass: 10

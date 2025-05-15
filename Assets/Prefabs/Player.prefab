@@ -575,7 +575,7 @@ MonoBehaviour:
   fJumpPressedRememberTime: 0.2
   fGroundedRememberTime: 0.25
   fCutJumpHeight: 0.5
-  maxDifferenceHeightToTakeDamage: 15
+  maxDifferenceHeightToTakeDamage: 8
   doubleTapD: 0
   doubleTapA: 0
   doubleTapTimeThreshold: 0.3
@@ -670,6 +670,7 @@ MonoBehaviour:
   audioClips:
   - {fileID: 8300000, guid: 72ccee048270805458a6217d35117936, type: 3}
   - {fileID: 8300000, guid: f2551caac9fe33148b45e347f97f2932, type: 3}
+  - {fileID: 8300000, guid: 53ef6d577b792a048b3f8da3eff8646b, type: 3}
 --- !u!114 &-8209480597885260348
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -47,6 +47,8 @@ public class Character : NetworkBehaviour
 
     private int groundSoundIndex = 0;
 
+    private HealthBar healthBar;
+
     #region Movement methods
 
     public void MoveRightAndLeft(float move, float speedNow, float stepsInterval)
@@ -125,7 +127,7 @@ public class Character : NetworkBehaviour
             soundManager.CmdPlayAudioClip(0, volume);
             if ((int)(Mathf.Abs(highestPosition - transform.position.y)) > maxDifferenceHeightToTakeDamage)
             {
-                //CmdTakeFallDamage((int)(Mathf.Abs(highestPosition - transform.position.y)) * 2);
+                CmdTakeFallDamage((int)(Mathf.Abs(highestPosition - transform.position.y)) * 2);
             }
             isFalling = false;
             firstTime = true;
@@ -135,7 +137,9 @@ public class Character : NetworkBehaviour
     [Command]
     private void CmdTakeFallDamage(int damage)
     {
-        // Логика получения урона от падения
+        healthBar = GetComponent<HealthBar>();
+        soundManager.CmdPlayAudioClip(2, damage);
+        healthBar.CmdTakeDamage(damage);
     }
 
     public void IsPlayerCanMove(bool isCanMove)

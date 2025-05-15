@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -5964204582388366913}
   - component: {fileID: 4642480935356589290}
   - component: {fileID: -8319338748552885022}
+  - component: {fileID: 8143210626505132480}
   m_Layer: 0
   m_Name: RedScrew
   m_TagString: Loot
@@ -268,3 +269,16 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &8143210626505132480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4221091744945144728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 657a3f69331d34a4ebeb09e136710e2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mass: 10

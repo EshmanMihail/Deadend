@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2660743275592103316}
   - component: {fileID: 1490370217447068689}
   - component: {fileID: -5148587669907704334}
+  - component: {fileID: -2841464838549599441}
   m_Layer: 0
   m_Name: GrayEngine
   m_TagString: Loot
@@ -268,3 +269,16 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-2841464838549599441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5635480949245368125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 657a3f69331d34a4ebeb09e136710e2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mass: 10
