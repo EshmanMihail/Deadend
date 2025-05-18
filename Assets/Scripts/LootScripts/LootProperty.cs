@@ -14,6 +14,7 @@ public class LootProperty : NetworkBehaviour
     public int maxCost = 50;
 
     [SyncVar] public int currentCost = -1;
+    public bool isCollected = false;
 
     private AudioSource audioSource;
 
@@ -32,9 +33,9 @@ public class LootProperty : NetworkBehaviour
     [Server]
 
    public void ChangeCost(int newCost)
-    {
+   {
         currentCost = newCost;
-    }
+   }
 
     [Command(requiresAuthority = false)]
     public void CmdPlayDropAudioClip()

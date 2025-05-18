@@ -62,6 +62,8 @@ public class FadeImageScript : NetworkBehaviour
         }
 
         ShipObjectsChecker.Instance.SetLootIdInList();
+        if (SceneManager.GetActiveScene().buildIndex > 1) LevelManager.Instance.SetCountOfDeadPlayers();
+
         StartCoroutine(FadeOutAndLoadScene());
     }
 

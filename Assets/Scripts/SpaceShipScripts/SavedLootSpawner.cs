@@ -11,8 +11,11 @@ public class SavedLootSpawner : NetworkBehaviour
 
     void Start()
     {
-        InitializeLootDb();
-        SpawnSavedLoot();
+        if (isServer)
+        {
+            InitializeLootDb();
+            SpawnSavedLoot();
+        }
     }
 
     private void InitializeLootDb()
@@ -54,6 +57,7 @@ public class SavedLootSpawner : NetworkBehaviour
         for (int i = 0; i < spawnedLoot.Count; i++)
         {
             spawnedLoot[i].GetComponent<LootProperty>().ChangeCost(MissionSettings.lootInShip[i].Item3);
+            spawnedLoot[i].GetComponent<LootProperty>().isCollected = MissionSettings.lootInShip[i].Item4;
         }
     }
 }

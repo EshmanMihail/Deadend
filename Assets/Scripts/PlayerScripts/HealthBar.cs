@@ -2,6 +2,8 @@ using Mirror;
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.TextCore.Text;
 using UnityEngine.UI;
 using static Org.BouncyCastle.Asn1.Cmp.Challenge;
 
@@ -23,6 +25,11 @@ public class HealthBar : NetworkBehaviour
     private Color damageColor = Color.red;
     [HideInInspector] public bool isCharacterDead;
 
+    private CameraFollowScript cameraFollowScript;
+    private Character character;
+    private FlashLightBarController flashLightBarController;
+    private InventoryController inventoryController;
+
     private void Awake()
     {
         hp = maxHealth;
@@ -32,6 +39,11 @@ public class HealthBar : NetworkBehaviour
     {
         healthBar = UIManager.Instance.GetFillingBar();
         characterSprite = GetComponent<SpriteRenderer>();
+        cameraFollowScript = GetComponent<CameraFollowScript>();
+        character = GetComponent<Character>();
+        flashLightBarController = GetComponent<FlashLightBarController>();
+        inventoryController = GetComponent<InventoryController>();
+
         damageMaterial = characterSprite.material;
 
         if (isServer)
@@ -39,6 +51,19 @@ public class HealthBar : NetworkBehaviour
             System.Random rand = new System.Random(Guid.NewGuid().GetHashCode());
             int noiseType = rand.Next(8, 70);
             //CmdGetNoiseNumber(noiseType);
+        }
+
+        if (SceneManager.GetActiveScene().buildIndex > 1)
+        {
+            LevelManager.Instance.RegisterPlayer(this);
+        }
+    }
+
+    private void OnDestroy()
+    {
+        if (isServer)
+        {
+            LevelManager.Instance.UnregisterPlayer(this);
         }
     }
 
@@ -48,7 +73,7 @@ public class HealthBar : NetworkBehaviour
 
         if (Input.GetKeyDown(KeyCode.X))
         {
-            CmdTakeDamage(10);
+            CmdTakeDamage(20);
         }
 
         if (hp <= 0 && !isCharacterDead)
@@ -88,6 +113,12 @@ public class HealthBar : NetworkBehaviour
             shaderAmount -= damage / 100 * 0.35f;
 
             RpcShowDamageHighlight(shaderAmount);
+
+            if (hp <= 0)
+            {
+                hp = 0;
+                Die();
+            }
         }
     }
 
@@ -113,7 +144,16 @@ public class HealthBar : NetworkBehaviour
 
     private void Die()
     {
+        if (isLocalPlayer) UIManager.Instance.HideTextHint();
+
         isCharacterDead = true;
-        Debug.Log("Игрок умер!");
+        character.IsPlayerCanMove(false);
+        flashLightBarController.OnTerminal(true);
+
+        cameraFollowScript.OnPlayerDied(this);
+        if (isServer)
+        {
+            LevelManager.Instance.CheckAllPlayersDead();
+        }
     }
 }

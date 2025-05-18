@@ -186,6 +186,8 @@ MonoBehaviour:
   lootCommonCostInShipText: {fileID: 0}
   enterInComputer: {fileID: 8300000, guid: 83cd464d49e981841b97262225138926, type: 3}
   exitFromComputer: {fileID: 8300000, guid: 996105c81388552479e0601cbd3b01a2, type: 3}
+  acceptSound: {fileID: 8300000, guid: f778584f96ffab341a52d7aaf0d6085b, type: 3}
+  errorSound: {fileID: 8300000, guid: 38035b02b27bad342b7187aec2655461, type: 3}
 --- !u!82 &4343541525277840831
 AudioSource:
   m_ObjectHideFlags: 0

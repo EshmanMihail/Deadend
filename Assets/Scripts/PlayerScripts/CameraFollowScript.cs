@@ -5,20 +5,21 @@ using Mirror;
 
 public class CameraFollowScript : NetworkBehaviour
 {
-    [SerializeField] private Transform targetTransform; // Цель (игрок)
-    [SerializeField] private float movingSpeed = 5f;    // Скорость перемещения камеры
+    [SerializeField] private Transform targetTransform;
+    [SerializeField] private float movingSpeed = 5f;
 
-    private Camera mainCamera; // Ссылка на основную камеру
+    private Camera mainCamera;
+
+    private List<HealthBar> otherPlayers;
+    private bool isLocalPlayerDead = false;
+    private int playerIndex = -1;
 
     void Start()
     {
-        // Проверяем, локальный ли это игрок
         if (!isLocalPlayer) return;
 
-        // Получаем основную камеру
         mainCamera = Camera.main;
 
-        // Устанавливаем начальную позицию камеры на игрока
         if (mainCamera != null && targetTransform != null)
         {
             mainCamera.transform.position = new Vector3(
@@ -26,28 +27,79 @@ public class CameraFollowScript : NetworkBehaviour
                 targetTransform.position.y,
                 targetTransform.position.z - 10
             );
-
-            // Привязываем камеру к этому скрипту (если не хотим использовать FixedUpdate)
-            mainCamera.transform.SetParent(null); // Отсоединяем от иерархии игрока
+            mainCamera.transform.SetParent(null);
         }
     }
 
     void Update()
     {
-        // Следим только за локальным игроком
         if (!isLocalPlayer || targetTransform == null || mainCamera == null) return;
 
-        // Новая позиция для камеры
+        if (isLocalPlayerDead && Input.GetKeyDown(KeyCode.Mouse0))
+        {
+            SwitchToNextPlayer();
+        }
+
         Vector3 target = new Vector3(
             targetTransform.position.x,
             targetTransform.position.y,
             targetTransform.position.z - 10
         );
 
-        // Плавное движение камеры к цели
         Vector3 pos = Vector3.Lerp(mainCamera.transform.position, target, movingSpeed * Time.deltaTime);
 
-        // Применяем новую позицию
         mainCamera.transform.position = pos;
+    }
+
+    public void OnPlayerDied(HealthBar deadPlayer)
+    {
+        isLocalPlayerDead = true;
+
+        otherPlayers = LevelManager.Instance.GetPlayers();
+        otherPlayers.RemoveAll(player => player.isCharacterDead);
+
+        if (deadPlayer.transform == targetTransform)
+        {
+            SwitchToNextPlayer();
+        }
+    }
+
+    private void SwitchToNextPlayer()
+    {
+        if (otherPlayers == null || otherPlayers.Count == 0)
+        {
+            Debug.LogWarning("Нет других игроков для переключения камеры.");
+            return;
+        }
+
+        if (playerIndex < 0)
+        {
+            playerIndex = SetPlayerIndex();
+        }
+        else
+        {
+            playerIndex++;
+            if (playerIndex == otherPlayers.Count) playerIndex = 0;
+
+            if (otherPlayers[playerIndex].isCharacterDead || otherPlayers[playerIndex].transform == targetTransform)
+            {
+                playerIndex++;
+                if (playerIndex == otherPlayers.Count) playerIndex = 0;
+            }
+        }
+
+        targetTransform = otherPlayers[playerIndex].transform;
+    }
+
+    private int SetPlayerIndex()
+    {
+        for (int i = 0; i < otherPlayers.Count; i++)
+        {
+            if (!otherPlayers[i].isCharacterDead && otherPlayers[i].transform != targetTransform)
+            {
+                return i;
+            }
+        }
+        return -1;
     }
 }

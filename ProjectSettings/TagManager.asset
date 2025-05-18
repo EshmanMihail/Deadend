@@ -13,11 +13,12 @@ TagManager:
   - StartLever
   - Zeep
   - SpaceToDelete
+  - Cabinet
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
   - Wall

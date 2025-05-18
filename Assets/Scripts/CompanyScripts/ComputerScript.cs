@@ -8,6 +8,7 @@ public class ComputerScript : NetworkBehaviour
 {
     [SerializeField] private GameObject computerObj;
     [SerializeField] private Text moreMoneyText;
+    [SerializeField] private Text terminalMoneyText;
     [SerializeField] private InputField inputField;
     [SerializeField] private Text errorText;
     [SerializeField] private Text acceptedText;
@@ -22,6 +23,12 @@ public class ComputerScript : NetworkBehaviour
     [SerializeField] private AudioClip[] keysSounds;
     [SerializeField] private AudioClip[] micSounds;
 
+    [SerializeField] private AudioClip acceptSound;
+    [SerializeField] private AudioClip errorSound;
+
+    [SerializeField] private Text paymentText;
+    [SerializeField] private AudioClip paymentSound;
+
     [SerializeField] private GameObject placeForLoot;
 
     private GameObject currentPlayer;
@@ -29,7 +36,6 @@ public class ComputerScript : NetworkBehaviour
 
     void Start()
     {
-        audioSource = GetComponent<AudioSource>();
         inputField.onValueChanged.AddListener(PlayKeySound);
     }
 
@@ -129,10 +135,14 @@ public class ComputerScript : NetworkBehaviour
     private void RpcSyncMoneyAndSoldedStuff(int lootCommonCost, int randSoundIndex)
     {
         QuotaSettings.money += lootCommonCost;
+        terminalMoneyText.text = QuotaSettings.money.ToString() + '$';
+        StartCoroutine(ShowPaymentText(lootCommonCost));
+
         QuotaSettings.soldLootAmount += lootCommonCost;
 
         if (QuotaSettings.soldLootAmount >= QuotaSettings.quota)
         {
+            QuotaSettings.isQuotaReached = true;
             StartCoroutine(PlayMicSoundWithDelay(randSoundIndex));
         }
     }
@@ -142,6 +152,15 @@ public class ComputerScript : NetworkBehaviour
         yield return new WaitForSeconds(8);
         AudioClip randomClip = micSounds[randSoundIndex];
         audioSource2D.PlayOneShot(randomClip);
+    }
+
+    private IEnumerator ShowPaymentText(int payment)
+    {
+        audioSource.PlayOneShot(paymentSound);
+        paymentText.text = "Получено: " + payment.ToString() + '$';
+        paymentText.gameObject.SetActive(true);
+        yield return new WaitForSeconds(4);
+        paymentText.gameObject.SetActive(false);
     }
 
     private void OpenGates()
@@ -176,6 +195,8 @@ public class ComputerScript : NetworkBehaviour
 
     private IEnumerator ShowAcceptForTwoSeconds(string acceptMessage)
     {
+        audioSource.clip = acceptSound;
+        audioSource.Play();
         acceptedText.text = acceptMessage;
         acceptedText.gameObject.SetActive(true);
         yield return new WaitForSeconds(2f);
@@ -200,6 +221,8 @@ public class ComputerScript : NetworkBehaviour
 
     private IEnumerator ShowErrorForTwoSeconds(string errorMessage)
     {
+        audioSource.clip = errorSound;
+        audioSource.Play();
         errorText.text = errorMessage;
         errorText.gameObject.SetActive(true);
         yield return new WaitForSeconds(2f);

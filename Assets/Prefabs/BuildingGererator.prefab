@@ -107,6 +107,7 @@ MonoBehaviour:
   - {fileID: 741538379130659512, guid: de98881e2cec2d54cae6ff000deff667, type: 3}
   - {fileID: 5341992706068682024, guid: 2efaa8995aba6f24d99af368ce3f11a6, type: 3}
   - {fileID: 5028414809800609089, guid: d5623e8f653b38f45811a40cef368146, type: 3}
+  - {fileID: 1804807232488214592, guid: 7f4ca82ecbc35d14ca6a2cd625d4274b, type: 3}
   grassRoomTiles:
   - {fileID: 11400000, guid: a1424010caa16a2449018170a312ebbb, type: 2}
   - {fileID: 11400000, guid: 5ea012b0e0c4b3749bc516cceffe5c77, type: 2}
@@ -148,6 +149,7 @@ MonoBehaviour:
   - {fileID: 5327352292094441071, guid: 44be932e5e2dbf84a919c1ee45e8e09a, type: 3}
   - {fileID: 6652926012424346849, guid: f26b9d35ff25f024fb9b57a75a52d737, type: 3}
   - {fileID: 6232913189707101295, guid: 7b25a20a6fdcc714c821c711acbf22de, type: 3}
+  - {fileID: 1804807232488214592, guid: 7f4ca82ecbc35d14ca6a2cd625d4274b, type: 3}
   frozenRoomTiles:
   - {fileID: 11400000, guid: d36ee9d777b6ead42b0a40698df237a3, type: 2}
   - {fileID: 11400000, guid: 53764e997da5cd04a820488427ff15eb, type: 2}
@@ -180,6 +182,7 @@ MonoBehaviour:
   - {fileID: 8332295123299857387, guid: 002dc8fae0beece4ba532e5ff46d8c4e, type: 3}
   - {fileID: 3185590619074964973, guid: ae787c1e6f808a14f989ddb39851453f, type: 3}
   - {fileID: 8546884595891351835, guid: 8bb8abe0f4d498f4d9ed381e2caec35b, type: 3}
+  - {fileID: 1804807232488214592, guid: 7f4ca82ecbc35d14ca6a2cd625d4274b, type: 3}
   backgroundTunnelTile: {fileID: 11400000, guid: 3725cba38adf11544bee3b4ddc66c3ce, type: 2}
   chanceToCheckToGenerateNextPathes: 50
   chanceToCheckToStopGenerate: 80

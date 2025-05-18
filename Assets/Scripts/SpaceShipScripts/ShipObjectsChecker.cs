@@ -62,17 +62,26 @@ public class ShipObjectsChecker : MonoBehaviour
         Collider2D[] colliders = Physics2D.OverlapAreaAll(gameObject.GetComponent<BoxCollider2D>().bounds.min,
             gameObject.GetComponent<BoxCollider2D>().bounds.max);
 
+        int countOfCollectedLoot = 0;
         for (int i = 0; i < colliders.Length; i++)
         {
             if (colliders[i].CompareTag("Loot"))
             {
-                if (colliders[i].GetComponent<LootProperty>() != null)
+                LootProperty lootProperty = colliders[i].GetComponent<LootProperty>();
+                if (lootProperty != null)
                 {
-                    int lootId = colliders[i].GetComponent<LootProperty>().Id;
-                    int lootCost = colliders[i].GetComponent<LootProperty>().currentCost;
-                    MissionSettings.lootInShip.Add((lootId, colliders[i].transform.position, lootCost));
+                    if (!lootProperty.isCollected)
+                    {
+                        lootProperty.isCollected = true;
+                        countOfCollectedLoot++;
+                    }
+
+                    int lootId = lootProperty.Id;
+                    int lootCost = lootProperty.currentCost;
+                    MissionSettings.lootInShip.Add((lootId, colliders[i].transform.position, lootCost, true));
                 }
             }
         }
+        MissionSettings.countOfCollectedLoot = countOfCollectedLoot;
     }
 }

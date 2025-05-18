@@ -23,6 +23,8 @@ public class TerminalMonitorScript : NetworkBehaviour
 
     [SerializeField] private AudioClip enterInComputer;
     [SerializeField] private AudioClip exitFromComputer;
+    [SerializeField] private AudioClip acceptSound;
+    [SerializeField] private AudioClip errorSound;
 
     private int currentSceneIndex = 1;
 
@@ -121,7 +123,7 @@ public class TerminalMonitorScript : NetworkBehaviour
                 CmdShowErrorMessage(playerIdentity, "Вы уже на задании!");
             }
         }
-        else if (commandText == "Company")
+        else if (commandText == "Company" || commandText == "c")
         {
             if (currentSceneIndex == 1)
             {
@@ -189,6 +191,8 @@ public class TerminalMonitorScript : NetworkBehaviour
 
     private IEnumerator ShowAcceptForTwoSeconds(string acceptMessage)
     {
+        audioSource.clip = acceptSound;
+        audioSource.Play();
         acceptedText.text = acceptMessage;
         acceptedText.gameObject.SetActive(true);
         yield return new WaitForSeconds(2f);
@@ -213,6 +217,8 @@ public class TerminalMonitorScript : NetworkBehaviour
 
     private IEnumerator ShowErrorForTwoSeconds(string errorMessage)
     {
+        audioSource.clip = errorSound;
+        audioSource.Play();
         errorText.text = errorMessage;
         errorText.gameObject.SetActive(true);
         yield return new WaitForSeconds(2f);

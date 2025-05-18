@@ -51,13 +51,16 @@ public class UIManager : MonoBehaviour
 
     public void ShowTextHint(Vector3 pos, string text)
     {
-        hint.text = text;
-        hint.gameObject.transform.position = pos + hintOffset;
-        hint.gameObject.SetActive(true);
+        if (hint != null)
+        {
+            hint.text = text;
+            hint.gameObject.transform.position = pos + hintOffset;
+            hint.gameObject.SetActive(true);
+        }     
     }
 
     public void HideTextHint()
     {
-        hint.gameObject.SetActive(false);
+         if (hint != null) hint.gameObject.SetActive(false);
     }
 }

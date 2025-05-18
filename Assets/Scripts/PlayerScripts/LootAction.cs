@@ -1,7 +1,8 @@
+using Mirror;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LootAction : MonoBehaviour
+public class LootAction : NetworkBehaviour
 {
     private List<GameObject> lootInRange = new List<GameObject>();
 
@@ -14,6 +15,8 @@ public class LootAction : MonoBehaviour
 
     void Update()
     {
+        if (!isLocalPlayer) return;
+
         if (Input.GetKeyDown(KeyCode.E))
         {
             if (lootInRange.Count > 0) 
