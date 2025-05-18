@@ -68,6 +68,8 @@ public class BuildingGenerator : NetworkBehaviour
     private List<Room> roomList = new List<Room>();
 
     private List<Vector2> occupiedPlaces = new List<Vector2>();
+
+    [SerializeField] GameObject ghost;
     void Start()
     {
         rand = new System.Random(Guid.NewGuid().GetHashCode());
@@ -141,6 +143,9 @@ public class BuildingGenerator : NetworkBehaviour
         nodeSpawner.GetComponent<NodeSpawner>().SpawnNodes();
 
         CmdReplaceMainDoor(startPosition + new Vector2(0.5f, 0.5f));
+
+        GameObject ghst = Instantiate(ghost, startPosition, Quaternion.identity);
+        NetworkServer.Spawn(ghst);
     }
 
     private Room GenerateRoom(RoomType roomType, Vector2 entryPoint, double chanceToSpawnNextRoom)

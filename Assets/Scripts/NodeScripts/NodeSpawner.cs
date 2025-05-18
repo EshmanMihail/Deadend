@@ -8,9 +8,19 @@ public class NodeSpawner : MonoBehaviour
 
     public void SpawnNodes()
     {
+        SpawnNodesOnLadders();
+
         for (int i = 0; i < BuildingData.node.Count; i++)
         {
             Instantiate(node, BuildingData.node[i], Quaternion.identity);
+        }
+    }
+
+    private void SpawnNodesOnLadders()
+    {
+        for (int i = 0; i < BuildingData.ladder.Count; i+=2)
+        {
+            BuildingData.node.Add(new Vector2(BuildingData.ladder[i].x + 0.5f, BuildingData.ladder[i].y + 0.5f));
         }
     }
 }

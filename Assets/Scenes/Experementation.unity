@@ -20673,6 +20673,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 766650370589453656, guid: 1c9977ed06fdc514db12a38eede5d889, type: 3}
     - target: {fileID: 7462886624316032005, guid: 9774597904ddd58449618fc39139e4ff, type: 3}
+      propertyPath: ghost
+      value: 
+      objectReference: {fileID: 1879953239863934696, guid: e390ae7622efd0c428a3378923ef3f92, type: 3}
+    - target: {fileID: 7462886624316032005, guid: 9774597904ddd58449618fc39139e4ff, type: 3}
       propertyPath: ladder
       value: 
       objectReference: {fileID: 104112128}

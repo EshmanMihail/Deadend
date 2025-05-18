@@ -13,7 +13,7 @@ namespace Assets.Scripts.NodeScripts
             {
                 if (!BuildingData.node.Contains(new Vector2(x, y)))
                 {
-                    BuildingData.node.Add(new Vector2(x, y));
+                    BuildingData.node.Add(new Vector2(x + 0.5f, y + 0.5f));
                 }
             }
         }
