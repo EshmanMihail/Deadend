@@ -27,6 +27,8 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Inner_roo
 
             int roomFloorY = (int)room.entryPoint.y - room.wallsInfo.countOfWallsDown;
 
+            BuildingData.node.Add(new Vector2((int)entry.x + 0.5f, (int)entry.y + 1 + 0.5f));
+
             room.tileSetter.RemoveWall(new Vector3Int((int)entry.x, (int)entry.y, 10));
             room.tileSetter.SetTile(roomTiles[16], (int)entry.x, (int)entry.y, ObjectsLayers.Ladder);
             BuildingData.ladder.Add(entry);
@@ -37,6 +39,8 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Inner_roo
                 BuildingData.ladder.Add(new Vector2((int)entry.x, y));
                 room.tileSetter.RemoveWall(new Vector3Int((int)entry.x, y, 10));
             }
+
+            BuildingData.node.Add(new Vector2((int)entry.x + 0.5f, roomFloorY + 1 + 0.5f));
 
             room.tileSetter.SetTile(roomTiles[18], (int)entry.x, roomFloorY + 1, ObjectsLayers.Ladder);
             BuildingData.ladder.Add(entry);

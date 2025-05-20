@@ -221,6 +221,8 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Platforms
             int y = (int)beginPosition.y;
             int x = (int)beginPosition.x;
 
+            BuildingData.node.Add(new Vector2(x + 0.5f, y + 1 + 0.5f));
+
             room.tileSetter.SetTile(tile[16], x, y, ObjectsLayers.Ladder);
             y--;
 
@@ -232,7 +234,8 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Platforms
             {
                 if (floorWalls.Contains(new Vector2(x, y)) || occupiedPlaces.Contains(new Vector2(x, y)))
                 {
-                    room.tileSetter.SetTile(tile[18], x, y, ObjectsLayers.Ladder);
+                    //room.tileSetter.SetTile(tile[18], x, y, ObjectsLayers.Ladder);
+                    BuildingData.node.Add(new Vector2(x + 0.5f, y + 1 + 0.5f));
                     isMeetPlatform = true;
                     break;
                 }
@@ -241,7 +244,11 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Platforms
                 y--;
             }
 
-            if (!isMeetPlatform) room.tileSetter.SetTile(tile[18], x, roomFloorY, ObjectsLayers.Ladder);
+            if (!isMeetPlatform)
+            {
+                BuildingData.node.Add(new Vector2(x + 0.5f, roomFloorY + 0.5f));
+                room.tileSetter.SetTile(tile[18], x, roomFloorY, ObjectsLayers.Ladder);
+            }
         }
 
         private void CorrectListOfWallsPositions()

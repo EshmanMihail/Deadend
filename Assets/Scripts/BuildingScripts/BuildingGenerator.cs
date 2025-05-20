@@ -144,7 +144,7 @@ public class BuildingGenerator : NetworkBehaviour
 
         CmdReplaceMainDoor(startPosition + new Vector2(0.5f, 0.5f));
 
-        GameObject ghst = Instantiate(ghost, startPosition, Quaternion.identity);
+        GameObject ghst = Instantiate(ghost, startPosition + new Vector2(1.5f, 0.5f), Quaternion.identity);
         NetworkServer.Spawn(ghst);
     }
 
@@ -635,6 +635,9 @@ public class BuildingGenerator : NetworkBehaviour
         Tile[] tiles = roomA.GetTiles();
 
         roomA.tileSetter.RemoveWall(new Vector3Int(randPositionX, tunnelStartY, 10));
+
+        BuildingData.node.Add(new Vector2(randPositionX + 0.5f, tunnelStartY + 1 + 0.5f));
+
         roomA.tileSetter.SetTile(tiles[16], randPositionX, tunnelStartY, ObjectsLayers.Ladder);
         //int countToLight = 0;
         for (int y = tunnelStartY - 1; y >= tunnelEndY; y--)
@@ -680,6 +683,8 @@ public class BuildingGenerator : NetworkBehaviour
         {
             if (objectPostions.Contains(new Vector2(x, y)))
             {
+                BuildingData.node.Add(new Vector2(x + 0.5f, y + 0.5f));
+
                 room.tileSetter.SetTile(tiles[18], x, y, ObjectsLayers.Ladder);
                 f = false;
                 break;
@@ -690,7 +695,12 @@ public class BuildingGenerator : NetworkBehaviour
                 room.tileSetter.SetTile(tiles[17], x, y, ObjectsLayers.Ladder);
             }
         }
-        if (f) room.tileSetter.SetTile(tiles[18], x, floorY + 1, ObjectsLayers.Ladder);
+        if (f)
+        {
+            BuildingData.node.Add(new Vector2(x + 0.5f, floorY + 1 + 0.5f));
+
+            room.tileSetter.SetTile(tiles[18], x, floorY + 1, ObjectsLayers.Ladder);
+        }
     }
 
     private bool IsTunnelCanBe(int tunnelStartX, int tunnelStartY, int tunnelEndY)
@@ -723,6 +733,9 @@ public class BuildingGenerator : NetworkBehaviour
 
         Tile[] tiles = roomA.GetTiles();
         roomA.tileSetter.RemoveWall(new Vector3Int(startX, tunnelY, 10));
+
+        BuildingData.node.Add(new Vector2(startX + 0.5f, tunnelY + 0.5f));
+
         for (int x = startX + 1; x < endX; x++)
         {
             if (!occupiedPlaces.Contains(new Vector2(x, tunnelY - 1)) && !occupiedTunnelPositions.Contains(new Vector2(x, tunnelY - 1)))
@@ -732,11 +745,15 @@ public class BuildingGenerator : NetworkBehaviour
             roomA.tileSetter.RemoveWall(new Vector3Int(x, tunnelY, 10));
             roomA.tileSetter.SetTile(backgroundTunnelTile, x, tunnelY, ObjectsLayers.BackgroundWalls);
 
+            BuildingData.node.Add(new Vector2(x + 0.5f, tunnelY + 0.5f));
+
             if (!occupiedPlaces.Contains(new Vector2(x, tunnelY + 1)) && !occupiedTunnelPositions.Contains(new Vector2(x, tunnelY + 1)))
                 roomA.tileSetter.SetTile(tiles[6], x, tunnelY + 1, ObjectsLayers.Walls);
         }
         roomA.tileSetter.RemoveWall(new Vector3Int(endX, tunnelY, 10));
         roomA.tileSetter.RemoveWall(new Vector3Int(endX + 1, tunnelY, 10));
+
+        BuildingData.node.Add(new Vector2(endX + 0.5f, tunnelY + 0.5f));
     }
 
     private bool IsRoomRight(Vector2 upperLeftA, Vector2 lowerRightA, Vector2 upperLeftB, Vector2 lowerRightB)

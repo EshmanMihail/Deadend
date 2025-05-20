@@ -220,6 +220,8 @@ namespace Assets.Scripts.BuildingScripts
             RemoveTile(new Vector3Int((int)room.entryPoint.x, (int)room.entryPoint.y, 10), backgroundWalls, ObjectsLayers.BackgroundWalls);
             RemoveWall(new Vector3Int((int)room.entryPoint.x, (int)room.entryPoint.y, 10));
 
+            BuildingData.node.Add(new Vector2((int)room.entryPoint.x + 0.5f, (int)room.entryPoint.y + 0.5f));
+
             SetTile(backTile, (int)room.entryPoint.x, (int)room.entryPoint.y, ObjectsLayers.BackgroundWalls);
         }
 
@@ -230,6 +232,8 @@ namespace Assets.Scripts.BuildingScripts
 
             Tile[] tile = room.GetTiles();
 
+            BuildingData.node.Add(new Vector2(beginX + 0.5f, beginY + 1 + 0.5f));
+
             SetTile(tile[16], beginX, beginY, ObjectsLayers.Ladder);
             BuildingData.ladder.Add(beginPos);
 
@@ -238,6 +242,9 @@ namespace Assets.Scripts.BuildingScripts
                 SetTile(tile[17], beginX, y, ObjectsLayers.Ladder);
                 BuildingData.ladder.Add(new Vector2(beginX, y));
             }
+
+            BuildingData.node.Add(new Vector2(beginX + 0.5f, roomFloorY + 1 + 0.5f));
+
             SetTile(tile[18], beginX, roomFloorY + 1, ObjectsLayers.Ladder);
             BuildingData.ladder.Add(new Vector2(beginX, roomFloorY + 1));
         }

@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using static UnityEngine.EventSystems.EventTrigger;
 
 
 namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Inner_rooms.InnerRoomStructs
@@ -106,22 +107,32 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Inner_roo
             //left ladder
             if (!BuildingData.ladder.Contains(new Vector2(leftX, startY)))
             {
+                BuildingData.node.Add(new Vector2(leftX + 0.5f, startY + 1 + 0.5f));
+
                 innerRoom.room.tileSetter.SetTile(tiles[16], leftX, startY, ObjectsLayers.Ladder);
                 for (int y = startY - 1; y > startY - storeyHeight + 1; y--)
                 {
                     innerRoom.room.tileSetter.SetTile(tiles[17], leftX, y, ObjectsLayers.Ladder);
                 }
+
+                BuildingData.node.Add(new Vector2(leftX + 0.5f, startY - storeyHeight + 1 + 0.5f));
+
                 innerRoom.room.tileSetter.SetTile(tiles[18], leftX, startY - storeyHeight + 1, ObjectsLayers.Ladder);
             }
 
             //right ladder
             if (!BuildingData.ladder.Contains(new Vector2(rightX, startY)))
             {
+                BuildingData.node.Add(new Vector2(rightX + 0.5f, startY + 1 + 0.5f));
+
                 innerRoom.room.tileSetter.SetTile(tiles[16], rightX, startY, ObjectsLayers.Ladder);
                 for (int y = startY - 1; y > startY - storeyHeight + 1; y--)
                 {
                     innerRoom.room.tileSetter.SetTile(tiles[17], rightX, y, ObjectsLayers.Ladder);
                 }
+
+                BuildingData.node.Add(new Vector2(rightX + 0.5f, startY - storeyHeight + 1 + 0.5f));
+
                 innerRoom.room.tileSetter.SetTile(tiles[18], rightX, startY - storeyHeight + 1, ObjectsLayers.Ladder);
             }
         }

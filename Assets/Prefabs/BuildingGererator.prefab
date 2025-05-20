@@ -188,6 +188,7 @@ MonoBehaviour:
   chanceToCheckToStopGenerate: 80
   chanceToSpawnNextRoom: 100
   minusChanceToSpawnNextRoom: 5
+  ghost: {fileID: 3281404766762054477, guid: 6847eca3a4f662d43b953bc7beb709f5, type: 3}
 --- !u!114 &5789674940414866324
 MonoBehaviour:
   m_ObjectHideFlags: 0

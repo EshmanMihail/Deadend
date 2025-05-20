@@ -20675,7 +20675,7 @@ PrefabInstance:
     - target: {fileID: 7462886624316032005, guid: 9774597904ddd58449618fc39139e4ff, type: 3}
       propertyPath: ghost
       value: 
-      objectReference: {fileID: 1879953239863934696, guid: e390ae7622efd0c428a3378923ef3f92, type: 3}
+      objectReference: {fileID: 3281404766762054477, guid: 6847eca3a4f662d43b953bc7beb709f5, type: 3}
     - target: {fileID: 7462886624316032005, guid: 9774597904ddd58449618fc39139e4ff, type: 3}
       propertyPath: ladder
       value: 

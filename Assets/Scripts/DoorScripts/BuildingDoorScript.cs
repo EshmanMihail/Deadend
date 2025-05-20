@@ -54,4 +54,9 @@ public class BuildingDoorScript : NetworkBehaviour
             triggerDoorCollider.enabled = !isOpen;
         }
     }
+
+    public bool isDoorOpen()
+    {
+        return isOpen;
+    }
 }

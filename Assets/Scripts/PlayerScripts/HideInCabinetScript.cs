@@ -95,6 +95,10 @@ public class HideInCabinetScript : NetworkBehaviour
         if (collision.gameObject.CompareTag("Cabinet"))
         {
             if (!inside) cabinet = null;
+            if (isLocalPlayer)
+            {
+                UIManager.Instance.HideTextHint();
+            }
         }
     }
 }
