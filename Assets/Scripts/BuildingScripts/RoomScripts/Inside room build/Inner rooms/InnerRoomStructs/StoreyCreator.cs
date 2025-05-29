@@ -107,7 +107,7 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Inner_roo
             //left ladder
             if (!BuildingData.ladder.Contains(new Vector2(leftX, startY)))
             {
-                BuildingData.node.Add(new Vector2(leftX + 0.5f, startY + 1 + 0.5f));
+                //BuildingData.node.Add(new Vector2(leftX + 0.5f, startY + 1 + 0.5f));
 
                 innerRoom.room.tileSetter.SetTile(tiles[16], leftX, startY, ObjectsLayers.Ladder);
                 for (int y = startY - 1; y > startY - storeyHeight + 1; y--)
@@ -123,7 +123,7 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_build.Inner_roo
             //right ladder
             if (!BuildingData.ladder.Contains(new Vector2(rightX, startY)))
             {
-                BuildingData.node.Add(new Vector2(rightX + 0.5f, startY + 1 + 0.5f));
+                //BuildingData.node.Add(new Vector2(rightX + 0.5f, startY + 1 + 0.5f));
 
                 innerRoom.room.tileSetter.SetTile(tiles[16], rightX, startY, ObjectsLayers.Ladder);
                 for (int y = startY - 1; y > startY - storeyHeight + 1; y--)

@@ -3619,7 +3619,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 500
+      scalar: 300
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -38322,8 +38322,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -1.7543526, y: 18.3592, z: 0}
-    m_Extent: {x: 71.24455, y: 27.3218, z: 0}
+    m_Center: {x: -1.7532997, y: 18.3594, z: 0}
+    m_Extent: {x: 71.2449, y: 27.3215, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -39239,7 +39239,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0

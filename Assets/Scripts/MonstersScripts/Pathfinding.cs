@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
@@ -10,6 +9,11 @@ namespace Assets.Scripts.MonstersScripts
 {
     public class Pathfinding
     {
+        public static async Task<List<Vector2>> FindPathAsync(Vector2 start, Vector2 goal)
+        {
+            return await Task.Run(() => FindPath(start, goal));
+        }
+
         public static List<Vector2> FindPath(Vector2 start, Vector2 goal)
         {
             Vector2 startNode = FindClosestNode(start);

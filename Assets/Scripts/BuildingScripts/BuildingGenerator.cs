@@ -121,7 +121,38 @@ public class BuildingGenerator : NetworkBehaviour
 
     private void GenerateBuilding(Vector2 startPosition, RoomType roomType)
     {
+        //GenerateRoom(roomType, startPosition, chanceToSpawnNextRoom);
+        StartCoroutine(PauseAndCraete(startPosition, roomType));
+
+        //CreateRoomStructure();
+
+        //CreatePassagesBetweenRooms();
+        //GenerateTunnels();
+
+        //lampSpawner.GetComponent<LampSpawner>().SpawnLamps();
+
+        //roomBackgroundChanger.GetComponent<RoomBackGroundChanger>().ChangeBackGround(roomList);
+
+        //AddEntryDoors();
+        //doorSpawner.GetComponent<DoorSpawner>().Spawn();
+
+        //AddPositionsForLootSpawn();
+        //lootSpawner.GetComponent<LootSpawner>().Spawn(rand);
+
+        //roomBackgroundObjectsPlacer.GetComponent<BackgroundObjectPlacerScript>().Spawn(roomList, rand);
+
+        //nodeSpawner.GetComponent<NodeSpawner>().SpawnNodes();
+
+        //CmdReplaceMainDoor(startPosition + new Vector2(0.5f, 0.5f));
+
+        //GameObject ghst = Instantiate(ghost, startPosition + new Vector2(1.5f, 0.5f), Quaternion.identity);
+        //NetworkServer.Spawn(ghst);
+    }
+
+    private IEnumerator PauseAndCraete(Vector2 startPosition, RoomType roomType)
+    {
         GenerateRoom(roomType, startPosition, chanceToSpawnNextRoom);
+        yield return new WaitForSeconds(2);
 
         CreateRoomStructure();
 

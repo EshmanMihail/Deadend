@@ -24,7 +24,7 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_spawn
         {
             Tile[] tile = room.GetTiles();
 
-            Tile[] grass = { tile[20], tile[21], tile[22] };
+            Tile[] grass = { tile[20], tile[21], tile[22], tile[28], tile[29], tile[30], tile[31], tile[32], tile[33], tile[34] };
             for (int i = 0; i < positions.Count; i++)
             {
                 int randIndex = rand.Next(0, grass.Length);
@@ -34,7 +34,8 @@ namespace Assets.Scripts.BuildingScripts.RoomScripts.Inside_room_spawn
             int leftX = (int)room.entryPoint.x - room.wallsInfo.countOfWallsLeft;
             int rightX = (int)room.entryPoint.x + room.wallsInfo.countOfWallsRight;
             int floorY = (int)room.entryPoint.y - room.wallsInfo.countOfWallsDown + 1;
-            Tile[] grassAndBushes = { tile[20], tile[21], tile[22], tile[23], tile[24], tile[25], tile[26], tile[27] };
+            Tile[] grassAndBushes = { tile[20], tile[21], tile[22], tile[23], tile[24], tile[25], tile[26], tile[27],
+                tile[28], tile[29], tile[30], tile[31], tile[32], tile[33], tile[34] };
             for (int x = leftX + 1; x < rightX; x++)
             {
                 int randIndex = rand.Next(0, grassAndBushes.Length);

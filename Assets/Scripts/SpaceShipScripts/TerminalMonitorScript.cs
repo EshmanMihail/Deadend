@@ -99,7 +99,7 @@ public class TerminalMonitorScript : NetworkBehaviour
                 CmdShowErrorMessage(playerIdentity, "Вы уже на задании!");
             }
         }
-        else if (commandText == "Rend")
+        else if (commandText == "Rend" || commandText == "rend")
         {
             if (currentSceneIndex == 1)
             {

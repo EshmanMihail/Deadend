@@ -147,8 +147,9 @@ public class HealthBar : NetworkBehaviour
         if (isLocalPlayer) UIManager.Instance.HideTextHint();
 
         isCharacterDead = true;
-        character.IsPlayerCanMove(false);
-        flashLightBarController.OnTerminal(true);
+        
+        character.enabled = false;
+        flashLightBarController.enabled = false;
 
         cameraFollowScript.OnPlayerDied(this);
         if (isServer)
